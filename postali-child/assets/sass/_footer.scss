@@ -1,0 +1,223 @@
+/**
+ * Footer Styles
+ *
+ * @package Postali Child
+ * @author Postali LLC
+**/
+
+footer {
+    background:$dkblue;
+    padding:100px 0 60px;
+    z-index: 1;
+    position: relative;
+    .container {
+        .columns {
+            p {
+                color:$white;
+                a {
+                    color:$white;
+                    &:hover {
+                        color:$orange;
+                    }
+                }
+            }
+            .column-33 {
+                &.map-column {
+                    flex-basis: 32%;
+                    @media screen and (max-width: $screen-sm) {
+                        flex-basis: 100%;
+                    }
+                }
+                img {
+                    max-width: 310px;
+                }
+                .main-contact {
+                    @media screen and (max-width: $screen-sm) {
+                        margin-bottom: 30px;
+                    }
+                    .orange {
+                        color: $orange;
+                    }
+                    .address {
+                        margin-bottom: 0 !important;
+                    }
+                    .directions-link {
+                        color: $orange;
+                        text-decoration: underline;
+                        margin-bottom: 20px;
+                        display: inline-block;
+                        font-weight: $bold;
+                    }
+                    iframe {
+                        min-height: 300px;
+                    }
+                }
+            }
+            .column-66 {
+                flex-direction:row;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                &:after {
+                    display:none;
+                }
+                .column-33 {
+                    flex-basis: 30%;
+                    flex-direction: column;
+                    display:flex;
+                    @media screen and (max-width:$screen-sm) {
+                        flex-basis: 50%;
+                        margin-bottom:30px;
+                    }
+                    @media screen and (max-width:$screen-xs) {
+                        flex-basis: 100%;
+                        margin-bottom:30px;
+                    }
+                    .column-header {
+                        color: #5a7087;
+                        font-size: 24px;
+                        margin-bottom:10px !important;
+                    }
+                    ul {
+                        margin:0;
+                        li {
+                            a {
+                                color:$white;
+                                text-decoration: none;
+                                line-height: 220%;
+                                font-size: 17px;
+                                font-weight: normal;
+                                &:hover {
+                                    color:$orange;
+                                }
+                            }
+                            &:before {
+                                content:"";
+                            }
+                            &.current_page_item,
+                            &.current-page-ancestor {
+                                a {
+                                    color:$orange;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            #utility {
+                display: flex;
+                border-bottom: 1px solid #5a7087;
+                justify-content: space-between;
+                flex-direction: row;
+                padding-bottom:15px;
+                align-items: flex-end;
+                #menu-footer-utility,
+                #menu-footer-utility-spanish {
+                    padding: 0;
+                    margin: 0;
+                    li {
+                        display: inline;
+                        list-style-type: none;
+                        padding: 0;
+                        margin: 0;
+                        @media screen and (max-width:$screen-md) {
+                            display:block;
+                        }
+                        &:before {
+                            content: "";
+                        }
+                        a {
+                            color: $white;
+                            text-decoration: none;
+                            font-size: 17px;
+                            margin-right: 25px;
+                            &:hover {
+                                color:$orange;
+                            }
+                        }
+                    }
+                }
+                .utility-links,
+                .social-media {
+                    display: flex;
+                    flex-direction: row;
+                }
+            }
+            #locations {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                .location-grid {
+                    display: grid;
+                    grid-template-areas: 
+                        'title title'
+                        'label-p phone'
+                        'label-a address'
+                        '. directions';
+                    grid-template-columns: 20px 1fr;
+                    grid-gap: 5px;
+                    color: $white;
+                    text-decoration: none;
+                    font-size: 16px;
+                    margin-right: 15px;
+                    font-family: $opensans;
+                    line-height: 1.7;
+                    flex-basis: 15%;
+                    @media screen and (max-width: $screen-lg) {
+                        flex-basis: revert;
+                    }
+                    .big, .big a {
+                        grid-area: title;
+                        font-size: 20px;
+                        color: $white;
+                        opacity: .5;
+                        padding-bottom: 10px;
+                        padding-top: 30px;
+                    }
+                    .big a {
+                        opacity: 1 !important;
+                    }
+                    .orange {
+                        font-weight: bold;
+                        color: $orange;
+                        margin-bottom: 10px !important;
+                        display: block;
+                        &:nth-of-type(1) {
+                            grid-area: label-a;
+                        }
+                        &:nth-of-type(2) {
+                            grid-area: label-p;
+                        }
+                    }
+                    a {
+                        font-size: 16px;
+                        font-weight: normal;
+                        color: $white;
+                        &:nth-of-type(1) {
+                            grid-area: phone;
+                        }
+                        &:nth-of-type(2) {
+                            grid-area: directions;
+                            font-weight: bold;
+                            text-decoration: underline;
+                            &:hover {
+                                color: $orange;
+                                transition: $trans;
+                            }
+                        }
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                    p {
+                        grid-area: address;
+                        font-size: 16px;
+                        font-weight: normal;
+                        margin-bottom: 10px !important;
+                    }
+                }
+            }
+        }
+    }
+}

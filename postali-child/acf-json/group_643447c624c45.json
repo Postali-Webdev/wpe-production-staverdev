@@ -1,0 +1,43 @@
+{
+    "key": "group_643447c624c45",
+    "title": "Category Interior",
+    "fields": [
+        {
+            "key": "field_643447c6d4552",
+            "label": "",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<span style=\"color: #ff0000;\">Notice! This template should be used for <strong>Category Interior pages.<\/strong> Do not use this template for <strong>Practice Area Child Pages<\/strong>.<\/span>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-interior.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1681147920
+}

@@ -1,0 +1,281 @@
+/**
+ * Web Font Styles, H Styles, Body Text Styles
+ *
+ * @package Postali Child
+ * @author Postali LLC
+**/
+
+/* Fonts */
+body, h1, h2, h3, h4, h5, h6, p, a, ul {
+    // color: $body-text-color;
+    position:relative;
+} 
+p, a, ul, ol {
+
+}
+ul li, ol li {
+    margin: 0 0 0 20px;
+    font-size: 18px;
+}
+dl, blockquote, img {
+
+}
+
+h1, h2, h3, h4 {
+    a {
+        font-family: inherit !important;
+        color: inherit;
+        font-weight: inherit;
+    }
+}
+
+ul {
+    font-family: $opensans;
+    margin:0;
+    list-style-type: none !important;
+    &.two-column {
+        -moz-column-count:2;
+        -webkit-column-count:2;
+        column-count: 2;
+        text-align: left;
+    }
+    li {
+        margin:0;
+        color:$grayblue;
+        position:relative;
+        line-height: 170%;
+        a {
+            color:inherit;
+            text-decoration: underline;
+            font-weight: bold;
+            &:hover {
+                color:$orange;
+            }
+        }
+        &:before {
+            content: "•";
+            font-size: 16px;
+            left: -17px;
+            position: absolute;
+            top: 2px;
+        }
+    }
+}
+
+ol {
+    font-family: $opensans;
+    margin-bottom:30px !important;
+    &.two-column {
+        -moz-column-count:2;
+        -webkit-column-count:2;
+        column-count: 2;
+        text-align: left;
+    }
+    li {
+        margin-left:35px;
+        color:$grayblue;
+        position:relative;
+        line-height: 170%;
+        a {
+            color:inherit;
+            text-decoration: underline;
+            font-weight: bold;
+            &:hover {
+                color:$orange;
+            }
+        }
+    }
+}
+
+a {
+    text-decoration:none;
+    -webkit-transition:$trans;
+    transition:$trans;
+    font-family: $opensans;
+    &:hover {
+        // color:$lt-red;
+        text-decoration:none;
+    }
+}
+
+.btn {
+    display:inline-block;
+    padding:15px 40px;
+    // background-color:$lt-red;
+    text-decoration:none;
+    // color:$white;
+    // border:2px solid $lt-red;
+    transition:$trans;
+    &:hover {
+        // background-color:$dk-red;
+    }
+}
+
+p {
+    font-size:18px;
+    margin-bottom:30px !important;
+    font-family: $opensans;
+    line-height: 170%;
+    color:$grayblue;
+    &.large {
+        font-size:22px;
+        line-height: 170%;
+        @media screen and (max-width:$screen-xxxs) {
+            font-size: 19px;
+        }
+    }
+    a {
+        color:$dkblue;
+        text-decoration: underline;
+    }
+    &.small {
+        font-size:15px;
+    }
+    &.caps {
+        text-transform: uppercase;
+        letter-spacing: .1em;
+        font-weight: bold;
+    }
+    &.disclaimer {
+        font-size:15px;
+        color:$white;
+    }
+    &.results-disclaimer {
+        font-size: 12px;
+        font-style: italic;
+    }
+    &.tall {
+        line-height: 225%;
+    }
+    &.read-more {
+        display: block;
+        span {
+            margin-left: 10px;
+            color: $orange;
+            vertical-align: middle;
+            font-size: 22px;
+        }
+    }
+    a {
+        font-weight:bold;
+        &:hover {
+            color:$orange;
+        }
+    }
+}
+
+h1 {
+    font-family: $opensans;
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 115%;
+    color:$grayblue;
+    text-transform: none;
+    @media screen and (max-width:$screen-md) {
+        font-size: 42px;
+    }
+    @media screen and (max-width:$screen-xxs) {
+        font-size: 34px;
+    }
+}
+
+h2 {
+    font-family: $opensans;
+    font-size: 42px;
+    font-weight: bold;
+    line-height: 115%;
+    color:$grayblue;
+    margin-bottom: 30px !important;
+    @media screen and (max-width:$screen-md) {
+        font-size: 36px;
+    }
+    @media screen and (max-width:$screen-xs) {
+        font-size: 30px;
+    }
+}
+
+h3 {
+    font-family: $opensans;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 115%;
+    color:$grayblue;
+    margin-bottom: 20px !important;
+    @media screen and (max-width:$screen-md) {
+        font-size: 26px;
+    }
+    @media screen and (max-width:$screen-xs) {
+        font-size: 24px;
+    }
+}
+
+h4 {
+    font-family: $opensans;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 115%;
+    color:$grayblue;
+    margin-bottom: 30px !important;
+    &.tall {
+        line-height: 150%;
+    }
+}
+.headline-text {
+    font-family: $opensans;
+    font-size: 70px;
+    font-weight: bold;
+    line-height: 115%;
+    color:$grayblue;
+    margin-bottom: 30px !important;
+    @media screen and (max-width:$screen-md) {
+        font-size: 46px;
+    }
+}
+
+// text styles //
+
+.small-orange {
+    color:$orange;
+    font-family: $opensans;
+    font-size:15px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 15px !important;
+    position:relative;
+    line-height: 135%;
+    &.underlined {
+        margin-bottom:20px;
+        &:after {
+            position: absolute;
+            border-bottom: 1px solid $gray-underline;
+            content: "";
+            top: 28px;
+            left: 0;
+            width: 100%;
+        }
+    }
+}
+
+// random blog fixes from old site //
+
+.pullquote {
+    padding: 40px;
+    font-size: 18px;
+    background: $white;
+    border-radius: 40px;
+    margin: 20px 0 60px;
+    font-family: $opensans;
+    line-height: 170%;
+    color: $dkblue;
+    font-style: italic;
+    .pullquote_author {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        margin-top: 20px !important;
+        display: block;
+        text-transform: uppercase;
+        letter-spacing: .1em;
+    }
+}
