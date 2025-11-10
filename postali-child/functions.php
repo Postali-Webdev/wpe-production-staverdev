@@ -9,6 +9,7 @@
 	require_once dirname( __FILE__ ) . '/includes/utility.php';
 	require_once dirname( __FILE__ ) . '/includes/testimonials-cpt.php'; // Custom Post Type Testimonials
 	require_once dirname( __FILE__ ) . '/includes/case-results-cpt.php'; // Custom Post Type Case Results
+	require_once dirname( __FILE__ ) . '/includes/videos-cpt.php'; // Custom Post Type Videos
 	// require_once dirname( __FILE__ ) . '/includes/attorneys-cpt.php'; // Custom Post Type Attorneys
 	//require_once dirname( __FILE__ ) . '/includes/social-share.php'; // Social Media Sharing
 

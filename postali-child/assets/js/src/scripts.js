@@ -218,4 +218,10 @@ jQuery( function ( $ ) {
 		});
 	});
 
+
+	$('.transcript .read-more').on('click', function () {
+		$(this).next('.hidden-transcript').slideToggle(400);
+		$(this).html( $(this).html() === 'Hide Transcript' ? 'View Transcript' : 'Hide Transcript' );
+	})
+
 });
