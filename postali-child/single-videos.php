@@ -1,4 +1,13 @@
-<?php get_header(); ?>
+<?php get_header(); 
+
+$banner = get_field('banner', 'options');
+$image = $banner['image'];
+$cta_text = $banner['cta_text'];
+$cta_button_one = $banner['cta_button_one'];
+$cta_button_two = $banner['cta_button_two'];
+
+
+?>
 
 <section class="video-archive-header">
     <div class="columns">
@@ -8,14 +17,16 @@
                 <div class="spacer-30"></div>
                 <div class="spacer-30"></div>
                 <div class="banner-cta-container">
-                    <p class="large-cta"><strong>Call Staver Today</strong></p>
-                    <a href="tel:312-236-2900" class="orange-button" title="call us at (312) 236-2900">(312) 236-2900</a>
-                    <a href="/do-i-have-a-case/process/" class="outline-button" title="Do I Have a Case?">Do I Have a Case?</a>
+                    <p class="large-cta"><strong><?php echo esc_html($cta_text); ?></strong></p>
+                    <div class="inner-wrap">
+                        <a href="<?php echo esc_url($cta_button_one['url']); ?>" class="orange-button" title="<?php echo esc_attr($cta_button_one['title']); ?>"><?php echo esc_html($cta_button_one['title']); ?></a>
+                        <a href="<?php echo esc_url($cta_button_two['url']); ?>" class="outline-button" title="<?php echo esc_attr($cta_button_two['title']); ?>"><?php echo esc_html($cta_button_two['title']); ?></a>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="column-33">
-            <?php echo wp_get_attachment_image('19272', 'full', '', array('class' => 'video-archive-image')); ?>
+            <?php echo wp_get_attachment_image($image['ID'], 'full', '', array('class' => 'video-archive-image')); ?>
         </div>
     </div>
 </section>
