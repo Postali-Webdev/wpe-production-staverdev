@@ -29,7 +29,7 @@ function create_custom_post_type_videos() {
 		'labels' => $labels,
         'menu_icon' => 'dashicons-format-video',
 		'has_archive' => true,
- 		'public' => true,
+ 		'public' => false,
 		'supports' => array( 'title', 'editor', 'excerpt'),	
 		'exclude_from_search' => false,
 		'capability_type' => 'post',
@@ -63,7 +63,7 @@ function video_topic() {
 	$args = array(
 		'labels'                     => $labels,
 		'hierarchical'               => true,
-		'public'                     => false,
+		'public'                     => true,
 		'show_ui'                    => true,
 		'show_admin_column'          => true,
 		'show_in_nav_menus'          => true,
