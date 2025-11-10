@@ -68,17 +68,21 @@ $cta_button_two = $banner['cta_button_two'];
                         </div>
 
                         <?php 
-                            echo "<script type=application/ld+json> 
-                                {
-                                    '@context': 'https://schema.org,
-                                    '@type': 'VideoObject',
-                                    'name': ${title},
-                                    'description': ${excerpt},
-                                    'thumbnailUrl': ${thumbnail_url},
-                                    'uploadDate': '${upload_date}',
-                                    'duration': 'PT${duration_minutes}M${duration_seconds}S',
-                                }
-                            </script>";
+                            // Build valid JSON-LD for the VideoObject and clean description (remove newlines/extra whitespace)
+                            $clean_description = wp_strip_all_tags( (string) $excerpt );
+                            $clean_description = trim( preg_replace( '/\s+/', ' ', $clean_description ) );
+
+                            $video_object = [
+                                '@context' => 'https://schema.org',
+                                '@type' => 'VideoObject',
+                                'name' => (string) $title,
+                                'description' => $clean_description,
+                                'thumbnailUrl' => (string) $thumbnail_url,
+                                'uploadDate' => (string) $upload_date,
+                                'duration' => sprintf('PT%dM%dS', (int) $duration_minutes, (int) $duration_seconds),
+                            ];
+
+                            echo '<script type="application/ld+json">' . wp_json_encode( $video_object, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) . '</script>';
                         ?>
 
                     <?php endwhile; ?>
