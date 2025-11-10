@@ -68,7 +68,7 @@ $cta_button_two = $banner['cta_button_two'];
                         </div>
 
                         <?php 
-                            echo "<script type=\'application/ld+json\'> 
+                            echo "<script type=application/ld+json> 
                                 {
                                     '@context': 'https://schema.org,
                                     '@type': 'VideoObject',
