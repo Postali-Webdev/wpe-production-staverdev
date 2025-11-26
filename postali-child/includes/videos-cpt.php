@@ -29,7 +29,7 @@ function create_custom_post_type_videos() {
 		'labels' => $labels,
         'menu_icon' => 'dashicons-format-video',
 		'has_archive' => true,
- 		'public' => true,
+ 		'public' => false,
 		'supports' => array( 'title', 'editor', 'excerpt'),	
 		'exclude_from_search' => false,
 		'capability_type' => 'post',
