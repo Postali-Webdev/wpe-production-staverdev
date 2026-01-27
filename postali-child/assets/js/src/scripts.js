@@ -55,7 +55,7 @@ jQuery( function ( $ ) {
 	});	
 
     //Mobile menu accordion toggle for sub pages
-	$('#header-top_menu > ul.menu > li.menu-item-has-children').append('<div class="accordion-toggle"><span class="icon-drw-chevron-down"></span></span></div>');
+	$('#header-top_menu > nav > ul.menu > li.menu-item-has-children').append('<div class="accordion-toggle"><span class="icon-drw-chevron-down"></span></span></div>');
 
     $('.menu .accordion-toggle').click(function() {
       $(this).parent().find('> ul').slideToggle(400);

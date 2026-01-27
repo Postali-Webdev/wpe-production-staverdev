@@ -118,6 +118,7 @@ header {
                             font-weight: normal;
                             box-sizing: border-box;
                             border:1px solid transparent;
+
                             @media screen and (max-width:$screen-ipad) {
                                 padding-right: 40px !important;
                                 text-align: left !important;
@@ -449,6 +450,7 @@ header {
                     padding: 0 30px;
                     box-sizing: border-box;
                     height: auto;
+
                     .menu {
                         display:block;
 
@@ -456,6 +458,7 @@ header {
 
                             display:block;
                             border-right: none;
+                            height: auto;
 
                             a {
                                 justify-content: flex-start;
@@ -463,6 +466,7 @@ header {
                                 font-size: 20px;
                                 border-bottom: 1px solid $gray-lines;
                                 font-weight: normal;
+                                height: auto;
                             }
 
                             .accordion-toggle {
