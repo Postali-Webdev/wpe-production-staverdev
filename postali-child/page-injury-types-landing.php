@@ -70,6 +70,6 @@ get_header();?>
 </section>
 <?php endif; ?>
 
-<?php get_template_part('block', 'footer-contact');?>
+<?php get_template_part('block', 'footer-contact'); ?>
 
 <?php get_footer(); ?>

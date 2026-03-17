@@ -12,13 +12,14 @@ $rem-base: 16px !default;
 
 // Breakpoints
 // $screen-xl: 2024px;
+$screen-xxl: 1660px;
 $screen-lg: 1400px;
 $screen-md: 992px;
 $screen-sm: 767px;
 $screen-xs: 540px;
 
 // Containers
-$container-max-width: $screen-lg;
+$container-max-width: $screen-xxl;
 $container-padding:30px;
 
 // Helpers

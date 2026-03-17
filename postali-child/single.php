@@ -13,8 +13,14 @@ $has_additional_author =  get_field('add_additional_author');
     <div class="container">
         <div class="columns">
             <div class="column-50">
-                <span class="small-orange">legal blog</span>
-                <h1><?php the_title(); ?></h1>
+                
+                <p id="breadcrumbs"><span><span><a href="/">Home</a></span> <span class="icon-lugar-chevron"></span> <span><a href="/blog/">Legal Blog</a></span> <span class="icon-lugar-chevron"></span>  <span class="breadcrumb_last" aria-current="page"><?php the_title(); ?></span></span></p>
+
+                <div class="bottom-content">
+                    <span class="small-orange">legal blog</span>
+                    <div class="spacer-15"></div>
+                    <h1><?php the_title(); ?></h1>
+                </div>
             </div>
             <div class="column-50">
                 <div class="top-section">
@@ -25,11 +31,11 @@ $has_additional_author =  get_field('add_additional_author');
                             <p class="small">Jared Staver is a Personal Injury Lawyer based in Chicago, Illinois and has been practicing law for over 25 years.</p>
                         </div>
                         <div class="author-headshot">
-                            <img src="/wp-content/uploads/2021/10/blog-cutout-jared.png" alt="Jared Staver" style="border: solid 2px #FF5601; border-radius: 100px;"> 
+                            <img src="/wp-content/uploads/2021/10/blog-cutout-jared.png" alt="Jared Staver" style="border: solid 2px #CB0829; border-radius: 100px;"> 
                             <?php if( $has_additional_author ) : $author_img = get_field('additional_author_picture');?>
                                 <?php if( $author_img ) : ?>
                                     <div class="spacer-15"></div>
-                                    <img src="<?php echo $author_img['url']; ?>" alt="<?php echo $author_img['alt']; ?>" style="border: solid 2px #FF5601; border-radius: 100px;">
+                                    <img src="<?php echo $author_img['url']; ?>" alt="<?php echo $author_img['alt']; ?>" style="border: solid 2px #CB0829; border-radius: 100px;">
                                 <?php endif; ?>
                             <?php endif; ?>
                         </div>
@@ -146,7 +152,6 @@ $has_additional_author =  get_field('add_additional_author');
 </section>
 
 <?php get_template_part('block', 'mobile-contact');?>
-
-<?php get_template_part('block', 'footer-contact');?>
+<?php get_template_part('block', 'footer-contact'); ?>
 
 <?php get_footer(); ?>

@@ -8,6 +8,7 @@ get_header();?>
 
 <section class="banner">
 	<div class="container">
+        <?php yoast_breadcrumb('<p id="breadcrumbs">', '</p>'); ?>
         <div class="columns">
             <span>
                 <p class="small-orange">Staver accident injury lawyers, p.c.</p>
@@ -144,7 +145,7 @@ get_header();?>
     </div>
 </section>
 
-<?php get_template_part('block', 'footer-contact');?>
+<?php get_template_part('block', 'footer-contact'); ?>
 
 <script>
 jQuery('.more-pages-btn').click(function() {

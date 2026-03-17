@@ -101,9 +101,7 @@ get_header();?>
 </section>
 
 <?php get_template_part('block', 'mobile-contact');?>
-
 <?php get_template_part('block', 'apply');?>
-
-<?php get_template_part('block', 'footer-contact');?>
+<?php get_template_part('block', 'footer-contact'); ?>
 
 <?php get_footer(); ?>

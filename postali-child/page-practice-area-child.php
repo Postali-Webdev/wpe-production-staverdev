@@ -16,12 +16,16 @@ get_header();?>
     <div class="container">
         <div class="columns">
             <div class="column-33">
+
                 <div class="left-content-container">
                     <div class="left-content">
-                        <?php the_field('left_column'); ?>
-                        <div class="banner-cta-container">
-                            <a href="tel:312-236-2900" class="orange-button" title="call us at (312) 236-2900">(312) 236-2900</a>
-                            <a href="/do-i-have-a-case/process/" class="outline-button" title="Do I Have a Case?">Do I Have a Case?</a>
+                        <?php yoast_breadcrumb('<p id="breadcrumbs">', '</p>'); ?>
+                        <div class="left-bottom">
+                            <?php the_field('left_column'); ?>
+                            <div class="banner-cta-container">
+                                <a href="tel:312-236-2900" class="orange-button" title="call us at (312) 236-2900">(312) 236-2900</a>
+                                <a href="/do-i-have-a-case/process/" class="outline-button" title="Do I Have a Case?">Do I Have a Case?</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -47,6 +51,6 @@ get_header();?>
 
 <?php get_template_part('block', 'mobile-contact');?>
 
-<?php get_template_part('block', 'footer-contact');?>
+<?php get_template_part('block', 'footer-contact'); ?>
 
 <?php get_footer(); ?>

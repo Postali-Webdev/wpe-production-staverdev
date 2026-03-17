@@ -58,7 +58,12 @@
         <link rel="preload" as="image" href="/wp-content/uploads/2020/04/header-logo.svg" fetchpriority="high">
 
         <?php if( is_front_page() ) : ?>
-            <link rel="preload" as="image" href="/wp-content/uploads/2021/10/homepage-hero-mobile-2021.webp" fetchpriority="high">
+            <link rel="preload" as="image" href="/wp-content/uploads/2026/02/banner-bg-home.jpg" fetchpriority="high">
+            <link rel="preload" as="image" href="/wp-content/uploads/2026/02/banner-bg-home.jpg.webp" fetchpriority="high">
+            <link rel="preload" as="image" href="/wp-content/uploads/2026/02/banner-bg-home-mobile.png" fetchpriority="high">
+            <link rel="preload" as="image" href="/wp-content/uploads/2026/02/banner-bg-home-mobile.png.webp" fetchpriority="high">
+            <link rel="preload" as="image" href="/wp-content/uploads/2026/03/banner-bg-home-mobile-xsm.jpg" fetchpriority="high">
+            <link rel="preload" as="image" href="/wp-content/uploads/2026/03/banner-bg-home-mobile-xsm.jpg.webp" fetchpriority="high">
             <link rel="preload" as="image" href="/wp-content/uploads/2020/04/20-year-badge-white.svg" fetchpriority="high">
         <?php endif; ?>
 
@@ -72,206 +77,12 @@
             <link rel="preload" as="image" href="<?php echo $banner_img; ?>" fetchpriority="high">
         <?php endif; ?>
 
-
-
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
         <?php wp_head(); ?>
-        <style>
-            header #header-top {
-                width: 100%;
-                padding: 0;
-                justify-content: space-between;
-                max-width: 100%;
-                flex-wrap: nowrap;
-                display: flex;
-            }
-            header #header-top #header-top_left {
-                display: flex;
-                padding: 21px 4% 21px 0;
-                border-right: 1px solid #E6E6E6;
-            }
-            .header-sub {
-                flex-wrap: wrap;
-                display: flex;
-                border-bottom: 1px solid #E6E6E6;
-                padding: 8px 0;
-                width: 100%;
-                background: #fff;
-                -webkit-box-shadow: 0 3px 5px 0 rgba(0,0,0,.1);
-                -moz-box-shadow: 0 3px 5px 0 rgba(0,0,0,.1);
-                box-shadow: 0 3px 5px 0 rgba(0,0,0,.1);
-                position: fixed;
-                top: 97px;
-                z-index: 2;
-                margin: 0;
-            }
-            .banner.non-mobile {
-                display:;
-            }
-            .banner.mobile-banner {
-                display:none;
-            }
-            .banner.mobile-alt {
-                display: none;
-            }
-            .banner .container .columns .desktop {
-                display:;
-            }
-            .banner .container .columns .column-50:first-of-type .left-container h1:before {
-                content: "";
-                background: url(/wp-content/uploads/2020/04/20-year-badge-white.svg);
-                background-size: cover;
-                width: 150px;
-                height: 150px;
-                position: absolute;
-                top: -180px;
-                left: -50px;
-            }
 
-            .banner .container .columns .column-50:first-of-type .left-container {
-                font-size: 32px;
-                color: #fff;
-                font-family: "Open Sans",sans-serif;
-                display: block;
-                margin-bottom: 10px;
-            }
-            .banner .container .columns .column-50:first-of-type .left-container .h1-sub {
-                font-size: 32px;
-                color: #fff;
-                font-family: "Open Sans",sans-serif;
-                display: block;
-                margin-bottom: 10px;
-            }
-            .banner .container .columns .column-50:first-of-type .left-container .cta-text {
-                font-size: 22px;
-                color: #fff;
-                font-family: "Open Sans",sans-serif;
-                display: block;
-                margin-bottom: 45px;
-            }
-            .frm_fields_container label, .frm_screen_reader, .frm_verify {
-                display: none;
-            }
-
-            @media screen and (max-width: 1024px) {
-                header #header-top #header-top_right {
-                    display: none;
-                    position: absolute;
-                    top: 100px;
-                    background: #fff;
-                    left: 0!important;
-                    z-index: -1;
-                    opacity: 0;
-                    width: 100%;
-                    height: calc(100vh - 100px);
-                    overflow: scroll;
-                }
-                header #header-top #header-top_mobile {
-                    display: block;
-                    position: absolute;
-                    top: 36px;
-                    right: 25px;
-                }
-                header #header-top #header-top_left {
-                    border-right: none;
-                    flex-basis: 65%;
-                    padding-left: 20px;
-                }
-
-                header #header-top #header-top_left .custom-logo {
-                    max-width: 220px;
-                    padding: 6px 0 0;
-                }
-                header #header-top #header-top_mobile #menu-icon {
-                    width: 40px;
-                    height: 25px;
-                    position: relative;
-                    display: block;
-                    margin-top: 0;
-                    margin-right: 0;
-                }
-                header #header-top #header-top_mobile #menu-icon .line.line-2 {
-                    top: 50%;
-                }
-                header #header-top #header-top_mobile #menu-icon .line {
-                    display: block;
-                    background: #FF5601;
-                    width: 40px;
-                    height: 4px;
-                    position: absolute;
-                    left: 0;
-                    transition: all 0.4s;
-                    -webkit-transition: all 0.4s;
-                    -moz-transition: all 0.4s;
-                }
-            }
-
-            @media screen and (max-width:768px ) {
-                .banner.non-mobile {
-                    display: none;
-                }
-                .banner.mobile-banner {
-                    display:block;
-                }
-                .banner.mobile-alt{
-                    display: block;
-                    margin-top: 0!important;
-                }
-
-            }
-            @media screen and (max-width: 667px) {
-                .header-sub {
-                    display: none;
-                }
-
-                .banner .container .columns .desktop {
-                    display: none;
-                }
-                .banner .container .columns .column-50:first-of-type {
-                    padding: 170px 30px 0;
-                    min-height: 500px;
-                }
-                .banner .container .columns .column-50:first-of-type .left-container h1:before {
-                    width: 130px;
-                    height: 130px;
-                    position: absolute;
-                    top: -140px;
-                    left: -15px;
-                }
-
-                .banner .container .columns .column-50:first-of-type .left-container .cta-text {
-                    line-height: 140%;
-                    margin-top: 10px;
-                }
-                .banner .container .columns .column-50:first-of-type .left-container .cta-text a {
-                    font-weight: 700;
-                    color: #fff;
-                }
-                .banner .container .columns .column-50:first-of-type .left-container .orange-button, .banner .container .columns .column-50:first-of-type .left-container .outline-button {
-                    display: flex;
-                    padding: 15px 0;
-                    width: 210px;
-                    justify-content: center;
-                }
-                .banner .container .columns .column-50:first-of-type .left-container .outline-button {
-                    display: flex;
-                    padding: 15px 0;
-                    width: 210px;
-                    justify-content: center;
-                }
-
-            }
-            @media screen and (max-width: 480px) {
-                .banner {
-                    background-size: 210%;
-                    background-position: top -50px left 35%;
-                    margin-top: 80px!important;
-                }
-                .banner .spacer-30 {
-                    height: 15px;
-                }
-            }
-        </style>
         <script>
             function init() {
                 var imgDefer = document.getElementsByTagName('img');
@@ -302,14 +113,13 @@
 
         <?php $GLOBALS['home_url'] = '/'; ?>
         <header>
-            <?php echo do_shortcode('[weglot_switcher]'); ?>
-            <div id="header-top" style="width: 100%;padding: 0;justify-content: space-between;max-width: 100%;flex-wrap: nowrap;display: flex;">
+            <div id="header-top">
                 <div id="header-top_left">
                     <?php if ( is_page_template('page-ppc-landing.php') ) { // remove link on PPC landing template?>
-						<img src="/wp-content/uploads/2020/04/header-logo.svg" class="custom-logo" alt="Staver Accident Injury Logo" width="271" height="66">
+						<img src="/wp-content/uploads/2026/02/logo-footer.svg" class="custom-logo" alt="Staver Accident Injury Logo" width="271" height="66">
                     <?php } else { ?>
                         <a href="<?php echo $GLOBALS['home_url']; ?>" class="custom-logo-link" rel="home" itemprop="url">
-                            <img src="/wp-content/uploads/2020/04/header-logo.svg" class="custom-logo" alt="Staver Accident Injury Logo" width="271" height="66">
+                            <img src="/wp-content/uploads/2026/02/logo-footer.svg" class="custom-logo" alt="Staver Accident Injury Logo" width="271" height="66">
                         </a>
                     <?php } ?>
                 </div>
@@ -327,20 +137,28 @@
                         </nav>
                     </div>
 
-                    <div class="search-box">
-                        <form method="get" action="<?php echo esc_url(home_url('/')); ?>" class="search" role="search">
-                            <label for="header-search-form" class="screen-reader-text">
-                                <?php esc_html_e('Search for:', 'postali'); ?>
-                            </label>
-                            <input type="text" name="s" placeholder="Search" id="header-search-form" value="" />
-                            <button type="submit" value="<?php echo esc_attr__('Search', 'postali'); ?>" aria-label="Search this site">
-                                <span class="icon-search"></span>
-                            </button>
-                        </form>
-                    </div>
-
-                    <p class="no-risk">FREE, NO-RISK CONSULT</p>
                     <div class="contact-language">
+
+                        <div class="top">
+                            <div class="search-holder">
+                                <form class="navbar-form-search" role="search" method="get" action="/">
+                                    <div class="search-form-container hdn" id="search-input-container">
+                                        <div class="search-input-group">
+                                            <div class="form-group">
+                                                <input type="text" name="s" placeholder="Search for..." id="search-input-5cab7fd94d469" value="" class="form-control">
+                                                <label for="s">search for... </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn-search" id="search-button"><span class="icon-search-icon" aria-hidden="true"></span></button>
+                                </form>	
+                            </div>
+
+                            <?php echo do_shortcode('[weglot_switcher]'); ?>
+                        </div>
+
+                        <div class="bottom">
+
                         <?php if (is_tree(19006)) { ?> <!-- aurora info -->
                             <a class="contact" href="/locations/aurora/contact-us/" title="Contact Staver Law Firm">Contact</a>
                         <?php } elseif (is_tree(19008)) { ?> <!-- elgin info -->
@@ -356,6 +174,8 @@
                         <?php } else { ?> <!-- main chicago info -->
                             <a class="contact" href="/contact-us/" title="Contact Staver Law Firm">Contact</a>
                         <?php } ?>
+
+                        </div>
                     </div>
 
                 </div>
@@ -368,24 +188,3 @@
                 </div>
             </div>
         </header>
-        <div class="header-sub">
-            <div class="container">
-                <span class="breadcrumb">
-                    <?php
-                    if (function_exists('yoast_breadcrumb')) {
-                        yoast_breadcrumb('<p id="breadcrumbs">', '</p>');
-                    }
-                    ?> 
-                </span>
-                <?php if( is_front_page() && have_rows('navigation') ) : $count = 0; ?>
-                <div class="in-page-nav-container">
-                    <p class="nav-title"><span class="small-orange"><span class="swap-text"><span class="divide-line"></span> Choose A Section</span> <span class="dropdown-arrow">&#9660;</span></p>
-                    <div class="in-page-nav-dropdown">
-                        <?php while( have_rows('navigation') ): the_row(); $count++; ?>
-                            <a href="#section-<?php echo $count; ?>" class="nav-link"><span class="small-orange"><span class="replacement-text"><?php echo sprintf('%02d', $count); ?> <span class="divide-line"></span> <?php the_sub_field('anchor_title'); ?></span></span></a>
-                        <?php endwhile; ?>
-                    </div>
-                </div>
-            <?php endif; ?>
-            </div>
-        </div>

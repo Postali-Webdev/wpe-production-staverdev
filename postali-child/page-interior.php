@@ -7,8 +7,10 @@
  */
 get_header(); ?>
 
+
 <section class="banner">
 	<div class="container">
+        <?php yoast_breadcrumb('<p id="breadcrumbs">', '</p>'); ?>
         <div class="columns">
             <span>
                 <p class="small-orange">Staver accident injury lawyers, p.c.</p>
@@ -19,7 +21,11 @@ get_header(); ?>
     </div>
 </section>
 
+<?php if(is_page(22037)) { ?>
+<section  class="lightgray">
+<?php } else { ?>
 <section>
+<?php } ?>
     <div class="container">
         <div class="columns">
             <div class="column-66 center">

@@ -6,6 +6,7 @@
             "key": "field_5e78f6a287893",
             "label": "Award Boxes",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -16,12 +17,14 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_5e78f773c2225",
             "label": "Award Boxes",
             "name": "award_boxes",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -35,12 +38,13 @@
             "min": 0,
             "max": 0,
             "layout": "table",
-            "button_label": "",
+            "button_label": "Add Row",
             "sub_fields": [
                 {
                     "key": "field_5e78f786c2226",
                     "label": "Award Title",
                     "name": "award_title",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -54,12 +58,14 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_5e78f773c2225"
                 },
                 {
                     "key": "field_5e78f78ec2227",
                     "label": "Award Image",
                     "name": "award_image",
+                    "aria-label": "",
                     "type": "image",
                     "instructions": "",
                     "required": 0,
@@ -70,7 +76,6 @@
                         "id": ""
                     },
                     "return_format": "url",
-                    "preview_size": "medium",
                     "library": "all",
                     "min_width": "",
                     "min_height": "",
@@ -78,12 +83,16 @@
                     "max_width": "",
                     "max_height": "",
                     "max_size": "",
-                    "mime_types": ""
+                    "mime_types": "",
+                    "allow_in_bindings": 1,
+                    "preview_size": "medium",
+                    "parent_repeater": "field_5e78f773c2225"
                 },
                 {
                     "key": "field_5e8e0e3a1a3a3",
                     "label": "Award Description",
                     "name": "award_description",
+                    "aria-label": "",
                     "type": "textarea",
                     "instructions": "",
                     "required": 0,
@@ -97,14 +106,17 @@
                     "placeholder": "",
                     "maxlength": "",
                     "rows": 4,
-                    "new_lines": ""
+                    "new_lines": "",
+                    "parent_repeater": "field_5e78f773c2225"
                 }
-            ]
+            ],
+            "rows_per_page": 20
         },
         {
             "key": "field_5e78f7a4c2228",
             "label": "Membership Boxes",
             "name": "membership_boxes",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -118,12 +130,13 @@
             "min": 0,
             "max": 0,
             "layout": "table",
-            "button_label": "",
+            "button_label": "Add Row",
             "sub_fields": [
                 {
                     "key": "field_5e78f7b2c2229",
                     "label": "Membership Title",
                     "name": "membership_title",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -137,12 +150,14 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_5e78f7a4c2228"
                 },
                 {
                     "key": "field_5e78f7bac222a",
                     "label": "Membership Image",
                     "name": "membership_image",
+                    "aria-label": "",
                     "type": "image",
                     "instructions": "",
                     "required": 0,
@@ -161,12 +176,14 @@
                     "max_width": "",
                     "max_height": "",
                     "max_size": "",
-                    "mime_types": ""
+                    "mime_types": "",
+                    "parent_repeater": "field_5e78f7a4c2228"
                 },
                 {
                     "key": "field_5e8e0e4b1a3a4",
                     "label": "Membership Description",
                     "name": "membership_description",
+                    "aria-label": "",
                     "type": "textarea",
                     "instructions": "",
                     "required": 0,
@@ -180,9 +197,11 @@
                     "placeholder": "",
                     "maxlength": "",
                     "rows": 4,
-                    "new_lines": ""
+                    "new_lines": "",
+                    "parent_repeater": "field_5e78f7a4c2228"
                 }
-            ]
+            ],
+            "rows_per_page": 20
         }
     ],
     "location": [
@@ -200,7 +219,8 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1586368094
+    "show_in_rest": 0,
+    "modified": 1769794545
 }

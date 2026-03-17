@@ -26,14 +26,18 @@ get_header(); ?>
     <div class="container">
         <div class="columns">
             <div class="column-33">
+
+
                 <div class="left-content-container">
                     <div class="left-content">
-                        <h1>Legal Blog</h1>
-                        <div class="spacer-30"></div>
-                        <p class="large">Get insight and commentary on the legal issues that <strong>impact injury victims.</strong></p> 
-						<p class="large">Not seeing what you're looking for?</p>
-						<a href="https://www.chicagolawyer.com/contact-us/" title="Learn more about Personal Injury" class="orange-button large">Talk to an Attorney Today</a>
-
+                        <?php yoast_breadcrumb('<p id="breadcrumbs">', '</p>'); ?>
+                        <div class="left-bottom">
+                             <h1>Legal Blog</h1>
+                            <div class="spacer-30"></div>
+                            <p class="large">Get insight and commentary on the legal issues that <strong>impact injury victims.</strong></p> 
+                            <p class="large">Not seeing what you're looking for?</p>
+                            <a href="https://www.chicagolawyer.com/contact-us/" title="Learn more about Personal Injury" class="orange-button large">Talk to an Attorney Today</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -126,10 +130,8 @@ get_header(); ?>
 </section>
 
 <?php get_template_part('block', 'consultation');?>
-
 <?php get_template_part('block', 'mobile-contact');?>
-
-<?php get_template_part('block', 'footer-contact');?>
+<?php get_template_part('block', 'footer-contact'); ?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
 

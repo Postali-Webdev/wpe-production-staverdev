@@ -130,6 +130,28 @@
                     "parent_repeater": "field_6430516f78af0"
                 },
                 {
+                    "key": "field_699f24832f180",
+                    "label": "Maps Link",
+                    "name": "maps_link",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 1,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_6430516f78af0"
+                },
+                {
                     "key": "field_643051ee78af5",
                     "label": "Page Link",
                     "name": "page_link",
@@ -217,5 +239,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1681131844
+    "modified": 1772037263
 }

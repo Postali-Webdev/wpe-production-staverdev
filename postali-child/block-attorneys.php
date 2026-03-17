@@ -46,36 +46,6 @@
         </div>
     <?php endwhile; ?>
 
-    <div class="spacer-60"></div>
-
-    <?php if( is_front_page() || is_page_template( ['page-locations-home.php'] ) ): ?>
-        <div class="column-75 super-lawyers-block">
-            <?php $left_column = get_field('super_lawyers_left_column'); ?>
-            <div class="left-col">
-                <img src="<?php echo $left_column['background_image']['url']; ?>" alt="<?php echo $left_column['background_image']['alt']; ?>" class="background-img">
-                <div class="left-award">
-                    <div class="orange-dot"></div>
-                    <div class="white-line"></div>
-                    <img src="<?php echo $left_column['award_1']['url']; ?>" alt="<?php echo $left_column['award_1']['url']; ?>">
-                </div>
-                <div class="right-award">
-                    <div class="orange-dot"></div>
-                    <div class="white-line"></div>
-                    <img src="<?php echo $left_column['award_2']['url']; ?>" alt="<?php echo $left_column['award_2']['url']; ?>">
-                </div>
-            </div>
-
-            <?php $right_column = get_field('super_lawyers_right_column'); ?>
-            <div class="right-col">
-                <div class="top-copy">
-                    <p class="title"><?php echo $right_column['title']; ?></p>
-                    <?php echo $right_column['title_copy']; ?>
-                </div>
-                <?php echo $right_column['italic_copy']; ?>
-            </div>
-        </div>
-    <?php endif; ?>
-
     <?php if( is_front_page() || is_page_template('page-locations-home.php') ) : ?>
         </div> <!-- /bottom-row -->
     <?php endif; ?>

@@ -6,6 +6,7 @@
             "key": "field_61bcd8f22a6ff",
             "label": "Header Panel",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -16,12 +17,14 @@
                 "id": ""
             },
             "placement": "left",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_61c08ed74d395",
             "label": "Header Text Color",
             "name": "header_text_color",
+            "aria-label": "",
             "type": "color_picker",
             "instructions": "",
             "required": 0,
@@ -39,6 +42,7 @@
             "key": "field_61bcd92b2a703",
             "label": "Background Image",
             "name": "header_background_image",
+            "aria-label": "",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -63,6 +67,7 @@
             "key": "field_61bcd90a2a700",
             "label": "Headline",
             "name": "header_headline",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -82,6 +87,7 @@
             "key": "field_61bcd9172a701",
             "label": "Value Proposition",
             "name": "header_value_proposition",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -101,6 +107,7 @@
             "key": "field_61bcd9232a702",
             "label": "CTA Text",
             "name": "header_cta_text",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -120,6 +127,7 @@
             "key": "field_61c0b1881affc",
             "label": "CTA Phone Number",
             "name": "header_cta_phone",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -139,6 +147,7 @@
             "key": "field_61bcd9632a704",
             "label": "Benefits Panel",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -149,12 +158,14 @@
                 "id": ""
             },
             "placement": "left",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_61c093ca90faf",
             "label": "Background Color",
             "name": "benefits_background_color",
+            "aria-label": "",
             "type": "color_picker",
             "instructions": "",
             "required": 0,
@@ -172,6 +183,7 @@
             "key": "field_61c0942498a53",
             "label": "Text Color",
             "name": "benefits_txt_color",
+            "aria-label": "",
             "type": "color_picker",
             "instructions": "",
             "required": 0,
@@ -189,6 +201,7 @@
             "key": "field_61bcd9722a705",
             "label": "Benefits Headline",
             "name": "benefits_headline",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -208,6 +221,7 @@
             "key": "field_61bcd9862a706",
             "label": "Benefits",
             "name": "benefits_repeater",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -221,12 +235,13 @@
             "min": 0,
             "max": 0,
             "layout": "table",
-            "button_label": "",
+            "button_label": "Add Row",
             "sub_fields": [
                 {
                     "key": "field_61bcd9902a707",
                     "label": "Benefit Title",
                     "name": "benefit_title",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -240,12 +255,14 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_61bcd9862a706"
                 },
                 {
                     "key": "field_61bcd9a02a708",
                     "label": "Benefit Copy",
                     "name": "benefit_copy",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "Ideally this should be kept to 20 words or less",
                     "required": 0,
@@ -259,14 +276,17 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_61bcd9862a706"
                 }
-            ]
+            ],
+            "rows_per_page": 20
         },
         {
             "key": "field_61bcd9e72a709",
             "label": "Testimonials Panel",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -277,12 +297,14 @@
                 "id": ""
             },
             "placement": "left",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_61c094765043c",
             "label": "Background Color",
             "name": "testimonials_background_color",
+            "aria-label": "",
             "type": "color_picker",
             "instructions": "",
             "required": 0,
@@ -300,6 +322,7 @@
             "key": "field_61c0947b5043d",
             "label": "Text Color",
             "name": "testimonials_txt_color_copy",
+            "aria-label": "",
             "type": "color_picker",
             "instructions": "",
             "required": 0,
@@ -317,6 +340,7 @@
             "key": "field_61bcedb3efc0a",
             "label": "Testimonials Headline",
             "name": "testimonials_headline",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -333,10 +357,11 @@
             "maxlength": ""
         },
         {
-            "key": "field_61bcd9f52a70a",
-            "label": "Testimonial Logo",
-            "name": "testimonial_logo",
-            "type": "image",
+            "key": "field_6998792ed02ae",
+            "label": "Testimonials",
+            "name": "testimonials_repeater",
+            "aria-label": "",
+            "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -345,59 +370,89 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
-            "preview_size": "medium",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_61bcda192a70b",
-            "label": "Testimonial Copy",
-            "name": "testimonial_copy",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": ""
-        },
-        {
-            "key": "field_61c0952191564",
-            "label": "Testimonial Author",
-            "name": "testimonial_author",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 3,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_61bcd9f52a70a",
+                    "label": "Testimonial Logo",
+                    "name": "testimonial_logo",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "parent_repeater": "field_6998792ed02ae"
+                },
+                {
+                    "key": "field_61bcda192a70b",
+                    "label": "Testimonial Copy",
+                    "name": "testimonial_copy",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": "",
+                    "parent_repeater": "field_6998792ed02ae"
+                },
+                {
+                    "key": "field_61c0952191564",
+                    "label": "Testimonial Author",
+                    "name": "testimonial_author",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "parent_repeater": "field_6998792ed02ae"
+                }
+            ]
         },
         {
             "key": "field_61bcda2b2a70c",
             "label": "About the Firm Panel",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -408,12 +463,14 @@
                 "id": ""
             },
             "placement": "left",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_61c09b30675d1",
             "label": "Panel Layout",
             "name": "attorneys_panel_layout",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -433,12 +490,15 @@
             "ui": 0,
             "return_format": "value",
             "ajax": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_61c0960174df4",
             "label": "Background Color",
             "name": "about_background_color",
+            "aria-label": "",
             "type": "color_picker",
             "instructions": "",
             "required": 0,
@@ -456,6 +516,7 @@
             "key": "field_61c0960774df5",
             "label": "Text Color",
             "name": "about_txt_color",
+            "aria-label": "",
             "type": "color_picker",
             "instructions": "",
             "required": 0,
@@ -473,6 +534,7 @@
             "key": "field_61bcda392a70d",
             "label": "About the Firm Headline",
             "name": "about_the_firm_headline",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -492,6 +554,7 @@
             "key": "field_61bcda4e2a70e",
             "label": "About the Firm Copy",
             "name": "about_the_firm_copy",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -511,6 +574,7 @@
             "key": "field_61bcda572a70f",
             "label": "Attorneys",
             "name": "attorneys_repeater",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -524,12 +588,13 @@
             "min": 0,
             "max": 0,
             "layout": "table",
-            "button_label": "",
+            "button_label": "Add Row",
             "sub_fields": [
                 {
                     "key": "field_61bcda6b2a710",
                     "label": "Attorney Image",
                     "name": "attorney_image",
+                    "aria-label": "",
                     "type": "image",
                     "instructions": "",
                     "required": 0,
@@ -548,12 +613,14 @@
                     "max_width": "",
                     "max_height": "",
                     "max_size": "",
-                    "mime_types": ""
+                    "mime_types": "",
+                    "parent_repeater": "field_61bcda572a70f"
                 },
                 {
                     "key": "field_6262cb20739e8",
                     "label": "Add link to bio?",
                     "name": "add_link_to_bio",
+                    "aria-label": "",
                     "type": "checkbox",
                     "instructions": "",
                     "required": 0,
@@ -571,12 +638,15 @@
                     "layout": "vertical",
                     "toggle": 0,
                     "return_format": "value",
-                    "save_custom": 0
+                    "save_custom": 0,
+                    "custom_choice_button_text": "Add new choice",
+                    "parent_repeater": "field_61bcda572a70f"
                 },
                 {
                     "key": "field_61bcda792a711",
                     "label": "Attorney Page Link",
                     "name": "attorney_page_link",
+                    "aria-label": "",
                     "type": "page_link",
                     "instructions": "",
                     "required": 0,
@@ -598,14 +668,47 @@
                     "taxonomy": "",
                     "allow_null": 0,
                     "allow_archives": 1,
-                    "multiple": 0
+                    "multiple": 0,
+                    "parent_repeater": "field_61bcda572a70f"
+                },
+                {
+                    "key": "field_699899b6e5ccf",
+                    "label": "Attorney Name",
+                    "name": "attorney_name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6262cb20739e8",
+                                "operator": "!=",
+                                "value": "yes"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_61bcda572a70f"
                 }
-            ]
+            ],
+            "rows_per_page": 20
         },
         {
             "key": "field_61bcda9d2a712",
             "label": "Awards Panel",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -616,12 +719,14 @@
                 "id": ""
             },
             "placement": "left",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_61c0a0b8c0874",
             "label": "Background Color",
             "name": "awards_background_color",
+            "aria-label": "",
             "type": "color_picker",
             "instructions": "",
             "required": 0,
@@ -639,6 +744,7 @@
             "key": "field_61bcdd212a714",
             "label": "Awards",
             "name": "awards_repeater",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -652,12 +758,13 @@
             "min": 0,
             "max": 0,
             "layout": "table",
-            "button_label": "",
+            "button_label": "Add Row",
             "sub_fields": [
                 {
                     "key": "field_61bcdd372a715",
                     "label": "Award Image",
                     "name": "award_image",
+                    "aria-label": "",
                     "type": "image",
                     "instructions": "",
                     "required": 0,
@@ -676,14 +783,17 @@
                     "max_width": "",
                     "max_height": "",
                     "max_size": "",
-                    "mime_types": ""
+                    "mime_types": "",
+                    "parent_repeater": "field_61bcdd212a714"
                 }
-            ]
+            ],
+            "rows_per_page": 20
         },
         {
             "key": "field_61bcdd492a716",
             "label": "Case Result Panel",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -694,12 +804,14 @@
                 "id": ""
             },
             "placement": "left",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_61c0a89cf0205",
             "label": "Background Color",
             "name": "results_background_color",
+            "aria-label": "",
             "type": "color_picker",
             "instructions": "",
             "required": 0,
@@ -717,6 +829,7 @@
             "key": "field_61c0a8a3f0206",
             "label": "Text Color",
             "name": "results_txt_color",
+            "aria-label": "",
             "type": "color_picker",
             "instructions": "",
             "required": 0,
@@ -731,10 +844,11 @@
             "return_format": "string"
         },
         {
-            "key": "field_61bcdd5d2a717",
-            "label": "Result Copy",
-            "name": "results_copy",
-            "type": "textarea",
+            "key": "field_6998901dce408",
+            "label": "Case Results Headline",
+            "name": "results_headline",
+            "aria-label": "",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -744,15 +858,62 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "",
             "maxlength": "",
-            "rows": "",
-            "new_lines": ""
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_699883d178205",
+            "label": "Results",
+            "name": "results_repeater",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_61bcdd5d2a717",
+                    "label": "Result Copy",
+                    "name": "results_copy",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": "",
+                    "parent_repeater": "field_699883d178205"
+                }
+            ]
         },
         {
             "key": "field_61bcdd8f2a718",
             "label": "Footer CTA Panel",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -763,12 +924,14 @@
                 "id": ""
             },
             "placement": "left",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_61c0ac3d501c4",
             "label": "Background Color",
             "name": "cta_background_color",
+            "aria-label": "",
             "type": "color_picker",
             "instructions": "",
             "required": 0,
@@ -786,6 +949,7 @@
             "key": "field_61c0ac45501c5",
             "label": "Text Color",
             "name": "cta_txt_color",
+            "aria-label": "",
             "type": "color_picker",
             "instructions": "",
             "required": 0,
@@ -803,44 +967,7 @@
             "key": "field_61bcdd9f2a719",
             "label": "Value Proposition",
             "name": "footer_value_proposition",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_61bcddab2a71a",
-            "label": "Incentive \/ Offer",
-            "name": "footer_incentive_offer",
-            "type": "text",
-            "instructions": "i.e. Free Consultation, Call Today, etc",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_61bcddda2a71b",
-            "label": "CTA Phone Number",
-            "name": "footer_cta_phone",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -860,6 +987,7 @@
             "key": "field_61dee5d396b3c",
             "label": "Form CTA copy",
             "name": "form_cta_copy",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -876,9 +1004,50 @@
             "new_lines": ""
         },
         {
+            "key": "field_61bcddab2a71a",
+            "label": "Incentive \/ Offer",
+            "name": "footer_incentive_offer",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "i.e. Free Consultation, Call Today, etc",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61bcddda2a71b",
+            "label": "CTA Phone Number",
+            "name": "footer_cta_phone",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_61dee5eb96b3d",
             "label": "Form Embed",
             "name": "form_embed",
+            "aria-label": "",
             "type": "wysiwyg",
             "instructions": "Insert appropriate form here: \r\n1) if using Gravity Forms,  use embed options provided in the toolbar below. \r\n2) if using Contact Form 7, paste shortcode below.",
             "required": 0,
@@ -915,5 +1084,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1650641743
+    "modified": 1771608528
 }

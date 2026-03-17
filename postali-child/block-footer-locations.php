@@ -43,6 +43,7 @@ if( have_rows('locations', 'options') || have_rows('locations', 'options') && is
         $address = get_sub_field('address');
         $phone = get_sub_field('phone');
         $directions_link = get_sub_field('directions_link');
+        $maps_link = get_sub_field('maps_link');
         $page_link = get_sub_field('page_link');
         $page_id = url_to_postid($page_link); 
         $page_link_esp = get_sub_field('page_link_spanish');
@@ -54,7 +55,7 @@ if( have_rows('locations', 'options') || have_rows('locations', 'options') && is
         <div class="location-grid">
             <span class="big"><a href="<?php echo $page_link_esp; ?>">Oficina de <?php echo $name; ?></a></span>
             <span class="orange">P</span><a href="tel:<?php echo $phone; ?>"><?php echo $phone; ?></a>
-            <span class="orange">A</span><p><?php echo $address; ?></p>
+            <span class="orange">A</span><a href="<?php echo $maps_link; ?>" title="<?php echo $link_title; ?>" target="_blank"><?php echo $address; ?></a>
             <a href="<?php echo $directions_link; ?>" title="<?php echo $link_title; ?>" target="_blank"><?php echo $dir_title ?></a>
         </div>
         
@@ -62,7 +63,7 @@ if( have_rows('locations', 'options') || have_rows('locations', 'options') && is
         <div class="location-grid">
             <span class="big"><a href="<?php echo $page_link; ?>"><?php echo $name; ?> Office</a></span>
             <span class="orange">P</span><a href="tel:<?php echo $phone; ?>"><?php echo $phone; ?></a>
-            <span class="orange">A</span><p><?php echo $address; ?></p>
+            <span class="orange">A</span><a href="<?php echo $maps_link; ?>" title="<?php echo $link_title; ?>" target="_blank"><?php echo $address; ?></a>
             <a href="<?php echo $directions_link; ?>" title="<?php echo $link_title; ?>" target="_blank"><?php echo $dir_title ?></a>
         </div>
 

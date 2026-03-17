@@ -23,9 +23,11 @@ get_header();?>
             <div class="column-50">
                 <div class="left-container">
                     <span class="small-orange">Staver Accident Injury Lawyers</span>
+                    <div class="spacer-15"></div>
                     <h1><?php the_title(); ?></h1>
+                    <div class="spacer-15"></div>
+                    <?php the_field('baner_sub_headline'); ?>
                     <div class="spacer-30"></div>
-                    <p><?php the_field('baner_sub_headline'); ?></p>
                 </div>
             </div>
             <div class="column-50"></div>
@@ -119,26 +121,12 @@ get_header();?>
 <?php get_template_part('block', 'mobile-contact');?>
 
 
-<section class="footer-pre-contact orange">
-    <div class="container">
-        <div class="columns">
-            <div class="column-50">
-
-                <h3><?php the_field('footer_headline'); ?></h3>
-                <p><?php the_field('footer_copy'); ?></p>
-                <div class="spacer-30"></div>
-                    <a class="orange-button large" title="Get a free consultation - call today!" href="tel:312-236-2900">FREE CASE EVALUATION <span class="mobile-break">–</span> (312) 236-2900 </a>
-                <div class="spacer-30"></div>
-                    
-            </div>
-            <div class="column-50">
-                <div class="contact-form-container">
-                    <?php echo do_shortcode("[formidable id=1]"); ?>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<?php get_template_part('block', 'footer-contact',
+    array( 
+        'class' => 'blue-bg',
+        ) 
+    ); 
+?>
 
 
 <?php get_footer(); ?>

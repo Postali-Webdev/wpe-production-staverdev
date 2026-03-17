@@ -496,6 +496,6 @@ get_header();?>
 
 </div>
 
-<?php get_template_part('block', 'footer-contact');?>
+<?php get_template_part('block', 'footer-contact'); ?>
 
 <?php get_footer(); ?>

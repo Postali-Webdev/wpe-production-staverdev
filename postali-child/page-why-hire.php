@@ -22,6 +22,7 @@ get_header(); ?>
 
 <section class="banner">
 	<div class="container">
+        <?php yoast_breadcrumb('<p id="breadcrumbs">', '</p>'); ?>
         <div class="columns">
             <div class="column-50">
                 <span>
@@ -161,6 +162,6 @@ get_header(); ?>
 </section>
 
 <?php get_template_part('block', 'mobile-contact');?>
-<?php get_template_part('block', 'footer-contact');?>
+<?php get_template_part('block', 'footer-contact'); ?>
 	
 <?php get_footer(); ?>

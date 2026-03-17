@@ -15,7 +15,7 @@ $current_page_parent_id = $post->post_parent;
     <div class="container">
         <div class="columns">
             <div class="column-33 map-column">
-                <a href="/" title="Home"><img src="/wp-content/uploads/2020/03/Staver-logo-footer.png" alt="Staver Accident Injury Lawyers"></a>
+                <a href="/" title="Home"><img src="/wp-content/uploads/2026/02/logo-footer.svg" alt="Staver Accident Injury Lawyers"></a>
                 <div class="spacer-60"></div>
                 
                 <?php if( have_rows('locations', 'options') ) : 
@@ -40,6 +40,7 @@ $current_page_parent_id = $post->post_parent;
                         $address = get_sub_field('address');
                         $phone = get_sub_field('phone');
                         $directions_link = get_sub_field('directions_link');
+                        $maps_link = get_sub_field('maps_link');
                         $map_embed = get_sub_field('map_embed');
                         $page_link = get_sub_field('page_link');
                         $page_id = url_to_postid($page_link); 
@@ -51,33 +52,42 @@ $current_page_parent_id = $post->post_parent;
                         <!-- General English -->
                         <?php if( !is_tree(27483) && !in_array($current_page_id, $secondary_locations) && !in_array($current_page_parent_id, $secondary_locations) && $is_primary ) : ?>
                             <p>
-                                <strong><span class="orange">P</span> <a href="tel:<?php _e($phone); ?>" title="Call Staver Accident Injury Lawyers Toiday"><?php _e($phone); ?></a></strong>
-                                <br>
-                                <strong><span class="orange">E</span> <a href="mailto:staver@chicagolawyer.com" title="Email Staver Accident Injury Lawyers Toiday">staver@chicagolawyer.com</a></strong>
-                            </p>
-                            <p class="address"><?php _e($address); ?></p>
-                            <a target="_blank" class="directions-link" href="<?php _e($directions_link); ?>">Get Directions</a>
+                                <span class="icon-footer-phone"></span> <a href="tel:<?php _e($phone); ?>" title="Call Staver Accident Injury Lawyers Toiday"><?php _e($phone); ?></a>
+                                <span class="spacer-15"></span>
+                                <span class="icon-footer-email"></span> <a href="mailto:staver@chicagolawyer.com" title="Email Staver Accident Injury Lawyers Toiday">staver@chicagolawyer.com</a>
+                                <span class="spacer-15"></span>
+                                <span class="icon-footer-pin"></span><a target="_blank" class="maps-link" href="<?php _e($maps_link); ?>"><?php _e($address); ?></a>
+                                <span class="spacer-15"></span>
+                                <a target="_blank" class="directions-link" href="<?php _e($directions_link); ?>">Get Directions</a>
+                            </p> 
                             <iframe src="<?php echo esc_url($map_embed); ?>" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
                         <!-- English Location -->
                         <?php elseif( !is_tree(27483) && !$is_primary && in_array($current_page_id, $secondary_locations) && $current_page_id == $page_id ) : ?>
                             <p>
-                                <strong><span class="orange">P</span> <a href="tel:<?php _e($phone); ?>" title="Call Staver Accident Injury Lawyers Toiday"><?php _e($phone); ?></a></strong>
-                                <br>
-                                <strong><span class="orange">E</span> <a href="mailto:staver@chicagolawyer.com" title="Email Staver Accident Injury Lawyers Toiday">staver@chicagolawyer.com</a></strong>
-                            </p>
-                            <p class="address"><?php _e($address); ?></p>
-                            <a target="_blank" class="directions-link" href="<?php _e($directions_link); ?>">Get Directions</a>
+                                <span class="icon-footer-phone"></span> <a href="tel:<?php _e($phone); ?>" title="Call Staver Accident Injury Lawyers Toiday"><?php _e($phone); ?></a>
+                                <span class="spacer-15"></span>
+                                <span class="icon-footer-email"></span> <a href="mailto:staver@chicagolawyer.com" title="Email Staver Accident Injury Lawyers Toiday">staver@chicagolawyer.com</a>
+                                <span class="spacer-15"></span>
+                                <span class="icon-footer-pin"></span><a target="_blank" class="maps-link" href="<?php _e($maps_link); ?>"><?php _e($address); ?></a>
+                                <span class="spacer-15"></span>
+                                <a target="_blank" class="directions-link" href="<?php _e($directions_link); ?>">Get Directions</a>
+                            </p> 
                             <iframe src="<?php echo esc_url($map_embed); ?>" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
                         <!-- English Location Child Pages -->
                         <?php elseif( !is_tree(27483) && !$is_primary && in_array($current_page_parent_id, $secondary_locations) && $current_page_parent_id == $page_id) : ?>
                             <p>
-                                <strong><span class="orange">P</span> <a href="tel:<?php _e($phone); ?>" title="Call Staver Accident Injury Lawyers Toiday"><?php _e($phone); ?></a></strong>
-                                <br>
-                                <strong><span class="orange">E</span> <a href="mailto:staver@chicagolawyer.com" title="Email Staver Accident Injury Lawyers Toiday">staver@chicagolawyer.com</a></strong>
-                            </p>
-                            <p class="address"><?php _e($address); ?></p>
-                            <a target="_blank" class="directions-link" href="<?php _e($directions_link); ?>">Get Directions</a>
+                                <span class="icon-footer-phone"></span> <a href="tel:<?php _e($phone); ?>" title="Call Staver Accident Injury Lawyers Toiday"><?php _e($phone); ?></a>
+                                <span class="spacer-15"></span>
+                                <span class="icon-footer-email"></span> <a href="mailto:staver@chicagolawyer.com" title="Email Staver Accident Injury Lawyers Toiday">staver@chicagolawyer.com</a>
+                                <span class="spacer-15"></span>
+                                <span class="icon-footer-pin"></span><a target="_blank" class="maps-link" href="<?php _e($maps_link); ?>"><?php _e($address); ?></a>
+                                <span class="spacer-15"></span>
+                                <a target="_blank" class="directions-link" href="<?php _e($directions_link); ?>">Get Directions</a>
+                            </p> 
                             <iframe src="<?php echo esc_url($map_embed); ?>" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
                         <?php endif; ?>
                         
                         <?php endwhile; ?>
@@ -117,8 +127,13 @@ $current_page_parent_id = $post->post_parent;
                     ?>
                 </div>
             </div>
-            <div class="spacer-90"></div>
+            <div class="spacer-30"></div>
             <div class="column-full" id="utility">
+                <div class="social-media">
+                    <a href="https://www.facebook.com/staverinjury/" class="social-media-icon" id="facebook" title="Facebook" target="_blank"></a>
+                    <a href="https://www.linkedin.com/company/staver-law-group-p.c./" class="social-media-icon" id="linkedin" title="LinkedIn" target="_blank"></a>
+                    <a href="https://twitter.com/StaverLawGroup" class="social-media-icon" id="twitter" title="LinkedIn" target="_blank"></a>
+                </div>
                 <div class="utility-links">
                     <?php 
                     $args = array(
@@ -127,11 +142,6 @@ $current_page_parent_id = $post->post_parent;
                     );
                     wp_nav_menu( $args );
                     wp_reset_postdata();?>
-                </div>
-                <div class="social-media">
-                    <a href="https://www.facebook.com/staverinjury/" class="social-media-icon" id="facebook" title="Facebook" target="_blank"></a>
-                    <a href="https://www.linkedin.com/company/staver-law-group-p.c./" class="social-media-icon" id="linkedin" title="LinkedIn" target="_blank"></a>
-                    <a href="https://twitter.com/StaverLawGroup" class="social-media-icon" id="twitter" title="LinkedIn" target="_blank"></a>
                 </div>
             </div>
             <div class="spacer-30"></div>
@@ -156,6 +166,16 @@ $current_page_parent_id = $post->post_parent;
 <script type="text/javascript" src="https://messenger.ngageics.com/ilnksrvr.aspx?websiteid=165-206-222-106-126-136-233-172"></script>
 <!-- End Of NGage -->
  <?php endif; ?>
+
+ <!-- Start of Clarity -->
+  <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "4u580mg9bd");
+    </script>
+ <!-- End of Clarity -->
 
 </body>
 </html>

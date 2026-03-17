@@ -9,6 +9,7 @@ get_header(); ?>
 
 <section class="banner">
 	<div class="container">
+        <?php yoast_breadcrumb('<p id="breadcrumbs">', '</p>'); ?>
 		<div class="columns">
 			<span>
 				<p class="small-orange">Staver accident injury lawyers, p.c.</p>

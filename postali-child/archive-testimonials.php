@@ -38,20 +38,7 @@ get_header();?>
                         <section class="pagination">
                             <div class="container">            
 
-                                <?php
-                                    $orig_query = $wp_query; // fix for pagination to work
-                                    $wp_query = $query;
-                                ?>
-                                    <div class="container posts">
-                                    <?php the_posts_pagination( array(
-                                        'mid_size' => 5,
-                                        'prev_text' => __( '<span class="icon-drw-chevron-left"></span>', 'textdomain' ),
-                                        'next_text' => __( '<span class="icon-drw-chevron-right"></span>', 'textdomain' ),
-                                    ) ); ?>
-                                    </div>
-                                <?php
-                                    $wp_query = $orig_query; // fix for pagination to work
-                                ?>
+                                <?php the_posts_pagination(); ?>
                                 
                             </div>
                         </section>
@@ -62,10 +49,8 @@ get_header();?>
 </section>
 
 <?php get_template_part('block', 'mobile-contact');?>
-
 <?php get_template_part('block', 'consultation');?>
-
-<?php get_template_part('block', 'footer-contact');?>
+<?php get_template_part('block', 'footer-contact'); ?>
 
 
 <?php get_footer(); ?>

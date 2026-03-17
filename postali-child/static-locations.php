@@ -27,7 +27,7 @@
       </div>
       <div class="wpsl-direction-wrap">
         <a
-          href="google.com/maps/dir//Staver+Accident+Injury+Lawyers,+P.C.,+120+W+Madison+St+Ste+400,+Chicago,+IL+60602/@41.8821063,-87.6316491,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880e2cbbbbaca573:0xc502af7b1d63096!2m2!1d-87.6316491!2d41.8821063!3e0"
+          href="https://www.google.com/maps/dir//Staver+Accident+Injury+Lawyers,+P.C.,+120+W+Madison+St+Ste+400,+Chicago,+IL+60602/@41.8821063,-87.6316491,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x880e2cbbbbaca573:0xc502af7b1d63096!2m2!1d-87.6316491!2d41.8821063!3e0"
           title="Go to Location Homepage"
           target="_blank"
           >Driving Directions

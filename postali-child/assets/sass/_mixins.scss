@@ -46,12 +46,12 @@
 	color:$dkblue;
     font-size: 22px;
     text-decoration: underline;
-	font-family: $opensans;
+	font-family: $hind;
 	line-height: 100%;
 	&:after {
 		position: absolute;
 		right: 0;
-		color: $orange;
+		color: $red;
 		content: "\ea3c";
 		font-family: icomoon;
 	}
@@ -80,63 +80,42 @@
         .attorney-image {
             padding:25px 25px 0;
             position:relative;
+            background:$white;
+            
             img {
                 z-index: 1;
                 position: relative;
             }
-            &:before {
-                position:absolute;
-                height:80px;
-                content:"";
-                width:100%;
-                left:0;
-                bottom:0;
-                @include orange-gradient;
-                z-index: 0;
-            }
         }
+
         .content-box {
             display: flex;
-            justify-content: flex-start;
+            justify-content: center;
             align-items: center;
             padding:25px 0 0;
-            background: $mdgray;
             flex-wrap: wrap;
+
+            @media screen and (max-width:$screen-xs) {
+                justify-content: center;
+                text-align: center;
+                padding: 20px;
+            }
+
             p {
                 margin-bottom:0 !important;
             }
             .attorney-name {
-                font-family: $opensans;
+                font-family: $hind;
                 font-size: 24px;
-                font-weight: bold;
+                font-weight: 600;
                 line-height: 115%;
-                color: $grayblue;
+                color: $white;
             }
-            .orange-button {
-                @media screen and (max-width:$screen-md) {
-                    padding: 15px 0;
-                    width:100%;
-                }
-            }
-        }
-        &:first-of-type::before {
-            content: "";
-            position: absolute;
-            background: url(/wp-content/uploads/2020/07/20-year-logo-blue.png);
-            height: 120px;
-            width: 120px;
-            background-size: 100%;
-            left: -55px;
-            z-index: 2;
-            height:100px;
-            width:100px;
-            top:60px;
-            left:-35px;
-            rotate:-15deg;
-            @media screen and (max-width:$screen-md) {
-                height:80px;
-                width:80px;
-                top:20px;
+
+            p.small.caps {
+                font-family: $zilla;
+                letter-spacing: 2px;
+                font-weight: normal;
             }
         }
     }
@@ -182,7 +161,7 @@
     }
     &:after {
         position: absolute;
-        background: url(/wp-content/uploads/2020/03/icon-heart.png);
+        background: url(/wp-content/uploads/2026/02/heart-icon.png);
         height: 52px;
         width: 52px;
         content: "";
@@ -231,7 +210,8 @@
         background-repeat: no-repeat;
         bottom: 0;
         left: -80px;
-        @include orange-gradient;
+        background-color:$red;
+
         border-radius:50%;
         @media screen and (max-width:$screen-md) {
             bottom:-1px;
@@ -273,7 +253,7 @@
                 padding:15px 10px;
             }
             &.active {
-                @include orange-gradient;
+                background-color:$red;
                 color:$white;
             }
         }
@@ -303,16 +283,21 @@
             display:flex;
             align-items: center;
             justify-content: center;
+
             @media screen and (max-width:$screen-sm) {
                 flex-basis: 50%;
             }
             @media screen and (max-width:$screen-xxxs) {
                 flex-basis: 100%;
             }
+
+            img {
+                max-height: 95%;
+            }
         }
     }
     .icon-arrow-right2 {
-        color:$orange;
+        color:$red;
         font-size: 24px;
         vertical-align: text-top;
     }
@@ -325,7 +310,7 @@
         padding: 15px 30px 13px 30px;
         border-radius: 50px;
         color: $white;
-        font-family: $opensans;
+        font-family: $hind;
         text-transform: uppercase;
         font-size: 15px;
         letter-spacing: .1em;
@@ -337,7 +322,8 @@
         top:185px;
         text-align: center;
         margin-bottom:50px;
-        @include orange-gradient;
+        background-color: $red;
+
         @media screen and (max-width:$screen-md) {
             position: absolute;
             left: calc(50% - 135px);
@@ -420,7 +406,7 @@
                             width: 50px;
                             vertical-align: middle;
                             display: inline-block;
-                            border:2px solid $orange;
+                            border:2px solid $red;
                             border-radius: 50%;
                         }
                         p {
@@ -511,24 +497,24 @@
         text-align: center;
         flex-direction: column;
         .text-top {
-            font-family: $opensans;
+            font-family: $hind;
             color: $dkblue;
             font-size: 32px;
-            font-weight: bold;
+            font-weight: normal;
         }
         .stars {
             font-size: 16px;
-            color:$orange;
+            color:$red;
             margin:5px 0;
             letter-spacing: .2em;
         }
         .text-bottom {
-            font-family: $opensans;
+            font-family: $hind;
             color: $dkblue;
             text-transform: uppercase;
             font-size: 13px;
             letter-spacing: .1em;
-            font-weight: bold;
+            font-weight: normal;
         }
         &:before,
         &:after {
@@ -537,7 +523,7 @@
             position: absolute;
             width: 40px;
             left: calc(50% - 20px);
-            @include orange-gradient;
+            background:$red;
         }
         &:before {
             top: -15px;
@@ -568,6 +554,7 @@
         padding: 35px;
         height:350px;
         transition:$trans;
+
         @media screen and (max-width:$screen-sm) {
             flex-basis:50%;
         }
@@ -597,9 +584,9 @@
             position: absolute;
             bottom:25px;
             right:25px;
-            background:url(/wp-content/uploads/2020/04/icon-result.png);
-            height:50px;
-            width:50px;
+            background:url(/wp-content/uploads/2026/02/result-icon.png);
+            height:30px;
+            width:30px;
             background-size: cover;
         }
             h3 {
@@ -651,6 +638,7 @@
         border-bottom: 1px solid $gray-underline;
         display: flex;
         width: 100%;
+
         .tab-link {
             background: none;
             display: flex;
@@ -661,7 +649,8 @@
             position:relative;
             flex-basis: 20%;
             flex-wrap: wrap;
-            @media screen and (max-width:$screen-sm) {
+
+            @media screen and (max-width:$tab-port) {
                 .small.caps {
                     display:none;
                 }
@@ -672,20 +661,23 @@
             p {
                 margin-bottom:0 !important;
                 width: 100%;
+                font-family: $hind;
+                font-weight: 500;
+
                 &.small-orange {
                     font-size:13px;
                     font-weight: normal;
                 }
             }
             &:after {
-                height:4px;
+                height:2px;
                 opacity:0;
                 position:absolute;
                 left:0;
-                bottom:0;
+                bottom:-1px;
                 width:100%;
                 content:"";
-                @include orange-gradient;
+                background:$red;
             }
             &:hover:after {
                 transition: $trans;
@@ -733,37 +725,58 @@
                 bottom:0;
                 width:100%;
                 content:"";
-                @include orange-gradient;
+                background-color:$red;
             }
         }
         .previous-next {
             display: flex;
-            justify-content: flex-end;
-            font-family: "benton-sans",sans-serif;
+            justify-content: space-between;
             color: $dkblue;
-            .back {
-                span {
-                    color:$orange;
-                }
+
+            @media screen and (max-width:$screen-xs) {
+                flex-wrap: wrap;
             }
-            .separator {
-                padding: 0 15px;
-            }
+
+            .back,
             .next {
-                text-decoration: none;
-                display: flex;
+                width: 49%;
+                border: 1px solid $dkblue;
                 cursor:pointer;
-                .underlined {
-                    text-decoration: underline;
+                padding: 10px;
+                box-sizing: border-box;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                font-family: $opensans;
+                line-height: 0;
+                font-size: 15px;
+                text-transform: uppercase;
+                transition: $trans;
+
+                @media screen and (max-width:$screen-xs) {
+                    width:100%;
+                    margin:5px 0;
                 }
-                &:after {
-                    content: "\e91c";
-                    padding-left: 10px;
-                    color: $orange;
-                    font-family: icomoon;
-                    text-decoration: none !important;
-                    vertical-align: middle;
-                    display: flex;
+            }
+            
+            .back {
+                opacity: .5;
+                 
+                span {
+                    margin-right: 10px;
+                }
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+            
+            .next {
+                margin-right: 0;
+                margin-left: auto;
+                
+                span {
+                    margin-left: 10px;
                 }
             }
         }
@@ -796,7 +809,7 @@
             align-content: center;
             display: grid;
             text-transform: uppercase;
-            font-family: $opensans;
+            font-family: $hind;
             font-size: 16px;
             color: $white;
             font-weight: bold;
@@ -804,7 +817,7 @@
             border: 1px solid transparent;
             height: 100%;
             box-sizing: border-box;
-            @include orange-gradient;
+            background:$red;
             
             @media screen and (max-width:$screen-md) {
                 height:80px;
@@ -844,7 +857,7 @@
                 font-size: 16px;
                 color: $dkblue;
                 font-weight: bold;
-                font-family: $opensans;
+                font-family: $hind;
             }
             &:after {
                 position: absolute;
@@ -852,7 +865,8 @@
                 bottom: 18px;
                 content: "\e910";
                 font-family: icomoon;
-                color: $orange;
+                color: $red;
+                
                 @media screen and (max-width:$screen-sm) {
                     bottom:30px;
                 }
@@ -860,6 +874,141 @@
             &:hover {
                 background:$mdgray;
             }
+        }
+    }
+}
+
+@mixin tout-box {
+    background: $white;
+    padding: 30px;
+    box-sizing: border-box;
+    box-shadow: 0px 43px 56px -22px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 43px 56px -22px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 43px 56px -22px rgba(0,0,0,0.75);
+    z-index: 4;
+
+    @media screen and (max-width:$screen-ipad) {
+        width:49% !important;
+        margin-bottom: 30px !important;
+    }
+
+    @media screen and (max-width:$tab-port) {
+        width:100% !important;
+
+        &:not(:last-of-type) {
+            margin-bottom: 30px !important;
+        }
+    }
+
+    &:not(:last-of-type) {
+        margin-bottom: 30px;
+    }
+
+    &:last-of-type {
+        margin-bottom: -100px;
+    }
+
+    .tout-title {
+        font-family: $hind;
+        font-weight: 500;
+        font-size: 24px;
+        margin-bottom: 40px !important;
+        position: relative;
+
+        &::after {
+            position: absolute;
+            bottom: -20px;
+            content:"";
+            height: 4px;
+            width: 50px;
+            background-color: $red;
+            left: 0;
+        }
+    }
+
+    p {
+        font-family: $ptsans;
+        font-size: 14px;
+        line-height: 140%;
+    }
+
+    .tout-link {
+        font-family: $hind;
+        color: $dkblue;
+        text-transform: uppercase;
+        padding: 4px 12px 4px 8px;
+        font-size: 14px;
+        transition: $trans;
+        background:$white;
+        font-weight: 500;
+        letter-spacing: 1px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: 0;
+            left: 0;
+            right: 10%;
+            background: $dkblue;
+            height: 1px;
+            bottom: 0;
+            transition-property: left, right;
+            transition-duration: 0.2s;
+            transition-timing-function: ease-out;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            z-index: 0;
+            bottom: 0;
+            left: 0;
+            width: 1px;
+            background: $dkblue;
+            height: 90%;
+            transition-duration: 0.2s;
+            transition-timing-function: ease-out;
+        }
+
+        &:hover {
+            color:$red;
+
+            &::before {
+                left: 0;
+                right: 0;
+                background: $red;
+            }
+
+            &::after {
+                height:0;
+                background: $red;
+            }
+        }
+    }
+}
+
+@mixin interior-breadcrumbs {
+    #breadcrumbs {
+        margin-left: 60px;
+        margin-bottom: 0 !important;
+        color: $white;
+        opacity: .5;
+        font-size: 14px;
+        font-weight: normal;
+        padding:20px 0 0;
+
+        @media screen and (max-width:$screen-md) {
+            margin-left: 30px;
+        }
+
+        a {
+            font-weight: normal;
+            color:$white;
+        }
+
+        .icon-lugar-chevron {
+            font-size: 10px;
+            margin: 0 3px;
         }
     }
 }

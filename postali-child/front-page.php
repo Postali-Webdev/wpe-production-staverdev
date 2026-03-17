@@ -6,566 +6,524 @@
  * */
 get_header();
 ?>
-<section class="banner ignore-lazy">
+<section class="banner home">
     <div class="container">
         <div class="columns">
             <div class="column-50">
                 <div class="left-container">
-                    <h1>Chicago Personal Injury Lawyers</h1>
+                    <h1><?php the_field('banner_h1'); ?></h1>
                     <span class="spacer-30"></span>
-                    <span class="h1-sub">Allies. Advocates. Advisors.</span>
-                    <span class="cta-text">Call <a href="tel:312-236-2900" title="Call Staver Accident Injury Lawyers - Today">(312) 236-2900</a> to get a free consultation.</span>
-                    <a href="/about-us/why-you-should-hire-us/" class="outline-button">Why Hire Us?</a>
-                    <div class="spacer-15 mobile"></div>
-                    <a href="/do-i-have-a-case/process/" class="orange-button" title="Do I Have a Case?">Do I Have a Case?</a>
-                    <div class="spacer-15 mobile"></div>
-                </div>
-            </div>
+                    <span class="h1-sub"><?php the_field('banner_headline'); ?></span>
+                    <p><?php the_field('banner_copy'); ?></p>
+                    <div class="spacer-15"></div>
+                    <span class="cta-text"><?php the_field('banner_cta'); ?></span>
+                    <div class="spacer-15"></div>
+                    <?php 
+                    if( have_rows('locations','options') ):
+                    while( have_rows('locations','options') ) : the_row();
+                        $is_active = get_sub_field('is_primary');
+                        if( $is_active ) { ?>
+                            <a href="tel:<?php the_sub_field('phone'); ?>" class="orange-button">Call <?php the_sub_field('phone'); ?></a>
+                        <?php } else {
+                        }
+                    endwhile;
+                    endif;
+                    ?>
 
-            <!--  Column  -->
-            <div class="column">
-                <div class="banner-container">
-                    <div class="left-column">
-                        <ul class="banner-menu">
-                            <li class="snapshot active">SNAPSHOT</li>
-                            <li class="reviews">REVIEWS</li>
-                            <li class="results">RESULTS</li>
-                            <li class="awards">AWARDS</li>
-                        </ul>
-                    </div>
-                    <div class="right-column">
-                        <div class="mobile-banner-menu">
-                            <input type="text" value="SNAPSHOT" readonly /><ul><li class="snapshot-mobile">SNAPSHOT</li><li class="reviews-mobile">REVIEWS</li><li class="results-mobile">RESULTS</li><li class="awards-mobile">AWARDS</li></ul>
-                        </div>
-                            
-                        <div class="columns active id="snapshot">
-                            <?php if (have_rows('snapshot_container')): ?>
-                                <?php while (have_rows('snapshot_container')): the_row(); ?>
-                                    <a class="inner-column" href="<?php the_sub_field('snapshot_box_link'); ?>" target="<?php the_sub_field('snapshot_box_target'); ?>" title="Learn more about the firm">
-                                        <div class="inner-column-container"><?php the_sub_field('snapshot_box_content'); ?></div></a>
-                                <?php endwhile; ?>
-                            <?php endif; ?>
-                        </div>
+                    <div class="spacer-90"></div>
 
-                        <div class="columns" id="reviews">
-                            <?php if (have_rows('reviews_container')): ?>
-                                <?php while (have_rows('reviews_container')): the_row(); ?>
-                                    <div class="inner-column">
-                                        <div class="inner-column-container">
-                                            <?php the_sub_field('reviews_box_content'); ?>
-                                        </div>
-                                    </div>
-                                <?php endwhile; ?>
-                            <?php endif; ?>
-                        </div>
-
-                        <div class="columns" id="results">
-                            <?php if (have_rows('results_container')): ?>
-                                <?php while (have_rows('results_container')): the_row(); ?>
-                                    <div class="inner-column" >
-                                        <div class="inner-column-container">
-                                            <?php the_sub_field('results_box_content'); ?>
-                                        </div>
-                                    </div>
-                                <?php endwhile; ?> 
-                            <?php endif; ?>
-                        </div>
-
-                        <div class="columns" id="awards">
-                            <?php if (have_rows('awards_container')): ?>
-                                <?php while (have_rows('awards_container')): the_row(); ?>
-                                    <div class="inner-column" >
-                                        <div class="inner-column-container">
-                                            <img src="<?php the_sub_field('awards_box_content'); ?>" alt="View our awards & Memberships" height="400" width="189">
-                                        </div>
-                                    </div>
-                                <?php endwhile; ?>
-                            <?php endif; ?>
-                        </div>
+                    <div id="awards">
+                        <?php if (have_rows('awards_container')): ?>
+                        <?php while (have_rows('awards_container')): the_row(); ?>
+                            <div class="award-container">
+                                <img src="<?php the_sub_field('awards_box_content'); ?>" alt="View our awards & Memberships" height="400" width="189">
+                            </div>
+                        <?php endwhile; ?>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
-            <!--/ Column  -->
+            <div class="column-33">
+                <?php if (have_rows('banner_touts')): ?>
+                <?php while (have_rows('banner_touts')): the_row(); ?>
+                    <div class="banner-tout">
+                        <div class="tout-title"><?php the_sub_field('headline'); ?></div>
+                        <p><?php the_sub_field('content'); ?></p>
+                        <a class="tout-link" href="<?php the_sub_field('link'); ?>" title="<?php the_sub_field('headline'); ?>"><?php the_sub_field('button_text'); ?></a>
+                    </div>
+                <?php endwhile; ?>
+                <?php endif; ?>
+            </div>
         </div>
+    </div>
+    <div class="banner-bg ignore-lazy">
+        <img src="/wp-content/uploads/2026/02/banner-bg-home.jpg" class="banner-bg-desktop">
+        <img src="/wp-content/uploads/2026/02/banner-bg-home-mobile.png" class="banner-bg-mobile">
+        <img src="/wp-content/uploads/2026/03/banner-bg-home-mobile-xsm.jpg" class="banner-bg-phone">
     </div>
 </section>
-<!--/  Non Mobile Banner  -->
 
-<!--/  Mobile Banner  -->
-<?php if( have_rows('hp_mobile_scroller') ): ?>
-<div class="scrolling-snapshot">
-    <?php while( have_rows('hp_mobile_scroller') ): the_row();
-        $snapshot_icon = get_sub_field('block_icon');
-        $snapshot_title = get_sub_field('block_title');
-        $snapshot_headline = get_sub_field('block_headline');
-        $snapshot_link_text = get_sub_field('block_link_text');
-        $snapshot_link = get_sub_field('block_link');
-    ?>
-    <div class="slide">
-        <div class="snapshot-slide-left">
-            <img src="<?php echo esc_url($snapshot_icon['url']); ?>" alt="<?php echo esc_attr($snapshot_icon['alt']); ?>" />
-        </div>
-        <div class="snapshot-slide-right">
-            <p class="title"><?php echo $snapshot_title; ?></p>
-            <p class="headline"><?php echo $snapshot_headline; ?></p>
-            <p><a href="<?php echo $snapshot_link; ?>" title="View our <?php echo $snapshot_title; ?>"><?php echo $snapshot_link_text; ?></a></p>
-        </div>
-    </div>
-    <?php endwhile; ?>
-</div>
-<?php endif; ?>
 
-<section class="hp-panel-1 tall">
+<section class="hp-panel-1">
     <div class="container">
         <div class="columns">
-            <div class="column-33">
+            <div class="column-50">
                 <span class="small-orange" id="section-1"><?php the_field('panel_1_small_title'); ?></span>
                 <div class="spacer-15"></div>
-                <?php the_field('panel_1_left_copy_block'); ?>
+                <h2><?php the_field('panel_1_headline'); ?></h2>
+                <p class="large"><?php the_field('panel_1_intro_copy'); ?></p>
+                <p><?php the_field('panel_1_main_copy'); ?></p>
             </div>
-            <div class="column-66 row">
-                <div class="white-box" id="step-1">
-                    <?php the_field('panel_1_right_box_1'); ?>
-                </div>
-                <div class="white-box" id="step-2">
-                    <?php the_field('panel_1_right_box_2'); ?>
-                </div>
-                <div class="white-box" id="step-3">
-                    <?php the_field('panel_1_right_box_3'); ?>
-                </div>
-                <div class="clients-helped">
-                    <div class="helped-counter">
-                        <span class="helped-number">3500+</span><br>
-                        <span class="helped-text">Clients Helped</span>
-                    </div>
-                </div>        
+            <div class="column-50">
+                <?php 
+                $image = get_field('panel_1_image');
+                if( !empty( $image ) ): ?>
+                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                <?php endif; ?>
             </div>
         </div>
     </div>
 </section>
 
 <section class="hp-panel-2">
-    <div class="container striped">
+    <div class="container wide">
         <div class="columns">
-            <div class="column-50">
-                <?php the_field('panel_2_column_left'); ?>
-            </div>
-            <div class="column-50">
-
-                <div class="white-box">
-
-                    <?php if( have_rows('locations', 'options') ) : 
-                    $secondary_locations = [];
-                    $secondary_locations_esp = [];
-                    while( have_rows('locations', 'options') ) {
-                        the_row();
-                        $is_primary = get_sub_field('is_primary');
-                        $page_link = get_sub_field('page_link');
-                        $page_id = url_to_postid($page_link); 
-                        $page_link_esp = get_sub_field('page_link_spanish');
-                        $page_id_esp = url_to_postid($page_link_esp);
-                        if( !$is_primary) {
-                            $secondary_locations[] .= $page_id;
-                            $secondary_locations_esp[] .= $page_id_esp;
-                        } elseif( $is_primary) {
-
-                            $name = get_sub_field('name');
-                            $address = get_sub_field('address');
-                            $phone = get_sub_field('phone');
-                            $directions_link = get_sub_field('directions_link');
-                            $map_embed = get_sub_field('map_embed');
-                            $page_link = get_sub_field('page_link');
-                            $page_id = url_to_postid($page_link); 
-                            $page_link_esp = get_sub_field('page_link_spanish');
-                            $page_id_esp = url_to_postid($page_link_esp); 
-                            $is_primary = get_sub_field('is_primary');
-                            $add_location = false; 
-                        
-                            }
-                    } ?>
-                    
-                    <div>
-                        <div class="main-contact">
-
-                        <!-- English  -->
-
-                            <p><strong>Visit our <?php _e($name); ?> Office</strong> <br>
-                                Staver Accident Injury Lawyers, P.C.<br>
-                                <?php _e($address); ?><br>
-                                <a target="_blank" class="directions-link" href="<?php _e($directions_link); ?>">Get Directions</a>
-                            </p>
-                            <p>
-                                <strong><span class="orange">P</span></strong> <a href="tel:<?php _e($phone); ?>" title="Call Staver Accident Injury Lawyers Toiday"><?php _e($phone); ?></a>
-                                <br>
-                                <strong><span class="orange">E</span></strong> <a href="mailto:staver@chicagolawyer.com" title="Email Staver Accident Injury Lawyers Toiday">staver@chicagolawyer.com</a><br>
-                            </p>
-                            <iframe src="<?php echo esc_url($map_embed); ?>" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                        
-                        <?php ?>
-                        </div>
+            <div class="column-33">
+                <span class="small-orange"><?php the_field('panel_2_small_title'); ?></span>
+                <div class="spacer-15"></div>
+                <h3><?php the_field('panel_2_headline'); ?></h3>
+                <p class="med"><?php the_field('panel_2_main_copy'); ?></p>
+                <div class="spacer-30"></div>
+                <div class="btn-block">
+                    <a href="/contact-us/" class="orange-button">Contact us today</a>
+                    <div class="slider-nav">
+                        <div class="prev-button-slick"><span class="icon-slick-prev"></span></div>
+                        <div class="next-button-slick"><span class="icon-slick-next"></span></div>
                     </div>
-                <?php endif; ?>
                 </div>
-
-
-                <?php the_field('panel_2_column_right'); ?>
+            </div>
+            <div class="column-66">
+                <?php if( have_rows('panel_2_featured_results') ): ?>
+                <div class="result-container">
+                <?php while( have_rows('panel_2_featured_results') ): the_row(); ?>
+                    <?php $post_object = get_sub_field('result'); ?>
+                    <?php if( $post_object ): ?>
+                        <?php // override $post
+                        $post = $post_object;
+                        setup_postdata( $post );
+                        ?>
+                        <div class="result-box">
+                            <div class="result-category"><?php the_sub_field('result_category'); ?></div>
+                            <div class="result-amount">
+                                <?php $result_amount = get_field('settlement_amount'); ?>    
+                                $<?php echo number_format($result_amount); ?>
+                            </div>
+                            <div class="spacer-15"></div>
+                            <?php 
+                            $content = get_the_content(); ?>
+                            <p><?php echo wp_trim_words( $content , '35' ); ?></p>
+                        </div>
+                        <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+                    <?php endif; ?>
+                <?php endwhile; ?>
+                </div>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+    <div class="spacer-30"></div>
+    <div class="container">
+        <div class="columns">
+            <div class="column-full centered">
+                <p><?php the_field('panel_2_disclaimer'); ?></p>
             </div>
         </div>
     </div>
 </section>
 
-    <section class="attorney-block">
-        <div class="container">
-            <h2>Meet Our Team of Attorneys</h2>
-            <div class="spacer-break"></div>
-            <div class="columns">
-                <?php get_template_part('block', 'attorneys'); ?>
-            </div>
-        <div>
-    </section>
+<section class="attorney-block blue">
+    <div class="container">
+        <span class="small-orange"><?php the_field('panel_3_small_title'); ?></span>
+        <div class="spacer-15"></div>
+        <h2><?php the_field('panel_3_headline'); ?></h2>
+        <div class="slider-nav">
+            <div class="prev-button-slick2"><span class="icon-slick-prev"></span></div>
+            <div class="next-button-slick2"><span class="icon-slick-next"></span></div>
+        </div>
+        <div class="spacer-15"></div>
+        <div class="columns">
+            <div class="hp-attorney-slider">
 
-    <section class="hp-panel-4 tall">
-        <div class="container">
-            <div class="columns">
-                <div class="column-33">
-                    <div class="spacer-30"></div>
-                    <?php the_field('panel_4_left_copy_block'); ?>
+                <?php get_template_part('block','attorney-slider'); ?>
+                
+            </div>
+        </div>
+    </div>
+    <div class="badge"></div>
+</section>
+
+<section class="awards-block blue">
+    <div class="container">
+        <div class="columns">
+            <div class="column-left">
+                <span class="small-orange"><?php the_field('awards_small_title'); ?></span>
+                <div class="spacer-15"></div>
+                <h2><?php the_field('awards_headline'); ?></h2>
+                <p><?php the_field('awards_main_copy'); ?></p>
+                <div class="spacer-15"></div>
+                <a href="/about-us/our-awards/" class="orange-button">Our Awards</a>
+            </div>
+            <div class="column-right">
+                <div class="hp-awards">
+                    <?php $random_awards = get_field( 'award_boxes','options' );  ?>
+                    <?php if ( is_array( $random_awards ) )  { ?>
+                    <?php shuffle( $random_awards ); ?> 
+                    <?php foreach ($random_awards as $random_award ) { ?>
+                        <div class="award-box">
+                            <img src="<?php echo $random_award['award_image']; ?>" alt="" />
+                        </div>
+                    <?php } ?>
+                    <?php } ?>
                 </div>
-                <div class="column-66 row">
-                    <?php get_template_part('block', 'awards'); ?>
+                <div class="hp-awards reversed">
+                    <?php $random_awards = get_field( 'award_boxes','options' );  ?>
+                    <?php if ( is_array( $random_awards ) )  { ?>
+                    <?php shuffle( $random_awards ); ?> 
+                    <?php foreach ($random_awards as $random_award ) { ?>
+                        <div class="award-box">
+                            <img src="<?php echo $random_award['award_image']; ?>" alt="" />
+                        </div>
+                    <?php } ?>
+                    <?php } ?>
+                </div>
+                <div class="hp-awards">
+                    <?php $random_awards = get_field( 'award_boxes','options' );  ?>
+                    <?php if ( is_array( $random_awards ) )  { ?>
+                    <?php shuffle( $random_awards ); ?> 
+                    <?php foreach ($random_awards as $random_award ) { ?>
+                        <div class="award-box">
+                            <img src="<?php echo $random_award['award_image']; ?>" alt="" />
+                        </div>
+                    <?php } ?>
+                    <?php } ?>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-            <section class="hp-panel-5">
-                <div class="container">
-                    <div class="columns">
-                        <div class="column-66">
-                            <div class="testimonial-container">
-                                <p class="large">Every time I’ve called, I’ve been asked how I’m feeling and how my medical treatment is going first. I’ve had every question answered as thoroughly and completely as possible, never been put on hold for more than about a minute, and all calls and emails are returned within less than a day. . . . I’d recommend them 100%.”</p>
-                                <p class="small caps">Stephanie N.</p>
-                            </div>
-                            <div class="spacer-30"></div>
-                            <p class="read-more"><a href="/testimonials/" title="Read more reviews">Read more reviews</a> <span class="icon-arrow-right2"></span></p>
+<?php get_template_part('block','nap'); ?>
+
+<section class="practice-areas">
+    <div class="container">
+        <div class="columns">
+            <div class="column-full">
+                <span class="small-orange"><?php the_field('pa_small_title'); ?></span>
+                <div class="spacer-break"></div>
+                <h2><?php the_field('pa_headline'); ?></h2>
+                <div class="spacer-15"></div>
+            </div>
+            <div class="spacer-30"></div>
+
+            <?php if( have_rows('practiceareas') ): ?>
+            <?php while( have_rows('practiceareas') ): the_row(); 
+                $pa_link = get_sub_field('link');
+                $pa_category = get_sub_field('category');
+                $pa_name = get_sub_field('name');
+                $pa_image = get_sub_field('thumbnail');
+            ?>
+                <a class="practice-area-box column-25" href="<?php echo $pa_link; ?>">
+                    <?php 
+                    if( !empty( $pa_image ) ): ?>
+                        <img src="<?php echo esc_url($pa_image['url']); ?>" alt="<?php echo esc_attr($pa_image['alt']); ?>" />
+                    <?php endif; ?>
+                    <span class="small-orange"><?php echo $pa_category; ?></span>
+                    <h3><?php echo $pa_name; ?></h3>
+                </a>
+            <?php endwhile; ?>
+            <?php endif; ?>
+
+        </div>
+    </div>
+</section>
+
+<?php get_template_part('block', 'footer-contact',
+    array( 
+        'class' => 'blue-bg',
+        ) 
+    ); 
+?>
+
+<section class="hp-process">
+    <div class="container">
+        <div class="columns">
+            <div class="column-50 sticky">
+                <span class="small-orange"><?php the_field('panel_7_small_title'); ?></span>
+                <div class="spacer-15"></div>
+                <?php the_field('panel_7_left_copy_block'); ?>
+            </div>
+            <div class="column-50">
+                <?php if (have_rows('process_steps')): ?>
+                <?php $n = 1; ?>
+                <?php while (have_rows('process_steps')): the_row(); ?>
+                    <div class="process-steps">
+                        <div class="step-number">
+                            <?php echo $n; ?>.
                         </div>
-                        <div class="column-33">
-                            <div class="client-testimonial">
-                                <div class="text-block">
-                                    <div class="text-top">5.0</div>
-                                    <div class="stars">★★★★★</div>
-                                    <div class="text-bottom">Avg. google rating</div>
-                                </div>
-                            </div>
+                        <div class="step-content">
+                            <h3><?php the_sub_field('process_step_title'); ?></h3>
+                            <p><?php the_sub_field('process_step_content'); ?></p>
                         </div>
                     </div>
+                    <?php $n++; ?>
+                <?php endwhile; ?>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hp-rights">
+    <div class="container">
+        <div class="columns">
+            <div class="column-50">
+                <span class="small-orange"><?php the_field('panel_8_small_title'); ?></span>
+                <div class="spacer-15"></div>
+                <h2><?php the_field('panel_8_headline'); ?></h2>
+                <p><?php the_field('panel_8_main_copy'); ?></p>
+            </div>
+            <div class="column-50 img">
+                <?php 
+                $image = get_field('panel_8_image');
+                if( !empty( $image ) ): ?>
+                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                <?php endif; ?>
+            </div>
+            <div class="spacer-60"></div>
+            <div class="column-50 centered center">
+                <?php the_field('panel_8_center_column'); ?>
+            </div>
+            <div class="spacer-30"></div>
+        </div>
+        <div class="columns normal">
+            <?php if (have_rows('panel_8_boxed_content')): ?>
+            <?php while (have_rows('panel_8_boxed_content')): the_row(); ?>
+                <div class="column-33 tout-box">
+                    <h4 class="tout-title"><?php the_sub_field('headline'); ?></h4>
+                    <p><?php the_sub_field('content'); ?></p>
                 </div>
-            </section>
+            <?php endwhile; ?>
+            <?php endif; ?>
 
-            <section class="career">
-                <div class="container centered">
-                    <h2>“…I'd recommend them 100%.”</h2>
-                    <div class="spacer-15"></div>
-                    <a class="orange-button large desktop" title="Get a free consultation - call today!" href="/contact-us/">request a free consultation</a>
-                    <a class="orange-button large mobile" title="Get a free consultation - call today!" href="tel:312-236-2900">free consultation - <span class="nowrap">(312) 236-2900</span></a>
-                    <div class="spacer-60"></div>
+            <div class="spacer-60"></div>
+            <div class="column-50 centered center">
+                <a href="<?php the_field('panel_8_button_link'); ?>" class="outline-button"><?php the_field('panel_8_button_text'); ?></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hp-damages">
+    <div class="container">
+        <div class="columns">
+            <div class="column-50">
+                <span class="small-orange"><?php the_field('panel_9_small_title'); ?></span>
+                <div class="spacer-15"></div>
+                <h2><?php the_field('panel_9_headline'); ?></h2>
+                <p><?php the_field('panel_9_main_copy'); ?></p>
+            </div>
+            <div class="column-50 img">
+                <?php 
+                $image = get_field('panel_9_image');
+                if( !empty( $image ) ): ?>
+                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hp-injury-process">
+    <div class="container">
+        <div class="columns">
+            <div class="column-33-left"></div>
+            <div class="column-33">
+                <?php 
+                $image = get_field('panel_10_image');
+                if( !empty( $image ) ): ?>
+                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                <?php endif; ?>
+            </div>
+            <div class="column-66">
+                <div class="spacer-15"></div>
+                <h2><?php the_field('panel_10_headline'); ?></h2>
+                <p><?php the_field('panel_10_main_copy'); ?></p>
+                <a href="<?php the_field('panel_10_button_link'); ?>" class="outline-button"><?php the_field('panel_10_button_text'); ?></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<?php $p_11_bg_image = get_field('panel_11_bg_image'); ?>
+
+<section class="hp-insights blue" style="background-image:url(<?php echo $p_11_bg_image; ?>);">
+    <div class="container">
+        <div class="columns">
+            <div class="column-50">
+                <h2><?php the_field('panel_11_headline'); ?></h2>
+                <p><?php the_field('panel_11_main_copy'); ?></p>
+                <a href="<?php the_field('panel_11_button_link'); ?>" class="orange-button"><?php the_field('panel_11_button_text'); ?></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hp-testimonials blue">
+    <div class="container">
+        <div class="columns">
+            <div class="column-66 centered center">
+                <div class="stars">
+                    <div class="star">☆</div>
+                    <div class="star">☆</div>
+                    <div class="star">☆</div>
+                    <div class="star">☆</div>
+                    <div class="star">☆</div>
                 </div>
-            </section>
-
-            <section class="hp-panel-6">
-                <div class="container">
-                    <div class="columns">
-                        <div class="column-50">
-                            <span class="small-orange" id="section-2"><?php the_field('panel_6_small_title'); ?></span>
-                            <div class="spacer-15"></div>
-                            <?php the_field('panel_6_left_column'); ?>
-                        </div>
-                        <div class="column-50">
-                            <div class="text-block">
-                                <div class="text-top">Hurt?</div>
-                                <div class="text-bottom">Call your doctor*</div>
-                            </div>
-                            <?php the_field('panel_6_right_column'); ?>
-                        </div>
-                        <div class="spacer-break"></div>
-                        <div class="spacer-90"></div>
-                        <div class="spacer-30"></div>
-                    </div>
-                    <div class="columns">
-                        <div class="column-50">
-                            <div class="what-is">
-                                <?php the_field('panel_6_bottom_left'); ?>
-                            </div>
-                        </div>
-                        <div class="column-50 striped">
-                            <?php the_field('panel_6_bottom_right'); ?>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="hp-slider">
-                <div class="container">
-                    <div class="columns">
-                        <div class="column-25">
-                            &nbsp;
-                        </div>
-                        <div class="column-50">
-                            <div class="slide-container">
-                                <div id="hp-slides">
-                                    <?php if (have_rows('slide_content')): ?>
-                                        <?php
-                                        while (have_rows('slide_content')): the_row();
-                                            $slide_number = get_sub_field('slide_number');
-                                            $slide_title = get_sub_field('slide_title');
-                                            $slide_copy = get_sub_field('slide_copy');
-                                            ?>
-                                            <div class="slide">
-                                                <div class="slide-number">No. <?php echo $slide_number; ?></div>
-                                                <div class="slide-title"><?php echo $slide_title; ?></div>
-                                                <div class="slide-copy"><?php echo $slide_copy; ?></div>
-                                            </div>
-                                        <?php endwhile; ?>
-                                    <?php endif; ?>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column-25">
-                            <ul class="nav-container">
-                                <div id="hp-slider-nav">
-                                    <?php if (have_rows('slide_content')): ?>
-                                        <?php
-                                        while (have_rows('slide_content')): the_row();
-                                            $right_nav_title = get_sub_field('right_nav_title');
-                                            ?> 
-                                            <li class="slide"><?php echo $right_nav_title; ?></li>
-                                        <?php endwhile; ?>
-                                    <?php endif; ?>
-                                </div>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="hp-panel-7 tall">
-                <div class="container">
-                    <div class="columns">
-                        <div class="column-33">
-                            <span class="small-orange" id="section-3"><?php the_field('panel_7_small_title'); ?></span>
-                            <div class="spacer-15"></div>
-                            <?php the_field('panel_7_left_copy_block'); ?>
-                        </div>
-                        <div class="column-66 row">
-                            <div class="consultation-box">
-                                <div class="consult-image">
-                                    <img src="/wp-content/uploads/2025/10/homepage-process-circle.png" alt="Attorney Jared Staver">
-                                </div>    
-                                <div class="consult-content">
-                                    <?php the_field('panel_7_right_consult_block'); ?>
-                                </div>
-                            </div>
-                            <a class="orange-button large" href="tel:312-236-2900">request a free consultation - <span class="nowrap"> (312) 236-2900</span></a>
-                        </div>
-                    </div>
-                    <div class="spacer-90"></div>
-                    <p class="large centered"><strong>Personal Injury Claims in Chicago, IL: Step by Step</strong></p>
-                    <div class="spacer-60"></div>
-                    <div class="columns">
-                        <?php if (have_rows('process_steps')): ?>
-                            <?php $n = 1; ?>
-                            <?php
-                            while (have_rows('process_steps')): the_row();
-                                $process_step_title = get_sub_field('process_step_title');
-                                $process_step_content = get_sub_field('process_step_content');
-                                ?> 
-                                <div class="column-33">
-                                    <span class="number-container"><?php echo $n; ?></span>
-                                    <h4><?php echo $process_step_title; ?></h4>
-                                    <p><?php echo $process_step_content; ?></p>
-                                </div>
-                                <?php $n++; ?>
-                            <?php endwhile; ?>
+                <h3><?php the_field('panel_12_headline'); ?></h3>
+                <p class="med"><?php the_field('panel_12_main_copy'); ?></p>
+            </div>
+        </div>
+        <div class="spacer-60"></div>
+        <div class="columns testimonial-callout">
+            <div class="column-33">
+                <?php 
+                $headshot = get_field('panel_12_testimonial_headshot');
+                if( !empty( $headshot ) ): ?>
+                    <img src="<?php echo esc_url($headshot['url']); ?>" alt="<?php echo esc_attr($headshot['alt']); ?>" />
+                <?php endif; ?>
+            </div>
+            <div class="column-66">
+                <img src="/wp-content/uploads/2026/02/quote-Icon.png" alt="">
+                <div class="spacer-30"></div>
+                <?php the_field('panel_12_testimonial_copy'); ?>
+                <p class="author"><?php the_field('panel_12_testimonial_author'); ?></p>
+            </div>
+        </div>
+        <div class="spacer-60"></div>
+        <div class="columns testimonial-scroller">
+            <?php if (have_rows('testimonial_scroller')): ?>
+            <?php while (have_rows('testimonial_scroller')): the_row(); ?>
+                <div class="column-25 testimonial">
+                    <div class="author-block">
+                        <?php 
+                        $author_img = get_sub_field('author_headshot');
+                        if( !empty( $author_img ) ): ?>
+                            <img src="<?php echo esc_url($author_img['url']); ?>" alt="<?php echo esc_attr($author_img['alt']); ?>" />
                         <?php endif; ?>
-                        <div class="spacer-90"></div>
-                        <a class="orange-button large centered" title="Learn more about the Personal Injury Claims process" href="/laws/legal-process/">Personal Injury Claims process</a>
+                        <p class="med"><?php the_sub_field('author'); ?></p>
                     </div>
-            </section>
+                    <div class="stars">★★★★★</div>
+                    <p><?php the_sub_field('testimonial'); ?></p>
+                </div>
+            <?php endwhile; ?>
+            <?php endif; ?>
+        </div>
+        <div class="slider-nav">
+            <div class="prev-button-slick3"><span class="icon-slick-prev"></span></div>
+            <div class="next-button-slick3"><span class="icon-slick-next"></span></div>
+        </div>
+    </div>
+</section>
 
-            <section class="hp-panel-8">
-                <div class="container">
-                    <div class="columns">
-                        <div class="column-50">
-                            <span class="small-orange" id="section-4"><?php the_field('panel_8_small_title'); ?></span>
+<section class="hp-faqs">
+    <div class="container">
+        <div class="columns">
+            <div class="column-full centered center">
+                <span class="small-orange"><?php the_field('faq_small_title'); ?></span>
+                <div class="spacer-15"></div>
+                <h2><?php the_field('faq_headline'); ?></h2>
+                <a href="<?php the_field('faq_button_link'); ?>" class="orange-button"><?php the_field('faq_button_text'); ?></a>
+            </div>
+        </div>
+        <div class="spacer-60"></div>
+        <div class="columns faqs">
+            
+            <?php
+            $repeater = get_field('faqs'); // Get repeater field
+            $total_rows = count($repeater); // Count total rows
+            $halfway_point = floor($total_rows / 2); // Calculate halfway point
+            $current_index = 0; // Initialize counter
+
+            if( have_rows('faqs') ): ?>
+            <div class="column-50">
+            <?php while( have_rows('faqs') ) : the_row(); ?>
+                
+                <div class="faq-box">
+                    <div class="accordion">
+                        <div class="accordion_title">
+                            <h3><?php the_sub_field('question'); ?> </h3><span></span>
+                        </div>
+                        <div class="accordion_content">
+                            <?php the_sub_field('answer'); ?>
+                            <?php if (get_sub_field('page_link')) { ?>
                             <div class="spacer-15"></div>
-                            <?php the_field('panel_8_left_column'); ?>
-                        </div>
-                        <div class="column-50">
-                            <div class="text-block">
-                                <div class="text-top">What Has an Accident Cost You?</div>
-                            </div>
-                            <?php the_field('panel_8_right_column'); ?>
-                        </div>
-                        <div class="spacer-break"></div>
-                        <div class="spacer-90"></div>
-                        <div class="spacer-30"></div>
-                    </div>
-                    <div class="columns">
-                        <div class="column-50">
-                            <div class="result-container">
-                                <?php the_field('panel_8_bottom_left'); ?>
-                            </div>
-                            <div class="spacer-30"></div>
-                            <p class="read-more"><a href="/settlements/" title="Read more results">Read more results</a> <span class="icon-arrow-right2"></span></p>
-                        </div>
-                        <div class="column-50 striped">
-                            <?php the_field('panel_8_bottom_right'); ?>
+                            <a href="<?php the_sub_field('page_link'); ?>" class="accordion-button">Learn More</a>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
-            </section>
 
-            <section class="hp-panel-9">
-                <div class="container">
-                    <div class="columns">
-                        <span class="small-orange" id="section-5"><?php the_field('panel_9_small_title'); ?></span>
-                        <div class="spacer-15"></div>
-                        <div class="column-50">
-                            <?php the_field('panel_9_left_column'); ?>
-                        </div>
-                        <div class="column-50">
-                            <?php the_field('panel_9_right_column'); ?>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                <?php if ( $current_index == $halfway_point - 1 ) { ?>
+                </div><div class="column-50">
+                <?php } ?>
 
-            <div class="spacer-90 mobile"></div>
+                <?php $current_index++;
+            endwhile; ?>
+            </div>
+            <?php endif; ?>
 
-            <section class="hp-practice-area-boxes" id="car-accident-box">
-                <div class="container">
-                    <div class="columns">
-                        <div class="column-25">
-                            <div class="filter-box">
-                                <p class="caps">Car Accident Overview</p>
-                                <div class="spacer-break"></div>
-                                <span id="car-filter-info" class="active">i</span>
-                                <span id="car-filter-result">$</span>
-                                <span id="car-filter-link"><a href="<?php the_field('car_accident_page_link'); ?>" title="Chicago Car Accident Lawyers"><span class="icon-lugar-chevron"></span></a></span>
-                            </div>
-                        </div>
-                        <div class="column-75">
-                            <div class="info-container active" id="car-info">
-                                <?php the_field('car_accident_info_box'); ?>
-                            </div>
-                            <div class="info-container" id="car-result">
-                                <?php the_field('car_accident_result_box'); ?>
-                            </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <div class="spacer-break"></div>
-            <section class="hp-practice-area-boxes" id="truck-accident-box">
-                <div class="container">
-                    <div class="columns">
-                        <div class="column-25">
-                            <div class="filter-box">
-                                <p class="caps">Truck Accident Overview</p>
-                                <div class="spacer-break"></div>
-                                <span id="truck-filter-info" class="active">i</span>
-                                <span id="truck-filter-result">$</span>
-                                <span id="truck-filter-link"><a href="<?php the_field('truck_accident_page_link'); ?>" title="Chicago Truck Accident Lawyers"><span class="icon-lugar-chevron"></span></a></span>
-                            </div>
-                        </div>
-                        <div class="column-75">
-                            <div class="info-container active" id="truck-info">
-                                <?php the_field('truck_accident_info_box'); ?>
-                            </div>
-                            <div class="info-container" id="truck-result">
-                                <?php the_field('truck_accident_result_box'); ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+<?php $areas_bg_image = get_field('areas_bg_image'); ?>
 
-            <section class="hp-panel-10">
-                <div class="container">
-                    <div class="columns">
-                        <div class="column-50">
-                            <?php the_field('panel_10_left_column'); ?>
-                        </div>
-                        <div class="column-50">
-                            <?php the_field('panel_10_right_column'); ?>
-                        </div>
-                    </div>
-                </div>
-            </section>
+<section class="hp-areas blue" style="background-image:url(<?php echo $areas_bg_image; ?>);">
+    <div class="container">
+        <div class="columns">
+            <div class="column-66 centered center">
+                <span class="small-orange"><?php the_field('areas_small_title'); ?></span>
+                <h2><?php the_field('areas_headline'); ?></h2>
+                <a href="<?php the_field('areas_button_link'); ?>" class="orange-button"><?php the_field('areas_button_text'); ?></a>
+            </div>
+        </div>
+    </div>
+</section>
 
-            <section class="hp-cases-header">
-                <div class="container centered">
-                    <h2 class="striped">More Personal Injury Practice Areas</h2>
-                </div>
-            </section>
+<?php $locations_bg_image = get_field('areas_bg_image_bottom'); ?>
 
-            <section class="hp-panel-11">
-                <div class="container">
-                    <div class="columns">
-                        <?php if (have_rows('practice_areas')): ?>
-                            <?php
-                            while (have_rows('practice_areas')): the_row();
-                                $practice_area_name = get_sub_field('practice_area_name');
-                                $practice_area_copy = get_sub_field('practice_area_copy');
-                                $practice_area_link = get_sub_field('practice_area_link');
-                                $background_image = get_sub_field('background_image');
-                                $practice_area_ID = get_sub_field('practice_area_name');
-                                $new_ID = str_replace(' ', '', $practice_area_ID);
-                                ?>
-                                <div class="practice-area-container" id="<?php echo $new_ID; ?>">
-                                    <a href="<?php echo $practice_area_link; ?>" title="<?php echo $practice_area_name; ?>">
-                                        <span class="spacer-60"></span>
-                                        <span class="column-33">
-                                            <h3><?php echo $practice_area_name; ?></h3>
-                                        </span>
-                                        <span class="column-66">
-                                            <p><?php echo $practice_area_copy; ?></p>
-                                            <span class="orange-button"><?php echo $practice_area_name; ?></span>
-                                        </span>
-                                        <span class="spacer-60"></span>
-                                        <hr>
-                                        <span class="hover"></span>
-                                    </a>
-                                </div>
-                            <?php endwhile; ?>
-                        <?php endif; ?>
-                    </div>
-                </div>
-            </section>
+<section class="hp-locations blue" style="background-image:url(<?php echo $locations_bg_image; ?>);">
+    <div class="mobile-bg" style="background-image:url(<?php echo $locations_bg_image; ?>);"></div>
+    <div class="container">
+        <div class="columns">
+            <div class="column-33">
+                <?php the_field('areas_bottom_left'); ?>
+            </div>
+            <div class="column-33">
+                <?php the_field('areas_bottom_right'); ?>
+            </div>
+        </div>
+    </div>
+</section>
 
-            <section class="hp-panel-12">
-                <div class="container">
-                    <div class="columns">
-                        <div class="column-50 center striped">
-                            <?php the_field('panel_12_main_content_block'); ?>
-                        </div>
-                    </div>
-                </div>
-            </section>
+<?php get_template_part('block', 'footer-contact',
+    array( 
+        'class' => 'white-bg grid-bg',
+        ) 
+    ); 
+?>
 
-            <section class="footer-pre-justice blue">
-                <div class="container">
-                    <div class="columns">
-                        <div class="column-50">
-                            <?php the_field('justice_left_column'); ?>
-                        </div>
-                        <div class="column-50">
-                            <?php the_field('justice_right_column'); ?>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <?php get_template_part('block', 'mobile-contact'); ?>
-            <?php get_template_part('block', 'footer-contact'); ?>
-            <?php get_footer(); ?>
+<?php get_template_part('block', 'mobile-contact'); ?>
+
+<?php get_footer(); ?>

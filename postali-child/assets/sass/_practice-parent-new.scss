@@ -21,8 +21,8 @@
         bottom: 30px;
         left: 30px;
         z-index: 10;
-        font-family: $opensans;
-        color:$orange;
+        font-family: $hind;
+        color:$red;
         display: flex;
         font-size: 13px;
         flex-wrap: wrap;
@@ -56,7 +56,7 @@
 
     p.headline {
         font-size: 25px;
-        font-weight: bold;
+        font-weight: normal;
         line-height: 135%;
         color: #131543;
         margin-bottom: 20px !important;
@@ -110,8 +110,11 @@
 
             .top-image {
                 img {
-                    max-width: 80%;
+                    max-width: 100%;
                     margin: 0 auto;
+                    -o-object-fit: cover;
+                       object-fit: cover;
+                    height: 100%;
                 }
             }
         }
@@ -166,7 +169,7 @@
                         }
 
                         &.directions-link {
-                            color: $orange;
+                            color: $red;
                             text-decoration: underline;
                             margin-bottom: 20px;
                             display: inline-block;
@@ -188,6 +191,19 @@
         &#practice-parent-new {
             background-color: $dkblue;
             height:auto;
+            padding-top: 0;
+
+            @include interior-breadcrumbs;
+
+            #breadcrumbs {
+                @media screen and (max-width:$screen-xs) {
+                    padding: 20px 20px 20px 0;
+                }
+            }
+
+            .small-orange {
+                color: #7D99B5;
+            }
 
             h1, h2, p {
                 color:$white;
@@ -301,7 +317,7 @@
 
                                 .number {
                                     color: $white;
-                                    font-family: $opensans;
+                                    font-family: $hind;
                                     font-weight: bold;
                                     font-size: 32px;
                                     margin-right: 15px;
@@ -309,13 +325,13 @@
 
                                 .review {
                                     .stars {
-                                        color: $orange;
+                                        color: $red;
                                         font-size: 14px;
                                         margin-bottom: 7px;
                                     }
 
                                     .review-text {
-                                        font-family: $opensans;
+                                        font-family: $hind;
                                         font-weight: 600;
                                         color: $white;
                                         font-size: 13px;
@@ -324,7 +340,7 @@
 
                                     .review-link {
                                         a {
-                                            font-family: $opensans;
+                                            font-family: $hind;
                                             color: white;
                                             font-size: 12px;
                                             text-decoration: underline;
@@ -535,7 +551,7 @@
 
                 .column-33 {
                     .orange-button {
-                        background:$dkblue;
+                        background:$red;
                     }
 
                     .cta-link-container {
@@ -544,7 +560,7 @@
 
                         .cta-link {
                             color:$white;
-                            font-family: $opensans;
+                            font-family: $hind;
                             font-size: 26px;
                             text-decoration: underline;
                             vertical-align: middle;
@@ -587,7 +603,7 @@
 
             .cta-link {
                 color: #fff;
-                font-family: $opensans;
+                font-family: $hind;
                 font-size: 18px;
                 text-decoration: underline;
                 vertical-align: middle;
@@ -670,6 +686,11 @@
                 left: 0px;
                 max-width: 215px;
 
+                @media screen and (max-width:$screen-xs) {
+                    top:10px;
+                    left: 10px;
+                }
+
                 .text-top {
                     font-size: 28px;
                     margin-bottom: 10px;
@@ -693,11 +714,12 @@
             box-sizing: border-box;
             padding: 40px;
             color: $white;
-            font-family: $opensans;
+            font-family: $hind;
             font-size: 17px;
             font-weight: bold;
             position:relative;
-            @include orange-gradient;
+            background:$red;
+            
             @media screen and (max-width:$screen-sm) {
                 height:185px;
                 width:185px;
@@ -777,11 +799,27 @@
         height: auto;
 
         .result-box {
+            display: block;
+            box-sizing: border-box;
+            position: relative;
+            flex-basis: calc(50% - 10px);
+            border: none;
+            flex-wrap: wrap;
+            padding: 35px;
+            height: auto;
+            transition: 0.3s ease all;
+            text-align: center;
+            margin: 5px;
+            background: $ltgray;
+
+            @media screen and (max-width:$screen-xxs) {
+                flex-basis: 100%;
+            }
 
             &:hover {
-                background-image: none;
+                margin-top: 5px;
+                background:none;
                 height: auto;
-                margin-top: 0;
 
                 p,
                 h3 {
@@ -790,7 +828,7 @@
                 }
 
                 h3 {
-                    color: $orange;
+                    color: $red;
                 }
             }
         }

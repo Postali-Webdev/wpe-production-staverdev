@@ -14,6 +14,7 @@ get_header(); ?>
 <section class="banner" id="practice-area-parent">
 <?php } ?>
 	<div class="container">
+        <?php yoast_breadcrumb('<p id="breadcrumbs">', '</p>'); ?>
         <div class="columns">
             <div class="column-50">
                 <span>
@@ -30,11 +31,7 @@ get_header(); ?>
     <div class="container white" id="section_1">
         <div class="columns">
             <div class="column-25 left-content">
-                <?php 
-                $image1 = get_field('section_1_left_image');
-                if( !empty( $image1 ) ): ?>
-                    <img src="<?php echo esc_url($image1['url']); ?>" alt="<?php echo esc_attr($image1['alt']); ?>" id="section_1_img" />
-                <?php endif; ?>
+
             </div>
             <div class="column-75 main-content">
                 <span class="small-orange">01 <span class="separator"></span> <?php the_field('section_1_section_title'); ?></span>
@@ -123,25 +120,11 @@ get_header(); ?>
 
 <?php get_template_part('block', 'mobile-contact');?>
 
-<section class="footer-pre-contact orange">
-    <div class="container">
-        <div class="columns">
-            <div class="column-50">
-
-                <h3><?php the_field('footer_headline'); ?></h3>
-                <p><?php the_field('footer_copy'); ?></p>
-                <div class="spacer-30"></div>
-                    <a class="orange-button large" title="Get a free consultation - call today!" href="tel:312-236-2900">FREE CASE EVALUATION <span class="mobile-break">–</span> (312) 236-2900 </a>
-                <div class="spacer-30"></div>
-                    
-            </div>
-            <div class="column-50">
-                <div class="contact-form-container">
-                    <?php echo do_shortcode("[formidable id=1]"); ?>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<?php get_template_part('block', 'footer-contact',
+    array( 
+        'class' => 'blue-bg',
+        ) 
+    ); 
+?>
 	
 <?php get_footer(); ?>

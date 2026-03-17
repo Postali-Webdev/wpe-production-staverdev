@@ -27,7 +27,7 @@
 		wp_enqueue_style( 'styles', get_stylesheet_directory_uri() . '/assets/css/styles.css', [], 'all' ); // Enqueue child theme styles.css
 		wp_enqueue_style( 'slick-css', get_stylesheet_directory_uri() . '/assets/css/slick.css'); // Enqueue child theme styles.css
 		
-		wp_register_style( 'icomoon-fonts', 'https://cdn.icomoon.io/152819/Staver/style-cf.css?gju9ib', array() );
+		wp_register_style( 'icomoon-fonts', 'https://cdn.icomoon.io/152819/Staver/style.css?ir1oat', array() );
 		wp_enqueue_style('icomoon-fonts');
 		
 		wp_register_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap', array() );

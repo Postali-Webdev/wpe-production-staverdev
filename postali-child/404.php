@@ -23,6 +23,6 @@ get_header(); ?>
     </div>
 </section>
 
-<?php get_template_part('block', 'footer-contact');?>
+<?php get_template_part('block', 'footer-contact'); ?>
 	
 <?php get_footer(); ?>

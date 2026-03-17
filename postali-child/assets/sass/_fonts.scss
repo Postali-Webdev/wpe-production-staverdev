@@ -30,12 +30,11 @@ h1, h2, h3, h4 {
 }
 
 ul {
-    font-family: $opensans;
+    font-family: $hind;
     margin:0;
     list-style-type: none !important;
     &.two-column {
         -moz-column-count:2;
-        -webkit-column-count:2;
         column-count: 2;
         text-align: left;
     }
@@ -49,7 +48,7 @@ ul {
             text-decoration: underline;
             font-weight: bold;
             &:hover {
-                color:$orange;
+                color:$red;
             }
         }
         &:before {
@@ -63,11 +62,10 @@ ul {
 }
 
 ol {
-    font-family: $opensans;
+    font-family: $hind;
     margin-bottom:30px !important;
     &.two-column {
         -moz-column-count:2;
-        -webkit-column-count:2;
         column-count: 2;
         text-align: left;
     }
@@ -89,9 +87,8 @@ ol {
 
 a {
     text-decoration:none;
-    -webkit-transition:$trans;
     transition:$trans;
-    font-family: $opensans;
+    font-family: $hind;
     &:hover {
         // color:$lt-red;
         text-decoration:none;
@@ -112,22 +109,32 @@ a {
 }
 
 p {
-    font-size:18px;
+    font-size:16px;
     margin-bottom:30px !important;
-    font-family: $opensans;
-    line-height: 170%;
-    color:$grayblue;
+    font-family: $ptsans;
+    line-height: 150%;
+    color:$dkblue;
+
     &.large {
-        font-size:22px;
-        line-height: 170%;
-        @media screen and (max-width:$screen-xxxs) {
-            font-size: 19px;
+        font-size: 24px;
+        line-height: 150%;
+        font-family: $hind;
+        font-weight: normal;
+
+        @media screen and (max-width:$screen-xs) {
+            font-size: 20px;
         }
     }
+
     a {
         color:$dkblue;
         text-decoration: underline;
     }
+
+    &.med {
+        font-size:20px;
+    }
+
     &.small {
         font-size:15px;
     }
@@ -151,7 +158,7 @@ p {
         display: block;
         span {
             margin-left: 10px;
-            color: $orange;
+            color: $red;
             vertical-align: middle;
             font-size: 22px;
         }
@@ -159,13 +166,13 @@ p {
     a {
         font-weight:bold;
         &:hover {
-            color:$orange;
+            color:$red;
         }
     }
 }
 
 h1 {
-    font-family: $opensans;
+    font-family: $hind;
     font-size: 48px;
     font-weight: bold;
     line-height: 115%;
@@ -180,9 +187,9 @@ h1 {
 }
 
 h2 {
-    font-family: $opensans;
+    font-family: $hind;
     font-size: 42px;
-    font-weight: bold;
+    font-weight: 500 !important;
     line-height: 115%;
     color:$grayblue;
     margin-bottom: 30px !important;
@@ -195,9 +202,9 @@ h2 {
 }
 
 h3 {
-    font-family: $opensans;
+    font-family: $hind;
     font-size: 32px;
-    font-weight: bold;
+    font-weight: 500 !important;
     line-height: 115%;
     color:$grayblue;
     margin-bottom: 20px !important;
@@ -210,7 +217,7 @@ h3 {
 }
 
 h4 {
-    font-family: $opensans;
+    font-family: $hind;
     font-size: 24px;
     font-weight: bold;
     line-height: 115%;
@@ -221,7 +228,7 @@ h4 {
     }
 }
 .headline-text {
-    font-family: $opensans;
+    font-family: $hind;
     font-size: 70px;
     font-weight: bold;
     line-height: 115%;
@@ -235,15 +242,17 @@ h4 {
 // text styles //
 
 .small-orange {
-    color:$orange;
-    font-family: $opensans;
+    color:$red;
+    font-family: $zilla;
     font-size:15px;
-    letter-spacing: .1em;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: normal;
     margin-bottom: 15px !important;
     position:relative;
     line-height: 135%;
+    letter-spacing: 2px;
+
     &.underlined {
         margin-bottom:20px;
         &:after {
@@ -265,7 +274,7 @@ h4 {
     background: $white;
     border-radius: 40px;
     margin: 20px 0 60px;
-    font-family: $opensans;
+    font-family: $hind;
     line-height: 170%;
     color: $dkblue;
     font-style: italic;

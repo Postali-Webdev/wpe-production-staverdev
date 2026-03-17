@@ -12,7 +12,10 @@ get_header();?>
             <div class="column-33">
                 <div class="left-content-container">
                     <div class="left-content">
-                        <?php the_field('right_content'); ?>
+                        <?php yoast_breadcrumb('<p id="breadcrumbs">', '</p>'); ?>
+                        <div class="left-bottom">
+                            <?php the_field('right_content'); ?>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -46,10 +49,6 @@ get_header();?>
     </div>
 </section>
 
-<?php get_template_part('block', 'mobile-contact');?>
-
-<?php get_template_part('block', 'consultation');?>
-
-<?php get_template_part('block', 'footer-contact');?>
+<?php get_template_part('block', 'footer-contact'); ?>
 
 <?php get_footer(); ?>

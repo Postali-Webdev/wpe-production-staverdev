@@ -10,51 +10,70 @@ nav#pojo-a11y-toolbar {
     display: none !important;
 }
 
+.home,
+.page-template-page-locations-home {
+    header {
+        background:transparent !important;
+
+        &.scrolled {
+            background:$dkblue !important;
+        }
+    }
+}
+
 header {
-    background:$white;
+    background:$dkblue;
     align-content:center;
-    border-bottom: 1px solid $gray-lines;
-    padding: 0 0 0 4%;
+    padding: 0 50px;
     flex-wrap: wrap;
     position:fixed;
     width:100%;
     top:0;
     box-sizing: border-box;
     z-index: 1000;
-    height: 97px;
-    .custom-logo {
-        max-width: 310px;
+    height: 129px;
+    border-bottom: 1px solid rgba($white, .2);
+    transition: $trans;
+
+    @media screen and (max-width:$screen-lg) {
+        padding: 0 30px;
     }
-    .weglot-dropdown {
-        position: absolute;
-        top: 0;
-        right: 0;
-        z-index: 10 !important;
-        @media screen and (max-width: $screen-ipad) {
-            top: 96px;
-        }
-        li {
-            &:before {
-                display: none !important;
-            }
-        }
+
+    @media screen and (max-width:$screen-ipad) {
+        height:100px;
     }
+
     #header-top {
         width:100%;
         padding:0;
         justify-content: space-between;
         max-width:100%;
         flex-wrap: nowrap;
-        #header-top_left {
+        display: flex;
+        height: 100%;
+        align-items: normal;
+
+        &_left {
             display: flex;
-            padding:21px 4% 21px 0;
-            border-right:1px solid $gray-lines;
+            margin-right:50px;
+            align-items: center;
+
+            @media screen and (max-width:$screen-xl) {
+                margin-right: 30px;
+            }
+
+            .custom-logo {
+                max-width: 310px;
+                min-width: 150px;
+            }
         }
+
         #header-top_right {
             display: flex;
             flex-basis: 100%;
             align-items: center;
             justify-content: flex-end;
+
             #header-top_menu {
                 width: 100%;
                 display: flex;
@@ -71,30 +90,59 @@ header {
                     margin:0;
                     padding:0;
                     width:100%;
+                    justify-content: flex-end;
+                    gap: 10px;
+
+                    @media screen and (max-width:$screen-lg) {
+                        gap:5px;
+                    }
 
                     li {
                         display:flex;
-                        flex-basis: 25%;
                         justify-content: center;
                         text-align: center;
-                        border-right:1px solid $gray-lines;
                         height: 100%;
-                        align-items: center;
+                        align-items: flex-end;
                         margin: 0;
                         padding: 0;
                         position: relative;
                         line-height: 130%;
 
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            z-index: -1;
+                            left: 51%;
+                            right: 51%;
+                            background: $red;
+                            height: 3px;
+                            transition-property: left, right;
+                            transition-duration: 0.2s;
+                            transition-timing-function: ease-out;
+                            top: 97px;
+
+                            @media screen and (max-width:$screen-ipad) {
+                                display:none;
+                            }
+                        }
+
+                        &:hover {
+                            &::before {
+                                left: 10px;
+                                right: 10px;
+                            }
+                        }
+
                         &.current-menu-parent,
                         &.current_page_item {
                             &::after {
                                 position:absolute;
-                                width:100%;
-                                height:5px;
-                                top:0;
-                                left:0;
+                                width:80%;
+                                height:3px;
+                                bottom:28px;
+                                left:10%;
                                 content:"";
-                                @include orange-gradient;
+                                background:$red;
 
                                 @media screen and (max-width:$screen-ipad) {
                                     display:none;
@@ -103,10 +151,10 @@ header {
                         }
 
                         a {
-                            font-family: $opensans;
-                            font-size: 17px;
-                            color: $dkblue;
-                            padding: 0 10%;
+                            font-family: $hind;
+                            font-size: 16px;
+                            color: $white;
+                            padding:0 10px;
                             line-height: 125%;
                             text-decoration: none;
                             display: flex;
@@ -117,7 +165,12 @@ header {
                             cursor: pointer;
                             font-weight: normal;
                             box-sizing: border-box;
-                            border:1px solid transparent;
+                            white-space: break-spaces;
+                            margin-bottom: -19px;
+
+                            @media screen and (max-width:$screen-lg) {
+                                font-size: 15px;
+                            }
 
                             @media screen and (max-width:$screen-ipad) {
                                 padding-right: 40px !important;
@@ -131,7 +184,7 @@ header {
 
                         .sub-menu {
                             display:none;
-                            top:96px;
+                            top:128px;
                             left: 0;
                             width:100%;
                             z-index: 1000;
@@ -142,9 +195,10 @@ header {
                             border-top: 1px solid $gray-lines;
                             padding-left: 40%;
                             padding-right: 20%;
-                            -moz-column-count: 2;
-                                 column-count: 2;
+                            grid-template-columns: 1fr 1fr; /* Two equal columns */
                             left: -20px;
+                            -moz-column-break-inside: avoid;
+                                 break-inside: avoid;
 
                             @media screen and (max-width:$screen-ipad) {
                                 -moz-column-count: 1;
@@ -167,6 +221,10 @@ header {
                             li {
                                 border-right: none !important;
 
+                                &::before {
+                                    display:none;
+                                }
+
                                 &.submenu-first {
                                     position: absolute !important;
                                     width: 40%;
@@ -177,6 +235,7 @@ header {
                                     padding-left: 20% !important;
                                     box-sizing: border-box;
                                     padding-right: 80px !important;
+                                    color:$dkblue;
 
                                     @media screen and (max-width:$screen-ipad) {
                                         display:none !important;
@@ -187,6 +246,7 @@ header {
                                         font-weight: bold !important;
                                         text-align: left;
                                         line-height: 125%;
+                                        white-space: break-spaces;
                                     }
                                 }
 
@@ -202,6 +262,7 @@ header {
                                     margin: 0 !important;
                                     justify-content: flex-start !important;
                                     text-align: left;
+                                    color:$dkblue;
 
                                     @media screen and (max-width:$screen-ipad) {
                                         line-height: 100%;
@@ -209,7 +270,7 @@ header {
                                     }
 
                                     &:hover {
-                                        color:$orange !important;
+                                        color:$red !important;
                                     }
                                 }
 
@@ -230,7 +291,7 @@ header {
                         &:hover {
                             .sub-menu {
                                 position: fixed;
-                                display: block;
+                                display: grid;
                                 -webkit-animation-name: fadeInOpacity;
                                         animation-name: fadeInOpacity;
                                 -webkit-animation-iteration-count: 1;
@@ -259,15 +320,6 @@ header {
                                 }
                             }
 
-                            &:after {
-                                position:absolute;
-                                width:100%;
-                                height:5px;
-                                top:0;
-                                left:0;
-                                content:"";
-                                @include orange-gradient;
-                            }
                         }
 
                         &:before {
@@ -283,19 +335,22 @@ header {
                 height: 100%;
                 justify-content: flex-end;
                 align-items: center;
+
                 .search {
                     position: relative;
+
                     input {
                         text-align: right;
                         padding-right: 50px;
                         box-sizing: border-box;
                         border: none;
                         font-size: 17px;
-                        font-family: $opensans;
+                        font-family: $hind;
                         color:$dkblue;
                         font-weight: normal;
                         width:100%;
                     }
+
                     button {
                         position: absolute;
                         right: 0;
@@ -309,51 +364,384 @@ header {
                     }
                 }
             }
-            .no-risk {
-                display: none;
-                margin: 0 25px 5px 25px !important;
-                font-size: 18px;
-                font-weight: $bold;
-                @media screen and (max-width: $screen-ipad) {
-                    display: block;
-                }
-            }
+
+
             .contact-language {
                 display: flex;
                 flex-direction: column;
-                justify-content: flex-end;
+                justify-content: center;
                 padding: 0;
                 height: 100%;
-                font-family: $opensans;
+                font-family: $hind;
+                position: relative;
+
+                @media screen and (max-width:$screen-ipad) {
+                    position: absolute;
+                    width: calc(100% - 60px);
+                    margin: 0 30px;
+
+                    .top {
+                        margin-left: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
+                        gap: 0 !important;
+                        position: relative;
+                        width: 100%;
+                        flex-direction: column;
+
+                        .search-holder {
+                            justify-content: flex-end;
+                            position: relative;
+                            width: 100% !important;
+                            height: 42px;
+
+                            &::after {
+                                display: none !important;
+                            }
+
+                            .navbar-form-search {
+                                .search-form-container.hdn {
+                                    width: calc(100% - 40px) !important;
+                                    top: 0;
+                                    left: 0;
+                                    border-radius: 0;
+
+                                    .search-input-group {
+                                        width: 100%;
+                                        padding: 0;
+                                        height: 42px;
+
+                                        .form-group {
+                                            width: 100%;
+
+                                            .form-control {
+                                                width: 100%;
+                                                height: 42px;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .icon-search-icon {
+                                    &::before {
+                                        color: $white !important;
+                                        top: 14px !important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .bottom {
+                        .contact {
+                            padding: 0 15px;
+                            font-size: 15px;
+                            margin-left: 0;
+                            margin-top: 20px;
+                            width: 100%;
+                            box-sizing: border-box;
+                        }
+                    }
+                }
+
+                .top {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    gap: 10px;
+                    margin-bottom: 5px;
+
+                    /* search styles */
+                    .search-holder {
+                        width:30px;
+                        justify-content: flex-end;
+                        position: relative;
+
+                        &::after {
+                            position: absolute;
+                            left: -40px;
+                            content: "Search";
+                            font-size: 14px;
+                            font-family: $ptsans;
+                            font-weight: 400;
+                            top: 14px;
+                            color:$white;
+                        }
+
+                        &:before {
+                            display: none;
+                        }
+                        .navbar-form-search {
+                            position: relative;
+                            z-index: 10;
+
+                            @media screen and (max-width:$screen-ipad) {
+                                height: 100%;
+                                width: 100%;
+                            }
+                    
+                            .icon-search-icon:before, 
+                            .icon-close-x:before {
+                                content: "";
+                                position: absolute;
+                                top: 9px;
+                                left: 10px;
+                                transition: 0.3s linear;
+                                -webkit-transition: 0.3s linear;
+                                z-index: 10;
+                                color: $blk;
+                                font-size: 14px;
+                                font-weight: $normal;
+                                width: 20px;
+                                height: 20px;
+                                background-repeat: no-repeat;
+                                background-size: contain;
+                            }
+                    
+                            .icon-search-icon:before {
+                                content:"\e986";
+                                font-family: $icomoon;
+                                color:$white;
+                                top: 10px;
+                                transform: scaleX(-1);
+                            }
+                    
+                            .icon-close-x:before {
+                                content:"\e91a";
+                                font-family: $icomoon;
+                                color:$white;
+                                top: 10px;
+                                rotate: 45deg;
+                                transform: scaleX(-1);
+                            }
+
+                            .form-group {
+                                width: 100%;
+                            }
+                    
+                            .form-control {
+                                width: 100%;
+                                box-sizing: border-box;
+                                padding: 0 8px;
+                                height:26px;
+                                font-size: 16px;
+                                border: 0;
+                                font-family: $ptsans;
+                                background:$gray-lines;
+                            }
+
+                            label {
+                                position: absolute;
+                                left: 15px;
+                                top: 13px;
+                                color: #efefef;
+                                z-index: -1;
+                                font-size: 14px;
+                            }
+                    
+                            .btn {
+                                border: 0;
+                                background: transparent;
+                                font-size: 1.8rem;
+                                padding:0;
+                                cursor: pointer;
+                                &:active,
+                                &:hover,
+                                &:focus {
+                                    color: #000;
+                                    outline: none;
+                                    box-shadow: none;
+                                }
+                                span {
+                                    color:$blk;
+                                    font-weight: bold;
+                                }
+                            }
+                    
+                            .btn-search {
+                                height: 40px;
+                                background: transparent;
+                                padding: 8px;
+                                position: relative;
+                                top: 3px;
+                                right: 0;
+                                width: 40px;
+                                border-radius: 0 50% 50% 0%;
+                                border:none;
+
+                                span {
+                                    color:$blk;
+                                }
+                            }
+                            
+                            .search-form-container {
+                                text-align: right;
+                                position: absolute;
+                                width: 250px;
+                                overflow: hidden;
+                                background: $white;
+                                right: 24px;
+                                top: 3px;
+                                z-index: 9;
+                                transition: all .3s ease-in-out;
+                                border-radius: 0;
+                    
+                                &.hdn {
+                                    width: 0;
+                                    
+                                    & ~ .btn-search {
+                                        height:40px;
+                                        width: 40px;
+                                        background-color: transparent !important;
+                                        border-radius: 50%;
+                                        background: unset;
+                                        padding:8px;
+                                        border:0;
+
+                                        @media screen and (max-width:$screen-ipad) {
+                                            position: absolute;
+                                            top: 0;
+                                            right: 0;
+                                            background-color: $red !important;
+                                            border-radius: 0;
+                                            height: 42px;
+                                        }
+                     
+                                        &:hover {
+                                            .icon-magnifying-glass:before {
+                                                color: $white;
+                                            }
+                                        }
+                    
+                                        span {
+                                            color:$blk;
+                                        }
+                                    }
+                                }
+                    
+                                .search-input-group {
+                                    width: 250px;
+                                    display: flex;
+                                    padding: 5px;
+                                    box-sizing: border-box;
+                                    height:36px;
+                                    
+                                    .btn {
+                                        border: 0;
+                                        background: $white;
+                                        font-size: 1.6rem;
+                                        padding: 4px 8px 0;
+                                        border-radius: 0;
+                                        height: 32px;
+
+                                        span {
+                                            color:$white;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .weglot-dropdown {
+                        position: relative;
+                        z-index: 10 !important;
+                        background:transparent;
+
+                        @media screen and (max-width:$screen-ipad) {
+                            background:$dkblue;
+                        }
+
+                        @media screen and (max-width:$screen-ipad) {
+                            position: relative;
+                            top: auto !important;
+                            width: 100%;
+                            margin-top: 10px;
+                            border: 1px solid $mdgray;
+                            padding: 5px;
+                            box-sizing: border-box;
+                        }
+
+                        .wgcurrent {
+                            border: none !important;
+                            color:$white;
+
+                            span {
+                                padding-right: 40px !important;
+                            }
+
+                            &::after {
+                                top: 13px !important;
+                                -webkit-filter: invert(1);
+                                        filter: invert(1);
+
+                                @media screen and (max-width:$screen-ipad) {
+                                    top:18px !important;
+                                }
+                            }
+                        }
+
+                        span {
+                            height: 30px !important;
+                            line-height: 30px !important;
+                        }
+
+                        @media screen and (max-width: $screen-ipad) {
+                            top: 96px;
+                        }
+                        li {
+                            &:before {
+                                display: none !important;
+                            }
+                        }
+                    }
+                }
+
                 @media screen and (max-width: $screen-ipad) {
                     display: flex;
                     flex-direction: column-reverse;
                     height: auto;
                 }
+
                 .contact {
-                    min-width: 200px;
-                    width: 100%;
-                    height: 55px;
-                    padding:0 4%;
+                    width: -webkit-fit-content;
+                    width: -moz-fit-content;
+                    width: fit-content;
+                    height: 44px;
+                    padding:0 30px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    font-weight:bold;
+                    font-weight:500;
                     font-size: 16px;
                     letter-spacing: .1em;
                     text-transform: uppercase;
                     color:$white;
                     position: relative;
-                    @include orange-gradient;
-                    @media screen and (max-width: $screen-lg) {
-                        min-width: 160px;
+                    background:$red;
+                    margin-left: 30px;
+                    margin-bottom: 10px;
+                    white-space: nowrap;
+
+                    &:hover {
+                        background: $dkblue;
                     }
-                    @media screen and (max-width: $screen-ipad) {
-                        margin: 0 25px 30px;
-                        padding: 20px 4%;
-                        height: auto;
-                        min-width: revert;
-                        width: auto;
+
+                    @media screen and (max-width:$screen-lg) {
+                        padding: 0 15px;
+                        font-size: 15px;
+                        margin-left: 20px;
+                    }
+
+                    @media screen and (max-width:$screen-ipad) {
+                        padding: 0 15px;
+                        font-size: 15px;
+                        margin-left: 30px;
+                        margin-top: 20px;
+                        width: calc(100% - 60px);
+                        box-sizing: border-box;
+                        
                     }
                 }
             }
@@ -361,6 +749,7 @@ header {
         }
         #header-top_mobile {
             display:none;
+
             @media screen and (max-width:$screen-ipad) {
                 display:block;
                 position: absolute;
@@ -373,9 +762,10 @@ header {
                     display: block;
                     margin-top: 0;
                     margin-right: 0;
+
                     .line {
                         display: block;
-                        background:$orange;
+                        background:$red;
                         width: 40px;
                         height: 4px;
                         position: absolute;
@@ -425,8 +815,8 @@ header {
                 flex-basis: 65%;
                 padding-left:20px;
                 .custom-logo {
-                    max-width: 220px;
-                    padding: 6px 0 0;
+                    max-width: 190px;
+                    padding: 0;
                 }
             }
             #header-top_right {
@@ -438,7 +828,7 @@ header {
                 z-index: -1;
                 opacity:0;
                 width:100%;
-                height:calc(100vh - 97px);
+                height:calc(100vh - 155px);
                 overflow: scroll;
                 &.active {
                     display: block;
@@ -455,18 +845,21 @@ header {
                         display:block;
 
                         li {
-
-                            display:block;
+                            display: flex;
                             border-right: none;
                             height: auto;
+                            align-items: center;
+                            flex-wrap: wrap;
+                            border-bottom: 1px solid $gray-lines;
 
                             a {
                                 justify-content: flex-start;
                                 padding:15px 0;
                                 font-size: 20px;
-                                border-bottom: 1px solid $gray-lines;
                                 font-weight: normal;
                                 height: auto;
+                                margin-bottom: 0;
+                                color:$dkblue;
                             }
 
                             .accordion-toggle {
@@ -485,10 +878,11 @@ header {
                                     height: 100%;
                                     border-left: 1px solid $gray-lines;
                                     content: "";
+                                    top: -4px;
                                 }
 
                                 span {
-                                    color: $orange;
+                                    color: $red;
                                     font-size: 25px;
                                     transition:$trans;
                                     display:block;
@@ -505,6 +899,11 @@ header {
                                 padding:0;
                                 top:0;
                                 border-top: none;
+
+                                li {
+                                    border-bottom: none;
+                                    margin-left: 20px;
+                                }
 
                                 &.active {
                                     display:block;
@@ -578,152 +977,6 @@ header {
                 }
             }
         }
-    }
-}
-
-.header-sub {
-    flex-wrap: wrap;
-    display:flex;
-    border-bottom:1px solid $gray-lines;
-    padding:8px 0;
-    width:100%;
-    background:$white;
-    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.10);
-    position:fixed;
-    top:97px;
-    z-index: 7;
-    margin: 0;
-    .container {
-        text-align: left;
-        font-family: $opensans;
-        color:$dkblue;
-        width:100%;
-        max-width:100%;
-        padding-left: 4.25%;
-        #breadcrumbs {
-            padding: 0;
-            font-weight: 600;
-            margin: 0 !important;
-            font-size: 13px;
-            line-height: 100%;
-            a {
-                color: $dkblue;
-                font-weight: bold;
-                text-decoration: none;
-            }
-            .icon-play3 {
-                font-size: 10px;
-                color: $orange;
-                margin: 0 2px;
-            }
-            .breadcrumb_last {
-                font-weight: normal;
-            }
-        }
-        .in-page-nav-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-            position: absolute;
-            left: 0;
-            top: 22px;
-
-            @media screen and (max-width:$screen-xs) {
-                width:100% !important;
-            }
-
-            .nav-title {
-                display: flex;
-                justify-content: flex-start;
-                align-items: center;
-                width: 100%;
-                margin-bottom: 0px !important;
-                cursor: pointer;
-                background: $white;
-                padding: 10px;
-                .small-orange {
-                    display: flex;
-                    justify-content: flex-start;
-                    align-items: center;
-                    margin: 0 !important;
-                    .swap-text {
-                        display: flex;
-                        justify-content: flex-start;
-                        align-items: center;
-                    }
-                }
-                .dropdown-arrow {
-                    font-size: 9px;
-                    margin-left: 5px;
-                    transition: $trans;
-                    &.active {
-                        transform: rotate(180deg);
-                    }
-                }
-            }
-            .in-page-nav-dropdown {
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: flex-start;
-                height: 0;
-                overflow: hidden;
-                transition: $trans;
-                background: $white;
-                
-                &.active {
-                    height: 220px;
-                    @media screen and (max-width: $screen-xxs) {
-                        height: 300px;
-                    }
-                }
-                a:first-of-type {
-                    margin-top: 10px;
-                }
-                .nav-link {
-                    display: inline-block;
-                    padding: 0 10px;
-                    width: 100%;
-                    .small-orange {
-                        margin: 0 !important;
-                        .replacement-text {
-                            display: flex;
-                            justify-content: flex-start;
-                            align-items: center;
-                            padding: 10px 0;
-                        }
-                    }
-                    &.active {
-                        background: $ltgray;
-                        .small-orange {
-                            color: $dkblue;
-                        }
-                    }
-
-                    &:hover {
-                        .replacement-text {
-                            color:$dkblue;
-                        }
-                    }
-                }
-                
-                @media screen and (max-width:$screen-xs) {
-                    width:100% !important;
-                }
-            }
-            .divide-line {
-                display: inline-block;
-                margin: 0 5px;
-                width: 34px;
-                height: 1px;
-                border-bottom: solid 1px $dkblue;
-            }
-        }
-    }
-    @media screen and (max-width:$screen-xs) {
-        width:100% !important;
-        display:block !important
     }
 }
 

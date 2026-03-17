@@ -60,13 +60,21 @@ if ( $sortby == "date-high" || $sortby == "date-low" ) {
     <div class="container">
         <div class="columns">
             <div class="column-33">
+
+
                 <div class="left-content-container">
                     <div class="left-content">
-                        <h1>Our Results</h1>
-                        <div class="spacer-30"></div>
-                        <p class="large">Fighting for your maximum compensation. <strong>Be someone who gets it.</strong></p> 
+                        <?php yoast_breadcrumb('<p id="breadcrumbs">', '</p>'); ?>
+
+                        <div class="left-bottom">
+                            <h1>Our Results</h1>
+                            <div class="spacer-30"></div>
+                            <p class="large">Fighting for your maximum compensation. <strong>Be someone who gets it.</strong></p> 
+                        </div>
                     </div>
                 </div>
+
+
             </div>
             <div class="column-66">
                 <div class="column-container">
@@ -93,31 +101,15 @@ if ( $sortby == "date-high" || $sortby == "date-low" ) {
                         </article>
                         <div class="spacer-15"></div>
                         <hr>
-                        <div class="spacer-60"></div>
                     <?php endwhile; ?>
                     <?php endif; ?>
-                    <?php if ($wp_query->max_num_pages > 1) : // custom pagination  ?>
-                        <section class="pagination">
-                            <div class="container">            
+                    <section class="pagination">
+                        <div class="container">            
 
-                                <?php
-                                    $orig_query = $wp_query2; // fix for pagination to work
-                                    $wp_query2 = $query;
-                                ?>
-                                    <div class="container posts">
-                                    <?php the_posts_pagination( array(
-                                        'mid_size' => 2,
-                                        'prev_text' => __( '<span class="icon-drw-chevron-left"></span>', 'textdomain' ),
-                                        'next_text' => __( '<span class="icon-drw-chevron-right"></span>', 'textdomain' ),
-                                    ) ); ?>
-                                    </div>
-                                <?php
-                                    $wp_query2 = $orig_query; // fix for pagination to work
-                                ?>
-                                
-                            </div>
-                        </section>
-                    <?php endif; ?>
+                            <?php the_posts_pagination(); ?>
+                            
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>
@@ -125,9 +117,7 @@ if ( $sortby == "date-high" || $sortby == "date-low" ) {
 </section>
 
 <?php get_template_part('block', 'mobile-contact');?>
-
 <?php get_template_part('block', 'consultation');?>
-
-<?php get_template_part('block', 'footer-contact');?>
+<?php get_template_part('block', 'footer-contact'); ?>
 
 <?php get_footer(); ?>

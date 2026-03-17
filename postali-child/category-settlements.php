@@ -125,9 +125,7 @@ if ( $sortby == "date-high" || $sortby == "date-low" ) {
 </section>
 
 <?php get_template_part('block', 'mobile-contact');?>
-
 <?php get_template_part('block', 'consultation');?>
-
-<?php get_template_part('block', 'footer-contact');?>
+<?php get_template_part('block', 'footer-contact'); ?>
 
 <?php get_footer(); ?>

@@ -27,15 +27,7 @@ $clients_helped_bg = get_field('p1_clients_helped_image');
     <section class="panel-1">
         <div class="container">
             <div class="columns">
-                <div class="column-25">
-                    <div class="clients-helped" style="background-image: url('<?php echo $clients_helped_bg['url']; ?>');">
-                        <div class="helped-counter">
-                            <span class="helped-number">3500+</span><br>
-                            <span class="helped-text">Clients Helped</span>
-                        </div>
-                    </div>   
-                </div>
-                <div class="column-75">
+                <div class="column-full">
                     <div class="white">
                         <span class="small-orange"><?php the_field('p1_section_sub_title'); ?></span>
                         <h2><?php the_field('p1_section_title'); ?></h2>

@@ -50,64 +50,67 @@ a img {
 }
  
 body {
-	background:$mdgray;
+	background:$white;
     @media screen and (max-width: $screen-sm) {
         
     }
 }
 
 :focus {
-	border:1px solid $orange;
+	border:1px solid $red;
 }
 :focus-visible {
-    border:1px solid $orange;
+    border:1px solid $red;
 }
 
 .container {
-    max-width:$screen-xl;
+    max-width:$screen-xxl;
 	padding: 0 30px;
 	display:flex;
 	position: relative;
 	width:100%;
 	flex-wrap: wrap;
 	box-sizing: border-box;
-	@media screen and (max-width:$screen-md) {
-		padding:0 30px;
-	}
-	@media screen and (max-width:$screen-sm) {
-		padding:0 80px;
-	}
-	@media screen and (max-width:$screen-xs) {
-		padding:0 30px;
-	}
+
+    @media screen and (min-width:1800px) {
+        max-width: 90%;
+    }
 }
 
 section {
 	padding: 80px 0;
 	position:relative;
+    z-index: 0;
+    
     @media screen and (max-width: $screen-sm) {
         padding: 80px 0;
     }
+    
     @media screen and (max-width: $screen-xs) {
         padding: 40px 0;
     }
+
     &:first-of-type {
 		margin-top:125px;
-		@media screen and (max-width:$screen-xs) {
-			margin-top:97px;
-		}
+
+        @media screen and (max-width:$screen-ipad) {
+            margin-top: 100px;
+        }
 	}
+
 	&.tall {
 		padding:120px 0;
 		@media screen and (max-width:$screen-xs) {
 			padding:60px 0;
 		}
 	}
+
 	&.attorney-block,
 	&.career {
 		background:$mdgray;
 		z-index: 1;
 	}
+
 	&.attorney-block {
 		.columns {
 			@media screen and (max-width:$screen-sm) {
@@ -138,10 +141,17 @@ section {
 	}
 	&.blue {
 		background:$dkblue;
-		h2,h3,h4,p,
+
+		h2,h3,h4,p, ul li, ul li a,
 		.headline-text {
 			color:$white;
 		}
+
+        .small-orange {
+            color:$ltblue;
+        }
+
+
 		p {
 			font-weight: normal;
 
@@ -150,8 +160,14 @@ section {
             }
 		}
 	}
+
+    &.lightgray {
+        background:$gray50;
+    }
+
 	&.orange {
-		@include orange-gradient;
+		background:$dkblue;
+
 		h2,h3,h4,p {
 			color:$white;
 		}
@@ -161,9 +177,10 @@ section {
 		&#cta-free-consult {
 			.headline {
 				font-size:65px;
-				font-family: $opensans;
-				font-weight: bold;
+				font-family: $hind;
+				font-weight: normal;
 				color: $white;
+                
 				@media screen and (max-width:$screen-xxs) {
 					font-size:45px;
 				}
@@ -221,10 +238,16 @@ section {
         flex-direction:column;
 		position: relative;
 		box-sizing: border-box;
+
         &.center {
 			margin:0 auto;
 			display:flex;
 		}
+
+        &.centered {
+            align-items: center;
+        }
+
 		&.row {
 			flex-direction: row;
 			justify-content: space-between;
@@ -234,31 +257,31 @@ section {
     }
     .column-25 {
         width:22%;
+        @media screen and (max-width:$tab-port) {
+          width:100%;
+        }
     }
     .column-50 {
         width:47%;
-        @media screen and (max-width:$screen-sm) {
+        @media screen and (max-width:$tab-port) {
           width:100%;
         }
     }
     .column-75 {
         width:73%;
-        @media screen and (max-width:$screen-md) {
-            width:90%;
-          }
-        @media screen and (max-width:$screen-sm) {
+        @media screen and (max-width:$tab-port) {
           width:100%;
         }
     }
     .column-33 {
         width:30%;
-        @media screen and (max-width:$screen-sm) {
+        @media screen and (max-width:$tab-port) {
           width:100%;
         }
     }
     .column-66 {
         width:63%;
-        @media screen and (max-width:$screen-sm) {
+        @media screen and (max-width:$tab-port) {
           width:100%;
         }
     }
@@ -280,7 +303,9 @@ section {
 		width:70px;
 		left:30px;
 		position: absolute;
-		@include orange-gradient;
+		background:$red;
+        
+
 		@media screen and (max-width:$screen-sm) {
             left:auto;
         }
@@ -331,34 +356,27 @@ section {
 }
 
 .orange-button {
-	display:table;
-	padding:15px 55px;
-	font-family: $opensans;
+	display:flex;
+	padding:17px 25px 15px 25px;
+	font-family: $hind;
 	color:$white;
-	font-size: 15px;
-	font-weight: bold;
-	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 600;
+	text-transform: uppercase !important;
 	letter-spacing: .1em;
 	transition: $trans;
 	text-align: center;
-	width: -webkit-max-content;
-	width: -moz-max-content;
-	width: max-content;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
 	text-decoration: none;
-	@include orange-gradient;
+	background-color: $red;
 	line-height: 100%;
+    
 	@media screen and (max-width:$screen-xxxs) {
 		width:auto;
 	}
-	&.large {
-		padding: 25px 70px;
-		@media screen and (max-width:$screen-ipad) {
-			padding:25px;
-			text-align: center;
-			display:block;
-			width:auto;
-		}
-	}
+
 	&.mobile {
 		display:none;
 		@media screen and (max-width:$screen-xxs) {
@@ -374,28 +392,34 @@ section {
 		color:$white;
 		text-decoration: underline;
 		transition: $trans;
+        background-color: darken($red, 10%);
 	}
 }
 
 .outline-button {
 	display:table;
-	padding:15px 55px;
-	font-family: $opensans;
-	color:$white;
+	padding:15px 35px;
+	font-family: $hind;
+	color:$dkblue;
 	font-size: 15px;
 	font-weight: bold;
 	text-transform: uppercase;
 	letter-spacing: .1em;
 	transition: $trans;
-	background:none;
+	background:$white;
 	line-height: 100%;
-	border:1px solid $white;
+	border:1px solid $dkblue;
 	box-sizing: border-box;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    
 	&.large {
 		padding: 25px 90px;
 	}
+    
 	&:hover {
-		color:$orange;
+		color:$red;
 		text-decoration: underline;
 		transition: $trans;
 	}
@@ -408,7 +432,8 @@ section {
 	width:35px;
 	border-radius: 50%;
 	position: relative;
-	@include orange-gradient;
+	background:$ltblue;
+    
 	&#facebook {
 		&:after {
 			content:"\ea90";
@@ -468,47 +493,151 @@ hr {
 }
 
 .footer-pre-contact {
-	padding:170px 0 100px;
 	z-index: 1;
-	@media screen and (max-width:$screen-md) {
-		padding: 240px 0 50px;
-	}
+    padding-top: 0;
+
+    .gform_wrapper.gravity-theme {
+        .gform_validation_errors > h2 {
+            color: #c02b0a !important;
+            margin-bottom: 0 !important;
+
+            .gform-icon {
+                inset-inline-start: -35px;
+            }
+        }
+    }
+
+
+    &.blue-bg {
+        .columns {
+            background:$dkblue;
+
+            .column-50 {
+                h2, p, p > a {
+                    color:$white;
+                }
+
+                .contact-form-container {
+                    .gform_wrapper {
+                        .gfield_label {
+                            color: $white;
+                            margin-top: 10px;
+                        }
+
+                        .gfield_required {
+                            color: $white;
+                        }
+
+                        input.large,
+                        textarea.small {
+                            border: 1px solid rgba($white, .4);
+                            color:$white;
+                        }
+
+                        input[type="submit"] {
+                            border: 1px solid $white;
+                            color:$white;
+                            margin: 20px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.white-bg {
+        background:$white;
+        
+        @media screen and (max-width:$screen-ipad) {
+            padding-top:60px;
+        }
+
+        .columns {
+            background:$white;
+            box-shadow: 0px 40px 40px -40px rgba(0,0,0,0.55);
+            -webkit-box-shadow: 0px 40px 40px -40px rgba(0,0,0,0.55);
+            -moz-box-shadow: 0px 40px 40px -40px rgba(0,0,0,0.55);
+
+            @media screen and (max-width:$tab-port) {
+                padding: 0;
+            }
+
+            .column-50 {
+                h2, p, p > a {
+                    color:$dkblue;
+                }
+
+                .contact-cta {
+                    color:$red;
+                }
+
+                .contact-form-container {
+                    .gform_wrapper {
+                        .gfield_label {
+                            color: $dkblue;
+                            margin-top: 10px;
+                        }
+
+                        input.large,
+                        textarea.small {
+                            border: 1px solid rgba($dkblue, .4);
+                            box-sizing: border-box;
+                        }
+
+                        input[type="submit"] {
+                            border: 1px solid $dkblue;
+                            color:$dkblue;
+                            margin: 20px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.grid-bg {
+        &::after {
+            position: absolute;
+            height: 800px;
+            width: 800px;
+            right: 0;
+            top: 94%;
+            transform: translateY(-50%);
+            background-image: url(/wp-content/uploads/2026/01/hex-pattern.svg);
+            content: "";
+            z-index: -1;
+        }
+    }
+
     .columns {
         align-items:center;
+        padding: 50px;
+
+        @media screen and (max-width:$screen-xs) {
+            padding:30px;
+        }
+        
         .column-50 {
 			margin:0;
+            
 			h2 {
 				font-size: 56px;
-				&:before {
-					content: "";
-					position: absolute;
-					left: -90px;
-					top: -150px;
-					background: url(/wp-content/uploads/2020/04/free-consultation-icon.svg);
-					width: 120px;
-					height: 120px;
-					z-index: 0;
-					background-size: 100%;
-					background-repeat: no-repeat;
-					@media screen and (max-width:$screen-md) {
-						left:0;
-					}
-				}
+
+                @media screen and (max-width:$screen-xs) {
+                    font-size: 40px;
+                }
 			}
-            .orange-button {
-                background:$dkblue;
-				margin:0;
-				.mobile-break {
-					@media screen and (max-width:$screen-xs) {
-						width:100%;
-						display:block;
-						color:$dkblue;
-						line-height: 50%;
-					}
-				}
-            }
+
             p  {
                 margin-bottom:0 !important;
+
+                &.contact-cta {
+                    font-family: $zilla;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    font-size: 14px;
+                }
+
                 a {
                     color:$white;
                     font-weight: bold;
@@ -518,115 +647,55 @@ hr {
                 vertical-align: inherit;
                 font-size: 16px;
 			}
+            
 			.contact-form-container {
 				display: block;
-				background: $white;
+				background: none;
 				height: 100%;
-				width: 90%;
-				margin-left: 10%;
-				padding: 60px 70px 55px;
+				width: 100%;
 				box-sizing: border-box;
 				position: relative;
 				border-radius: 12px;
-				box-shadow: 0px 0px 30px 0px rgba(240,85,7,0.9);
-				@media screen and (max-width:$screen-md) {
-					width: 100%;
-					margin-left: 0;
-					padding: 40px 40px 25px;
-					margin-top: 40px;
-				}
-				.frm_form_fields {
-					input[type="text"] {
-						border: none !important;
-						box-shadow: none !important;
-						border-bottom: 1px solid $dkblue !important;
-						border-radius: 0 !important;
-						padding: 12px 0 25px !important;
-						color:$dkblue;
-						font-size: 18px;
-						font-family: $opensans;
-						&::-webkit-input-placeholder {
-							color:$dkblue;
-							font-size: 18px;
-							font-family: $opensans;
-							opacity:1;
-						}
-						&::-moz-placeholder {
-							color:$dkblue;
-							font-size: 18px;
-							font-family: $opensans;
-							opacity:1;
-						}
-						&:-ms-input-placeholder {
-							color:$dkblue;
-							font-size: 18px;
-							font-family: $opensans;
-							opacity:1;
-						}
-						&::-ms-input-placeholder {
-							color:$dkblue;
-							font-size: 18px;
-							font-family: $opensans;
-							opacity:1;
-						}
-						&::placeholder {
-							color:$dkblue;
-							font-size: 18px;
-							font-family: $opensans;
-							opacity:1;
-						}
-					}
-					textarea {
-						border: 0;
-						border-bottom: solid 1px $blk;
-					}
-					label {
-						font-family: "Lucida Grande", "Lucida Sans Unicode";
-						font-size: 16px;
-						font-weight: $normal;
-						padding: 10px 6px;
-					}
-					.frm_visible {
-						opacity: 0;
-					}
-					.frm_submit button {
-						width: 100% !important;
-						padding: 20px !important;
-						margin-top: 30px !important;
-						margin-bottom: 0 !important;
-						border: none !important;
-						box-shadow: none !important;
-						color: $white !important;
-						font-family: $opensans;
-						text-transform: uppercase;
-						font-size: 16px !important;
-						letter-spacing: .1em;
-						border-radius: 0 !important;
-						font-weight: bold;
-						@include orange-gradient;
-					}
-				}
-				.frm_error {
-					color: $orange !important;
-					padding: 10px 0 0 !important;
-					position: relative;
-					display: block;
-					margin-bottom: -12px !important;
-				}
-				.frm_error_style {
-					background-color: transparent;
-					border: none !important;
-					border-radius: 4px;
-					color: $orange;
-					font-size: 14px;
-					margin: 0;
-					margin-bottom: 20px;
-					padding: 0;
-					font-size: 18px;
-					font-family: $opensans;
-					line-height: 120%;
-					font-weight: bold;
-				}
+
+                @media screen and (max-width:$tab-port) {
+                    margin-top: 50px;
+                }
+                
+                .gform_wrapper {
+                    .gform_required_legend {
+                        font-size: 12px;
+                        padding-bottom: 15px !important;
+                        display: block;
+                        font-weight: 600;
+                        font-family: $hind;
+                    }
+
+                    .gfield_label {
+                        display: inline-block;
+                        font-size: 15px;
+                        font-weight: 700;
+                        margin-bottom: 8px;
+                        padding: 0;
+                        font-family: $hind;
+                        font-weight: 500;
+                    }
+
+                    input.large,
+                    textarea.small {
+                        width: 100%;
+                        background: none;
+                        border: none;
+                        padding: 12px;
+                        box-sizing: border-box;
+                    }
+
+                    input[type="submit"] {
+                        padding: 10px 20px;
+                        background: none;
+                        font-family: $hind;
+                        text-transform: uppercase;
+                    }
+                }
 			}
         }
     }
@@ -646,7 +715,7 @@ hr {
 			.page-numbers {
 				background: darken($mdgray, 3%);
 				font-size:18px;
-				font-family: $opensans;
+				font-family: $hind;
 				color:$dkblue;
 				display:flex;
 				justify-content: center;
@@ -661,11 +730,32 @@ hr {
 				&.prev,
 				&.next {
 					color:$white;
-					@include orange-gradient;
+                    background:$red;
+                    font-size: 0;
+                    
 					&:hover {
-						background:$orange;
+						background:$red;
 					}
 				}
+
+                &.prev {
+                    &::after {
+                        content:"\e91b";
+                        font-family: $icomoon;
+                        color:$white;
+                        font-size: 20px;
+                    }
+                }
+
+                &.next {
+                    &::after {
+                        content:"\e91c";
+                        font-family: $icomoon;
+                        color:$white;
+                        font-size: 20px;
+                    }
+                }
+
 				@media screen and (max-width:$screen-md) {
                     font-size: 18px;
                     display: inline-flex;
@@ -704,7 +794,8 @@ hr {
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			@include orange-gradient;
+            background:$red;
+
 			span {
 				color:$white;
 				font-size: 24px;
@@ -713,7 +804,7 @@ hr {
 	}
 	.right {
 		.top {
-			font-family: $opensans;
+			font-family: $hind;
 			text-transform: uppercase;
 			font-weight: bold;
 			text-align: center;
@@ -722,7 +813,7 @@ hr {
 			padding-bottom: 2px;
 		}
 		.bottom {
-			font-family: $opensans;
+			font-family: $hind;
 			color:$white;
 			font-size: 18px;
 			font-weight: bold;
@@ -751,7 +842,7 @@ hr {
 		align-items: center;
 		box-sizing: border-box;
 		.text-links {
-			font-family: $opensans;
+			font-family: $hind;
 			font-size: 16px;
 			font-weight: bold;
 			a {
@@ -840,7 +931,7 @@ hr {
 			padding: 10px 0;
 			background: none;
 			font-weight: normal;
-			font-family: $opensans;
+			font-family: $hind;
 			cursor: pointer;
 			border-top:1px solid $gray-underline;
 			transform:$trans;
@@ -934,6 +1025,124 @@ hr {
 	}          
 }
 
+// updated accordion styles //
+
+.accordion {
+    width:100%;
+    position: relative;
+    border-bottom: 1px solid #cccdc9;
+    padding: 20px;
+    box-sizing: border-box; 
+    
+    &_title {
+        display: flex;
+        cursor: pointer;
+        padding: 15px 0;
+        transition: 0.3s linear;
+        text-align: left;
+        align-items: center;
+        line-height: 100%;
+        position: relative;
+
+        h3 {
+            font-size:24px;
+            font-weight:600 !important;
+            color:$gray250;
+            transition:$trans;
+            margin-bottom:0 !important;
+            margin-top:0;
+			font-family: $ptsans;
+            max-width: 90%;
+        }
+
+        span {
+            align-self:center;
+            justify-self:end;
+            display: block;
+
+            &:after {
+                content: "+";
+                display: inline-block;
+                transition:$trans;
+                position: absolute;
+                color:$red;
+                font-size:32px;
+                top:20px;
+                right:0;
+                font-weight: lighter;
+                transition: $trans;
+            }
+        }
+        
+        &.active {
+            h3 {
+                color:$dkblue;
+            }
+
+            span {
+                &:after {
+                    content: "–";
+                }
+            }
+
+            h3 {
+                font-weight: 900 !important;
+            }
+        }
+    }
+
+    &_content {
+        display: none;
+		padding: 10px 0;
+		text-align: left;
+        font-family: $ptsans;
+        width:90%;
+        line-height: 170%;
+
+        p {
+            color:$dkblue;
+            margin-bottom: 0 !important;
+        }
+
+        ul {
+            color:$dkblue;
+            margin: 0;
+
+            li {
+                margin:0;
+            }
+        }
+
+        .accordion-button {
+            font-family: $hind;
+            color: $dkblue;
+            text-transform: uppercase;
+            padding: 4px 8px;
+            border-left: 1px solid $dkblue;
+            border-bottom: 1px solid $dkblue;
+            font-size: 14px;
+            transition: $trans;
+            background:$white;
+            font-weight: 500;
+            letter-spacing: 1px;
+
+            &:hover {
+                color:$red;
+                border-left: 1px solid $red;
+                border-bottom: 1px solid $red;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &.active {
+        border-bottom: none;
+        box-shadow: 0px 20px 40px -20px rgba(0, 0, 0, 0.25);
+        -webkit-box-shadow: 0px 20px 40px -20px rgba(0, 0, 0, 0.25);
+        -moz-box-shadow: 0px 20px 40px -20px rgba(0, 0, 0, 0.25);
+    }
+}
+
 // fix for orange buttons on mobile //
 
 .nowrap {
@@ -982,6 +1191,7 @@ hr {
 .related-post-wrapper {
 	width: -webkit-fill-available;
 	width: -moz-fill-available;
+	width: -moz-available;
 	width: fill-available;
 	margin-top: 10px;
 	.related-title {
@@ -1000,6 +1210,7 @@ hr {
 		height: 40px;
 		width: -webkit-fill-available;
 		width: -moz-fill-available;
+		width: -moz-available;
 		width: fill-available;
 		background: $white;
 		padding: 20px 50px 20px 50px;
@@ -1035,4 +1246,131 @@ hr {
 		}
 
 	}
+}
+
+#gform_wrapper_5 {
+    text-align: left;
+
+    .gform-page-footer.gform_page_footer.top_label {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    #field_5_8 {
+        color:$white;
+        font-size: 12px;
+        opacity: .6;
+        line-height: 1.3;
+    }
+    
+    .gfield_label,
+    .gform-field-label {
+        color: $white;
+        margin-top: 10px;
+        font-size: 16px;
+        line-height: 150%;
+    }
+
+    .gfield.buttonized {
+        .gfield_checkbox,
+        .ginput_container_radio {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+
+            .gchoice {
+                position: relative;
+                text-align: center;
+            }
+
+            label {
+                /* Style the label as a button */
+                display: block !important;
+                position: relative;
+                max-width: 100%;
+                padding: 1em;
+                font-size: 16px; /* Adjust size as needed */
+                border: none;
+                background-color: rgba($white, .3);
+                cursor: pointer;
+                border-radius: 4px; /* Optional: adds rounded corners */
+                margin-bottom: 0.5em; /* Spacing between buttons */
+            }
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            /* Hide the actual input */
+            position: absolute;
+            left: -9999px;
+            background-color: rgba($white, .3);
+        }
+
+        input[type="checkbox"]:checked + label,
+        input[type="radio"]:checked + label {
+            /* Styles when checked */
+            color: $white;
+            background-color: $red;
+        }
+    }
+
+    .gform_drop_area {
+        span {
+            color:$white !important;
+        }
+    }
+
+    .gform_fileupload_rules {
+        color:$white !important;
+    }
+
+    .ginput_preview_list {
+        color:$white;
+    }
+
+    .dashicons-trash:before {
+        content: "\f182";
+        color: white;
+    }
+
+    .gfield_required {
+        color: $white;
+    }
+
+    input.large,
+    textarea.small {
+        border: 1px solid rgba($white, .4);
+        color:$blk;
+    }
+
+    input[type="button"] {
+        background: $red;
+        color:white;
+        display: flex;
+        height: 45px;
+        padding: 0 25px;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        text-transform: uppercase;
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+
+    input[type="submit"] {
+        border: 1px solid $white;
+        color:$white;
+        margin: 20px 0;
+    }
+
+    input#gform_submit_button_5 {
+        height: 45px;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        background: none;
+        padding: 0 25px;
+        margin-top: -5px !important;
+    }
 }

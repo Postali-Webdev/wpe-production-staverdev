@@ -35,7 +35,7 @@ $pageFooterText = get_field('page_footer_txt_color');
 
 	<section id="header" style="background-image:url(<?php echo esc_url($background_img['url']); ?>);">
         <div class="mobile-image" style="background-image:url(<?php echo esc_url($background_img['url']); ?>);">&nbsp;</div>
-		<div class="container skinny">
+		<div class="container">
 			<div class="columns">
 				<div class="column-66" style="display:block;">
 					<h1 style="color:<?php echo $headerText; ?>"><?php the_field('header_headline'); ?></h1>
@@ -71,23 +71,25 @@ $pageFooterText = get_field('page_footer_txt_color');
 	</section>
 
 	<section id="testimonials" style="background-color:<?php echo $testimonialsBG; ?>">
-		<div class="container skinny">
+		<div class="container">
 			<div class="columns">
 				<div class="column-full centered">
 					<h2 style="color:<?php echo $testimonialsText; ?>"><?php the_field('testimonials_headline'); ?></h2>
 				</div>
-				<div class="spacer-30"></div>
-				<div class="column-full centered">
-					<?php $logo_img = get_field('testimonial_logo'); ?>
-					<?php if( !empty( $logo_img ) ): ?>
-						<img src="<?php echo esc_url($logo_img['url']); ?>" alt="<?php echo esc_attr($logo_img['alt']); ?>" class="testimonial-img" style="margin:0 auto;" />
-					<?php endif; ?>
-					<div class="spacer-break"></div>
-					<span class="stars">★★★★★</span>
-					<div class="spacer-break"></div>
-					<p style="color:<?php echo $testimonialsText; ?>"><?php the_field('testimonial_copy'); ?></p>
-					<p style="color:<?php echo $testimonialsText; ?>" class="testimonial_author"><?php the_field('testimonial_author'); ?></p>
-				</div>
+
+                <?php if( have_rows('testimonials_repeater') ): ?>
+                <?php while( have_rows('testimonials_repeater') ) : the_row(); ?>
+
+                    <div class="column-33 review">
+                        <span class="stars">★★★★★</span>
+                        <div class="spacer-break"></div>
+                        <p style="color:<?php echo $testimonialsText; ?>"><?php the_field('testimonial_copy'); ?></p>
+                        <p style="color:<?php echo $testimonialsText; ?>" class="testimonial_author"><?php the_field('testimonial_author'); ?></p>
+                    </div>
+                            
+                <?php endwhile; ?>
+                <?php endif; ?>
+
 			</div>
 		<div>
 	</section>
@@ -95,11 +97,9 @@ $pageFooterText = get_field('page_footer_txt_color');
 	<section id="about" style="background-color:<?php echo $aboutBG; ?>">
 		<div class="container">
 			<div class="columns">
-				<div class="column-full centered">
-					<h2 style="color:<?php echo $aboutText; ?>"><?php the_field('about_the_firm_headline'); ?></h2>
-				</div>
 				<div class="spacer-60"></div>
 				<div class="column-<?php echo $column1; ?>">
+                    <h2 style="color:<?php echo $aboutText; ?>"><?php the_field('about_the_firm_headline'); ?></h2>
 					<p style="color:<?php echo $aboutText; ?>"><?php the_field('about_the_firm_copy'); ?></p>
 				</div>
 				<div class="column-<?php echo $column2; ?>" id="attorney-img">
@@ -107,19 +107,32 @@ $pageFooterText = get_field('page_footer_txt_color');
 					<?php if( have_rows('attorneys_repeater') ): ?>
 					<?php while( have_rows('attorneys_repeater') ) : the_row(); ?>
 
+                        <?php 
+                        // Replace 'your_page_link_field' with your actual field name
+                        $post_id = get_sub_field('attorney_page_link', false, false); 
+
+                        if( $post_id ) {
+                            $title = get_the_title( $post_id ); // Get the page title
+                        }
+                        ?>
+
                         <?php $selected = get_sub_field('add_link_to_bio');
                         if( in_array('yes', $selected) ) { ?>
-                            <a href="<?php the_sub_field('attorney_page_link'); ?>">
+                            <a href="<?php the_sub_field('attorney_page_link'); ?>" class="attorney-box">
                                 <?php $attorney_img = get_sub_field('attorney_image'); ?>
                                 <?php if( !empty( $attorney_img ) ): ?>
                                     <img src="<?php echo esc_url($attorney_img['url']); ?>" alt="<?php echo esc_attr($attorney_img['alt']); ?>" class="attorney-img" />
+                                    <p><?php echo esc_html($title); ?></p>
                                 <?php endif; ?>
                             </a>
                         <?php } else { ?>
-                            <?php $attorney_img = get_sub_field('attorney_image'); ?>
-                            <?php if( !empty( $attorney_img ) ): ?>
-                                <img src="<?php echo esc_url($attorney_img['url']); ?>" alt="<?php echo esc_attr($attorney_img['alt']); ?>" class="attorney-img" />
-                            <?php endif; ?>
+                            <div class="attorney-box">
+                                <?php $attorney_img = get_sub_field('attorney_image'); ?>
+                                <?php if( !empty( $attorney_img ) ): ?>
+                                    <img src="<?php echo esc_url($attorney_img['url']); ?>" alt="<?php echo esc_attr($attorney_img['alt']); ?>" class="attorney-img" />
+                                    <p><?php the_sub_field('attorney_name') ?></p>
+                                <?php endif; ?>
+                            </div>
                         <?php } ?>
                                 
 					<?php endwhile; ?>
@@ -148,11 +161,23 @@ $pageFooterText = get_field('page_footer_txt_color');
 	</section>
 
 	<section id="results" style="background-color:<?php echo $resultsBG; ?>">
-		<div class="container skinny">
+		<div class="container">
 			<div class="columns">
-				<div class="column-full centered">
-					<p style="color:<?php echo $resultsText; ?>"><?php the_field('results_copy'); ?></p>
+
+                <div class="column-full centered">
+					<h2 style="color:<?php echo $resultsText; ?>"><?php the_field('results_headline'); ?></h2>
 				</div>
+
+            <?php if( have_rows('results_repeater') ): ?>
+            <?php while( have_rows('results_repeater') ) : the_row(); ?>
+
+                <div class="column-33 result">
+                    <?php the_sub_field('results_copy'); ?>
+                </div>
+                        
+            <?php endwhile; ?>
+            <?php endif; ?>
+
 			</div>
 		</div>
 	</section>
@@ -162,11 +187,11 @@ $pageFooterText = get_field('page_footer_txt_color');
 			<div class="columns">
 				<div class="column-50 first">
 					<h2 style="color:<?php echo $ctaText; ?>"><?php the_field('footer_value_proposition'); ?></p>
+                    <p style="color:<?php echo $ctaText; ?>"><?php the_field('form_cta_copy'); ?></p>
 					<p style="color:<?php echo $ctaText; ?>"><?php the_field('footer_incentive_offer'); ?></p>
 					<a href="tel:<?php the_field('footer_cta_phone'); ?>" title="Call Today" class="btn"><?php the_field('footer_cta_phone'); ?></a>
 				</div>
 				<div class="column-50">
-					<p style="color:<?php echo $ctaText; ?>"><?php the_field('form_cta_copy'); ?></p>
 					<div class="footer-cta-form"><?php the_field('form_embed'); ?></div>
 				</div>
 			</div>
@@ -180,10 +205,10 @@ $pageFooterText = get_field('page_footer_txt_color');
 				<div id="head-logo">
                     <?php if (!is_page('26351')) { ?>
 					<a href="/" class="custom-logo-link" rel="home" itemprop="url">
-						<img width="271" height="66" src="/wp-content/uploads/2020/04/header-logo.svg" class="custom-logo" alt="Staver Accident Injury Lawyers, PC" itemprop="logo">
+						<img width="271" height="66" src="/wp-content/uploads/2026/02/sail_logo.svg" class="custom-logo" alt="Staver Accident Injury Lawyers, PC" itemprop="logo">
 					</a>
                     <?php } else { ?>
-						<img width="271" height="66" src="/wp-content/uploads/2020/04/header-logo.svg" class="custom-logo" alt="Staver Accident Injury Lawyers, PC" itemprop="logo">
+						<img width="271" height="66" src="/wp-content/uploads/2026/02/sail_logo.svg" class="custom-logo" alt="Staver Accident Injury Lawyers, PC" itemprop="logo">
                     <?php } ?>
 				</div>
 				</div>

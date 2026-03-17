@@ -16,6 +16,6 @@ get_header();?>
 
 <?php get_template_part('block', 'consultation');?>
 
-<?php get_template_part('block', 'footer-contact');?>
+<?php get_template_part('block', 'footer-contact'); ?>
 
 <?php get_footer(); ?>

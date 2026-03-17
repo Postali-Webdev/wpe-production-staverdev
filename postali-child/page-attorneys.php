@@ -12,6 +12,9 @@ get_header(); ?>
         <div class="columns">
             <div class="column-33">
                 <div class="attorney-content-container">
+
+                    <?php yoast_breadcrumb('<p id="breadcrumbs">', '</p>'); ?>
+
                     <div class="attorney-content">
                         <h1><?php the_title(); ?></h1>
                         <div class="spacer-break"></div>
@@ -97,20 +100,24 @@ get_header(); ?>
 
 <?php get_template_part('block', 'consultation');?>
 
-<section class="attorney-block">
+<section class="attorney-block blue">
     <div class="container">
         <h2>Meet Our Team of Attorneys</h2>
         <div class="spacer-break"></div>
         <div class="columns">
-            <?php get_template_part('block', 'attorneys');?>
+            <div class="slider-nav">
+                <div class="prev-button-slick2"><span class="icon-slick-prev"></span></div>
+                <div class="next-button-slick2"><span class="icon-slick-next"></span></div>
+            </div>
+            <div class="hp-attorney-slider">
+                <?php get_template_part('block', 'attorney-slider'); ?>
+            </div>
         </div>
     <div>
 </section>
 
 <?php get_template_part('block', 'mobile-contact');?>
-
 <?php get_template_part('block', 'apply');?>
-
-<?php get_template_part('block', 'footer-contact');?>
+<?php get_template_part('block', 'footer-contact'); ?>
 
 <?php get_footer(); ?>

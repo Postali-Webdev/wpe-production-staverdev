@@ -57,11 +57,40 @@ jQuery( function ( $ ) {
     //Mobile menu accordion toggle for sub pages
 	$('#header-top_menu > nav > ul.menu > li.menu-item-has-children').append('<div class="accordion-toggle"><span class="icon-drw-chevron-down"></span></span></div>');
 
-    $('.menu .accordion-toggle').click(function() {
-      $(this).parent().find('> ul').slideToggle(400);
-      $(this).toggleClass('toggle-background');
-      $(this).find('.icon-drw-chevron-down').toggleClass('toggle-rotate');
+
+    // Define a function that contains the jQuery logic
+    function checkWindowSize() {
+        const windowWidth = $(window).width();
+        const breakpoint = 1024; // Set your desired breakpoint in pixels
+
+        if (windowWidth <= breakpoint) {
+            // Your jQuery code to run only on smaller screens
+            $('.menu li.menu-item-has-children').click(function() {
+                $(this).find('.sub-menu').slideToggle(400);
+                $(this).toggleClass('toggle-background');
+                $(this).find('.icon-drw-chevron-down').toggleClass('toggle-rotate');
+            });
+        } else {
+
+        }
+    }
+
+    // 1. Run the function on initial page load
+    $(document).ready(function() {
+    checkWindowSize();
     });
+
+    // 2. Run the function whenever the window is resized
+    $(window).resize(function() {
+    checkWindowSize();
+});
+
+
+
+
+
+
+    
 
 	  //only show floating number after header
 
@@ -76,7 +105,7 @@ jQuery( function ( $ ) {
 				$("#" + s).addClass("current");
 			});
 		
-			$('.previous-next').click(function() {
+			$('.previous-next .next').click(function() {
 				$("#tab-1").hasClass("current") ? (
 					$(".process-tabs span").removeClass("current"), 
 					$(".process-content").removeClass("current"), 
@@ -118,6 +147,45 @@ jQuery( function ( $ ) {
 					$(".process-content").removeClass("current"), 
 					$("#tab-1").addClass("current"), 
 					$("#tab-1-nav").addClass("current")
+				); 
+			});
+
+            $('.previous-next .back').click(function() {
+				$("#tab-1").hasClass("current") ? (
+					$(".process-tabs span").removeClass("current"), 
+					$(".process-content").removeClass("current"), 
+					$("#tab-6").addClass("current"), 
+					$("#tab-6-nav").addClass("current")
+				) :
+				$("#tab-2").hasClass("current") ? (
+					$(".process-tabs span").removeClass("current"), 
+					$(".process-content").removeClass("current"), 
+					$("#tab-1").addClass("current"), 
+					$("#tab-1-nav").addClass("current")
+				) : 
+				$("#tab-3").hasClass("current") ? (
+					$(".process-tabs span").removeClass("current"), 
+					$(".process-content").removeClass("current"), 
+					$("#tab-2").addClass("current"), 
+					$("#tab-2-nav").addClass("current")
+				) : 
+				$("#tab-4").hasClass("current") ? (
+					$(".process-tabs span").removeClass("current"), 
+					$(".process-content").removeClass("current"), 
+					$("#tab-3").addClass("current"), 
+					$("#tab-3-nav").addClass("current")
+				) : 
+				$("#tab-5").hasClass("current") ? (
+					$(".process-tabs span").removeClass("current"), 
+					$(".process-content").removeClass("current"), 
+					$("#tab-4").addClass("current"), 
+					$("#tab-4-nav").addClass("current")
+				) : 
+				$("#tab-6").hasClass("current") && (
+					$(".process-tabs span").removeClass("current"),
+					$(".process-content").removeClass("current"), 
+					$("#tab-5").addClass("current"), 
+					$("#tab-5-nav").addClass("current")
 				); 
 			});
 		}
@@ -218,10 +286,73 @@ jQuery( function ( $ ) {
 		});
 	});
 
+    // script to make accordions function
+	$(".accordion").on("click", ".accordion_title", function() {
+        // will (slide) toggle the related panel.
+        $(this).toggleClass("active").next().slideToggle();
+        $(this).parent().toggleClass("active");
+    });
 
 	$('.transcript .read-more').on('click', function () {
 		$(this).next('.hidden-transcript').slideToggle(400);
 		$(this).html( $(this).html() === 'Hide Transcript' ? 'View Transcript' : 'Hide Transcript' );
 	})
+
+    // Toggle search function in nav
+	$( document ).ready( function() {
+		var width = $(document).outerWidth();
+		if (width > 992) {
+			var open = false;
+			$('#search-button').attr('type', 'button');
+			
+			$('#search-button').on('click', function(e) {
+					if ( !open ) {
+						$('#search-input-container').removeClass('hdn');
+						$('#search-button span').removeClass('icon-search-icon').addClass('icon-close-x');
+						$('.menu li.menu-item').addClass('disable');
+						open = true;
+						return;
+					}
+					if ( open ) {
+						$('#search-input-container').addClass('hdn');
+						$('#search-button span').removeClass('icon-close-x').addClass('icon-search-icon');
+						$('.menu li.menu-item').removeClass('disable');
+						open = false;
+						return;
+					}
+			}); 
+			$('html').on('click', function(e) {
+				var target = e.target;
+				if( $(target).closest('.navbar-form-search').length ) {
+					return;
+				} else {
+					if ( open ) {
+						$('#search-input-container').addClass('hdn');
+						$('#search-button span').removeClass('icon-close-x').addClass('icon-search-icon');
+						$('.menu li.menu-item').removeClass('disable');
+						open = false;
+						return;
+					}
+				}
+			});
+		}
+	});
+
+    $(document).ready(function() { // Ensures the script runs after the DOM is fully loaded
+        // Function to toggle the 'scrolled' class based on current scroll position
+        function toggleHeaderScrolled() {
+            if ($(window).scrollTop() > 10) {
+                $('header').addClass('scrolled');
+            } else {
+                $('header').removeClass('scrolled');
+            }
+        }
+
+        // Run once on initial page load
+        toggleHeaderScrolled();
+
+        // Bind to scroll to update on user scrolling
+        $(window).on('scroll', toggleHeaderScrolled);
+    });
 
 });

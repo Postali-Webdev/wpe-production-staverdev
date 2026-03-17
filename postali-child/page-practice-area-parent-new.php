@@ -32,6 +32,7 @@ if( image_url_exists($banner_img) . '.webp' ) {
 
 <section class="banner" id="practice-parent-new">
     <div class="container">
+        <?php yoast_breadcrumb('<p id="breadcrumbs">', '</p>'); ?>
         <div class="columns">
             <div class="column-66">
                 <span class="small-orange">Practice Areas</span>
@@ -127,7 +128,7 @@ if( image_url_exists($banner_img) . '.webp' ) {
             <div class="spacer-break"></div>
             <div class="column-50">
                 <div class="video-container">
-                    <iframe class="video-container" width="560" height="315" src="https://www.youtube.com/embed/<?php the_field('panel1_video'); ?>?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                    <iframe class="video-container" width="560" height="315" src="https://www.youtube.com/embed/<?php the_field('panel1_video'); ?>?rel=0&amp;controls=1&amp&amp;showinfo=0&amp;modestbranding=0" frameborder="0"></iframe>
                 </div>
             </div>
             <div class="column-50 highlights">
@@ -235,7 +236,7 @@ if( image_url_exists($banner_img) . '.webp' ) {
             <div class="spacer-break"></div>
             <div class="column-50">
                 <div class="video-container">
-                    <iframe class="video-container" width="560" height="315" src="https://www.youtube.com/embed/<?php the_field('panel3_video'); ?>?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                    <iframe class="video-container" width="560" height="315" src="https://www.youtube.com/embed/<?php the_field('panel3_video'); ?>?rel=0&amp;controls=1&amp&amp;showinfo=0&amp;modestbranding=0" frameborder="0"></iframe>
                 </div>
             </div>
             <div class="column-50 highlights">
@@ -340,7 +341,7 @@ if( image_url_exists($banner_img) . '.webp' ) {
             <div class="column-66">
                 <span class="headline">Ready to get started?</span>
                 <span class="spacer-15"></span>
-                <p class="large"><strong>It all starts with a free consultation.</strong></p>
+                <p class="large">It all starts with a free consultation.</p>
             </div>
             <div class="column-33">
                 <a class="orange-button large" title="Get a free consultation - call today!" href="tel:(312) 736-0773">PH: (312) 736-0773</a>
@@ -496,7 +497,12 @@ if( image_url_exists($banner_img) . '.webp' ) {
     <?php get_template_part('block', 'mobile-contact');?>
 </div>
 
-<?php get_template_part('block', 'footer-contact');?>
+<?php get_template_part('block', 'footer-contact',
+    array( 
+        'class' => 'white-bg grid-bg',
+        ) 
+    ); 
+?>
 
 
 <script src="/wp-content/themes/postali-child/assets/js/jquery.fitvids.js"></script>
