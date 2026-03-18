@@ -58,13 +58,13 @@
         <link rel="preload" as="image" href="/wp-content/uploads/2020/04/header-logo.svg" fetchpriority="high">
 
         <?php if( is_front_page() ) : ?>
-            <link rel="preload" as="image" href="/wp-content/uploads/2026/02/banner-bg-home.jpg" fetchpriority="high">
-            <link rel="preload" as="image" href="/wp-content/uploads/2026/02/banner-bg-home.jpg.webp" fetchpriority="high">
-            <link rel="preload" as="image" href="/wp-content/uploads/2026/02/banner-bg-home-mobile.png" fetchpriority="high">
-            <link rel="preload" as="image" href="/wp-content/uploads/2026/02/banner-bg-home-mobile.png.webp" fetchpriority="high">
+            <!-- <link rel="preload" as="image" href="/wp-content/uploads/2026/02/banner-bg-home.jpg" fetchpriority="high">
+            <link rel="preload" as="image" href="/wp-content/uploads/2026/02/banner-bg-home.jpg.webp" fetchpriority="high"> -->
+            <!-- <link rel="preload" as="image" href="/wp-content/uploads/2026/02/banner-bg-home-mobile.png" fetchpriority="high">
+            <link rel="preload" as="image" href="/wp-content/uploads/2026/02/banner-bg-home-mobile.png.webp" fetchpriority="high"> -->
             <link rel="preload" as="image" href="/wp-content/uploads/2026/03/banner-bg-home-mobile-xsm.jpg" fetchpriority="high">
             <link rel="preload" as="image" href="/wp-content/uploads/2026/03/banner-bg-home-mobile-xsm.jpg.webp" fetchpriority="high">
-            <link rel="preload" as="image" href="/wp-content/uploads/2020/04/20-year-badge-white.svg" fetchpriority="high">
+            <!-- <link rel="preload" as="image" href="/wp-content/uploads/2020/04/20-year-badge-white.svg" fetchpriority="high"> -->
         <?php endif; ?>
 
         <?php if (is_single()) { ?>
@@ -77,8 +77,8 @@
             <link rel="preload" as="image" href="<?php echo $banner_img; ?>" fetchpriority="high">
         <?php endif; ?>
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com">
+        <link href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
         <?php wp_head(); ?>
