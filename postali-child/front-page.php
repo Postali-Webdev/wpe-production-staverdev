@@ -56,10 +56,10 @@ get_header();
             </div>
         </div>
     </div>
-    <div class="banner-bg ignore-lazy">
-        <img src="/wp-content/uploads/2026/02/banner-bg-home.jpg" class="banner-bg-desktop">
-        <img src="/wp-content/uploads/2026/02/banner-bg-home-mobile.png" class="banner-bg-mobile">
-        <img src="/wp-content/uploads/2026/03/banner-bg-home-mobile-xsm.jpg" class="banner-bg-phone">
+    <div class="banner-bg">
+        <img src="/wp-content/uploads/2026/02/banner-bg-home.jpg" class="ignore-lazy banner-bg-desktop">
+        <img src="/wp-content/uploads/2026/02/banner-bg-home-mobile.png" class="ignore-lazy banner-bg-mobile">
+        <img src="/wp-content/uploads/2026/03/banner-bg-home-mobile-xsm.jpg" class="ignore-lazy banner-bg-phone">
     </div>
 </section>
 
