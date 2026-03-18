@@ -588,3 +588,6 @@ function postali_remove_customizer_additional_css_section( $wp_customize ) {
     }
 }
 add_action( 'customize_register', 'postali_remove_customizer_additional_css_section', 20 );
+
+
+add_filter( 'rocket_preconnect_external_domains_optimization', '__return_false' );
