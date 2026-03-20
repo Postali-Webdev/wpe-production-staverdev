@@ -83,8 +83,8 @@ $pageFooterText = get_field('page_footer_txt_color');
                     <div class="column-33 review">
                         <span class="stars">★★★★★</span>
                         <div class="spacer-break"></div>
-                        <p style="color:<?php echo $testimonialsText; ?>"><?php the_field('testimonial_copy'); ?></p>
-                        <p style="color:<?php echo $testimonialsText; ?>" class="testimonial_author"><?php the_field('testimonial_author'); ?></p>
+                        <p style="color:<?php echo $testimonialsText; ?>"><?php the_sub_field('testimonial_copy'); ?></p>
+                        <p style="color:<?php echo $testimonialsText; ?>" class="testimonial_author"><?php the_sub_field('testimonial_author'); ?></p>
                     </div>
                             
                 <?php endwhile; ?>
