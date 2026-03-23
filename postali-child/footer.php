@@ -209,6 +209,32 @@ $current_page_parent_id = $post->post_parent;
 </noscript>
 <!-- End Meta Pixel Code -->
 
+<!-- Start GeoPlugin -->
+<script language="JavaScript" src="https://ssl.geoplugin.net/javascript.gp?k=f704370a6bf5d3ef" type="text/javascript"></script>
+<script>
+  (function() {
+    var city = geoplugin_city();
+    var countryName = geoplugin_countryName();
+    var dma = geoplugin_dmaCode();
+    var areaCode = geoplugin_areaCode();
+    var region = geoplugin_regionName();
+    var regionCode = geoplugin_regionCode();
+    var ip = geoplugin_request();
+
+dataLayer.push({
+    'event': 'geo',
+    'city': city,
+    'countryName': countryName,
+    'dma': dma,
+    'areaCode': areaCode,
+    'region': region,
+    'regionCode': regionCode,
+    'ip': ip
+    });
+})();
+</script>
+<!-- End GeoPlugin -->
+
 </body>
 </html>
 
