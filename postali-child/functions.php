@@ -38,7 +38,7 @@
 		wp_enqueue_script('custom-scripts');
 		
 		wp_register_script('priority-scripts', get_stylesheet_directory_uri() . '/assets/js/priority-scripts.min.js',array('jquery'), null, true); 
-		wp_enqueue_script('priority-scripts');
+		
 		wp_register_script('slick-min', get_stylesheet_directory_uri() . '/assets/js/slick.min.js',array('jquery'), null, true); 
 		wp_enqueue_script('slick-min');
 		wp_register_script('slick-custom-min', get_stylesheet_directory_uri() . '/assets/js/slick-custom.min.js',array('jquery'), null, true); 
@@ -54,7 +54,10 @@
 		// again for location homepages 
 		if ( is_page_template ( 'page-locations-home.php' ) ) {
 			wp_enqueue_script('homepage-scripts');
-
+		}
+		
+		if ( is_page_template ( 'page-locations-landing.php' ) ) {
+			wp_enqueue_script('priority-scripts');
 		}
 		// wp_register_script('attorney-scripts', get_stylesheet_directory_uri() . '/assets/js/attorneys.min.js',array('jquery'), null, true); 
 		// load attorney bio scripts 
