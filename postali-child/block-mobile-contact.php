@@ -4,10 +4,6 @@
     </div>
 <?php endif; ?>
 <div class="mobile-contact">
-    <div class="text-links">
-        <a href="https://m.me/staverinjury/" title="facebook chat"><span class="icon-messenger"></span> Chat</a>
-    </div>
-
     <?php if ( is_tree(19006) ) { ?> <!-- aurora info -->
         <a class="free-consultation-box" href="tel:630-892-0779" title="Call Staver Accident Injury Lawyers Today">
             <div class="left">

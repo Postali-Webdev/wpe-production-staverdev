@@ -519,10 +519,21 @@ hr {
 
                 .contact-form-container {
                     .gform_wrapper {
-                        .gfield_label {
+                        .gfield_label, .gfield_validation_message, .instruction.validation_message {
                             color: $white;
                             margin-top: 10px;
                         }
+
+						.gform_submission_error {
+							color: $white !important;
+							font-size: 24px;
+							font-style: italic;
+						}
+
+						.gfield_validation_message,
+						.instruction.validation_message {
+							font-style: italic;
+						}
 
                         .gfield_required {
                             color: $white;
@@ -538,6 +549,12 @@ hr {
                             border: 1px solid $white;
                             color:$white;
                             margin: 20px 0;
+							cursor: pointer;
+							transition: $trans;
+							&:hover {
+								background: $white;
+								color: $dkblue;
+							}
                         }
                     }
                 }
@@ -573,10 +590,22 @@ hr {
 
                 .contact-form-container {
                     .gform_wrapper {
-                        .gfield_label {
+                        .gfield_label, .gfield_validation_message,
+							.instruction.validation_message {
                             color: $dkblue;
                             margin-top: 10px;
                         }
+
+						.gform_submission_error {
+							color: $dkblue !important;
+							font-size: 24px;
+							font-style: italic;
+						}
+
+						.gfield_validation_message,
+						.instruction.validation_message {
+							font-style: italic;
+						}
 
                         input.large,
                         textarea.small {
@@ -588,6 +617,12 @@ hr {
                             border: 1px solid $dkblue;
                             color:$dkblue;
                             margin: 20px 0;
+							cursor: pointer;
+							transition: $trans;
+							&:hover {
+								background: $dkblue;
+								color: $white;
+							}
                         }
                     }
                 }
@@ -841,35 +876,18 @@ hr {
 		justify-content: space-between;
 		align-items: center;
 		box-sizing: border-box;
-		.text-links {
-			font-family: $hind;
-			font-size: 16px;
-			font-weight: bold;
-			a {
-				color:$dkblue;
-				text-transform: uppercase;
-				font-weight: bold;
-			}
-			.icon-messenger {
-				color: #2196f3;
-				font-size: 24px;
-				vertical-align: middle;
-			}
-		}
 		.free-consultation-box {
 			display: flex;
-			justify-content: space-between;
-			width: 185px;
-			padding: 7px 18px 7px 8px;
+			justify-content: center;
+			width: 100%;
+			padding: 12px 18px 12px 8px;
 			border-radius: 50px;
 			position: relative;
 			background: $dkblue;
 			align-items: center;
 			z-index: 1;
 			right: auto;
-			bottom: auto;
-			margin-bottom: 0;
-			margin-right: 0;
+			margin: 0 auto;
 			top:auto;
 			.left {
 				.phone-icon {
@@ -880,7 +898,10 @@ hr {
 					justify-content: center;
 					align-items: center;
 					background: $orange;
-					background: linear-gradient(135deg, #ff9462 0%, #ff5601 100%);
+					position: absolute;
+					left: 8px;
+					top: calc(50% - 12.5px);
+					background: $red;
 					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9462', endColorstr='#ff5601',GradientType=1 );
 					span {
 						color: $white;
