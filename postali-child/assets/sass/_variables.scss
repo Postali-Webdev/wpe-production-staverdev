@@ -51,144 +51,8 @@ $gray200: #92A0B2;
 $link-transition-speed: .15s;
 $trans: 0.3s ease all;
 
-// Font Weight
-$normal: 400;
-$bold: 700;
-$black: 900;
-
 // Typography
-
-// Hind
-@font-face {
-    font-family: "Hind";
-    src: url("../fonts/hind/Hind-Light.woff2") format("woff2");
-    font-weight: 100;
-    font-display: swap;
-}
-@font-face {
-    font-family: "Hind";
-    src: url("../fonts/hind/Hind-Regular.woff2") format("woff2");
-    font-weight: $normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: "Hind";
-    src: url("../fonts/hind/Hind-Medium.woff2") format("woff2");
-    font-weight: 500;
-    font-display: swap;
-}
-@font-face {
-    font-family: "Hind";
-    src: url("../fonts/hind/Hind-SemiBold.woff2") format("woff2");
-    font-weight: 600;
-    font-display: swap;
-}
-@font-face {
-    font-family: "Hind";
-    src: url("../fonts/hind/Hind-Bold.woff2") format("woff2");
-    font-weight: $bold;
-    font-display: swap;
-}
-
-// PT Sans
-@font-face {
-    font-family: "PT Sans";
-    src: url("../fonts/pt-sans/PTSans-Regular.woff2") format("woff2");
-    font-weight: $normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: "PT Sans";
-    src: url("../fonts/pt-sans/PTSans-Italic.woff2") format("woff2");
-    font-weight: $normal;
-    font-style: italic;
-    font-display: swap;
-}
-@font-face {
-    font-family: "PT Sans";
-    src: url("../fonts/pt-sans/PTSans-Bold.woff2") format("woff2");
-    font-weight: $bold;
-    font-display: swap;
-}
-@font-face {
-    font-family: "PT Sans";
-    src: url("../fonts/pt-sans/PTSans-BoldItalic.woff2") format("woff2");
-    font-weight: $bold;
-    font-display: swap;
-    font-style: italic;
-}
-
-// Zilla Slab
-@font-face {
-    font-family: "Zilla Slab";
-    src: url("../fonts/zilla-slab/ZillaSlab-Light.woff2") format("woff2");
-    font-weight: 100;
-    font-display: swap;
-}
-@font-face {
-    font-family: "Zilla Slab";
-    src: url("../fonts/zilla-slab/ZillaSlab-LightItalic.woff2") format("woff2");
-    font-weight: 100;
-    font-display: swap;
-    font-style: italic;
-}
-@font-face {
-    font-family: "Zilla Slab";
-    src: url("../fonts/zilla-slab/ZillaSlab-Regular.woff2") format("woff2");
-    font-weight: $normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: "Zilla Slab";
-    src: url("../fonts/zilla-slab/ZillaSlab-Italic.woff2") format("woff2");
-    font-weight: $normal;
-    font-display: swap;
-    font-style: italic;
-}
-@font-face {
-    font-family: "Zilla Slab";
-    src: url("../fonts/zilla-slab/ZillaSlab-Medium.woff2") format("woff2");
-    font-weight: 500;
-    font-display: swap;
-}
-@font-face {
-    font-family: "Zilla Slab";
-    src: url("../fonts/zilla-slab/ZillaSlab-MediumItalic.woff2") format("woff2");
-    font-weight: 500;
-    font-display: swap;
-    font-style: italic;
-}
-@font-face {
-    font-family: "Zilla Slab";
-    src: url("../fonts/zilla-slab/ZillaSlab-SemiBold.woff2") format("woff2");
-    font-weight: 600;
-    font-display: swap;
-}
-@font-face {
-    font-family: "Zilla Slab";
-    src: url("../fonts/zilla-slab/ZillaSlab-SemiBoldItalic.woff2") format("woff2");
-    font-weight: 600;
-    font-display: swap;
-    font-style: italic;
-}
-@font-face {
-    font-family: "Zilla Slab";
-    src: url("../fonts/zilla-slab/ZillaSlab-Bold.woff2") format("woff2");
-    font-weight: $bold;
-    font-display: swap;
-}
-@font-face {
-    font-family: "Zilla Slab";
-    src: url("../fonts/zilla-slab/ZillaSlab-BoldItalic.woff2") format("woff2");
-    font-weight: $bold;
-    font-display: swap;
-    font-style: italic;
-}
-
-
-
-
-
+//$FONTFAMILY: 'FONTFAMILY', sans-serif;
 $icomoon: 'Icomoon';
 $opensans: 'Open Sans', sans-serif;
 $playfair: 'Playfair Display', serif;
@@ -202,3 +66,8 @@ $zilla: "Zilla Slab", serif;
 // $body-font-family: $overpass;
 // $body-text-color: $dk-blue;
 $body-line-height: 130%;
+
+// Font Weight
+$normal: 400;
+$bold: 700; 
+$black: 900;
