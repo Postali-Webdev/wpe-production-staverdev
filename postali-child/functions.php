@@ -30,9 +30,6 @@
 		wp_register_style( 'icomoon-fonts', 'https://cdn.icomoon.io/152819/Staver/style.css?ir1oat', array() );
 		wp_enqueue_style('icomoon-fonts');
 		
-		wp_register_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap', array() );
-		wp_enqueue_style('google-fonts');
-
 		// Compiled .js using Grunt.js
 		wp_register_script('custom-scripts', get_stylesheet_directory_uri() . '/assets/js/scripts.min.js',array('jquery'), true); 
 		wp_enqueue_script('custom-scripts');
@@ -47,9 +44,6 @@
 		// load homepage scripts 
 		if ( is_page(13) || is_page(27483) ) {
 			wp_enqueue_script('homepage-scripts');
-            
-            wp_register_style( 'google-fonts-roboto', 'https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap', array() );
-            wp_enqueue_style('google-fonts-roboto');
 		}
 		// again for location homepages 
 		if ( is_page_template ( 'page-locations-home.php' ) ) {
@@ -59,11 +53,7 @@
 		if ( is_page_template ( 'page-locations-landing.php' ) ) {
 			wp_enqueue_script('priority-scripts');
 		}
-		// wp_register_script('attorney-scripts', get_stylesheet_directory_uri() . '/assets/js/attorneys.min.js',array('jquery'), null, true); 
-		// load attorney bio scripts 
-		// if ( is_page_template( 'page-attorneys.php' ) ) {
-		//	wp_enqueue_script('attorney-scripts');
-		// }
+		
 		wp_register_script('smooth-scroll-scripts', get_stylesheet_directory_uri() . '/assets/js/smooth-scroll-custom.min.js',array('jquery'), null, true); 
 		// load smooth scroll scripts 
 		if ( is_page_template( array ( 'page-practice-area-child.php','page-practice-area-parent.php', 'page-practice-area-parent-new.php', 'front-page.php', 'page-faqs.php' ) ) ) {
