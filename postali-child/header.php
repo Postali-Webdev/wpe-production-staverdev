@@ -8,32 +8,6 @@
 ?><!DOCTYPE html>
 <html class="no-js webp" <?php language_attributes(); ?>>
     <head>
-
-    <!-- Font Preloads -->
-     <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/hind/Hind-Light.woff2" crossorigin>
-     <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/hind/Hind-Regular.woff2" crossorigin>
-     <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/hind/Hind-Medium.woff2" crossorigin>
-     <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/hind/Hind-SemiBold.woff2" crossorigin>
-     <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/hind/Hind-Bold.woff2" crossorigin>
-
-     <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/pt-sans/PTSans-Regular.woff2" crossorigin>
-     <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/pt-sans/PTSans-Italic.woff2" crossorigin>
-     <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/pt-sans/PTSans-Bold.woff2" crossorigin>
-     <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/pt-sans/PTSans-BoldItalic.woff2" crossorigin>
-
-     <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/zilla-slab/ZillaSlab-Light.woff2" crossorigin>
-     <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/zilla-slab/ZillaSlab-LightItalic.woff2" crossorigin>
-     <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/zilla-slab/ZillaSlab-Regular.woff2" crossorigin>
-     <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/zilla-slab/ZillaSlab-Italic.woff2" crossorigin>
-     <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/zilla-slab/ZillaSlab-Medium.woff2" crossorigin>
-     <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/zilla-slab/ZillaSlab-MediumItalic.woff2" crossorigin>
-     <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/zilla-slab/ZillaSlab-SemiBold.woff2" crossorigin>
-     <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/zilla-slab/ZillaSlab-SemiBoldItalic.woff2" crossorigin>
-     <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/zilla-slab/ZillaSlab-Bold.woff2" crossorigin>
-     <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/zilla-slab/ZillaSlab-BoldItalic.woff2" crossorigin>
-    <!-- Font Preloads -->
-
-
         <!-- Google Tag Manager -->
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -113,6 +87,32 @@
 
             window.onload = init;
         </script>
+
+
+
+        <!-- Font Preloads -->
+        <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/hind/Hind-Light.woff2" crossorigin>
+        <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/hind/Hind-Regular.woff2" crossorigin>
+        <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/hind/Hind-Medium.woff2" crossorigin>
+        <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/hind/Hind-SemiBold.woff2" crossorigin>
+        <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/hind/Hind-Bold.woff2" crossorigin>
+
+        <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/pt-sans/PTSans-Regular.woff2" crossorigin>
+        <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/pt-sans/PTSans-Italic.woff2" crossorigin>
+        <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/pt-sans/PTSans-Bold.woff2" crossorigin>
+        <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/pt-sans/PTSans-BoldItalic.woff2" crossorigin>
+
+        <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/zilla-slab/ZillaSlab-Light.woff2" crossorigin>
+        <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/zilla-slab/ZillaSlab-LightItalic.woff2" crossorigin>
+        <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/zilla-slab/ZillaSlab-Regular.woff2" crossorigin>
+        <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/zilla-slab/ZillaSlab-Italic.woff2" crossorigin>
+        <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/zilla-slab/ZillaSlab-Medium.woff2" crossorigin>
+        <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/zilla-slab/ZillaSlab-MediumItalic.woff2" crossorigin>
+        <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/zilla-slab/ZillaSlab-SemiBold.woff2" crossorigin>
+        <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/zilla-slab/ZillaSlab-SemiBoldItalic.woff2" crossorigin>
+        <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/zilla-slab/ZillaSlab-Bold.woff2" crossorigin>
+        <link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/postali-child/assets/fonts/zilla-slab/ZillaSlab-BoldItalic.woff2" crossorigin>
+        <!-- Font Preloads -->
     </head>
 
     <body <?php body_class(); ?>>
