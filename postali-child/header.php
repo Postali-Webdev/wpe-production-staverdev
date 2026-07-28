@@ -18,37 +18,12 @@
 
         <!-- Add JSON Schema here -->
         <?php 
-            // Global Schema
-            $default_schema = get_field('global_schema', 'options');
-            $aurora_schema = get_field('aurora_global_schema', 'options');
-            $elgin_schema = get_field('elgin_global_schema', 'options');
-            $hinsdale_schema = get_field('hinsdale_global_schema', 'options');
-            $joilet_schema = get_field('joliet_global_schema', 'options');
-            $naperville_schema = get_field('naperville_global_schema', 'options');
-            $waukegan_schema = get_field('waukegan_global_schema', 'options');
-
-
-            if (is_tree(19006)) {
-                echo "<script type=\"application/ld+json\"> ${aurora_schema} </script>";
-            } else if (is_tree(19008)) {
-                echo "<script type=\"application/ld+json\"> ${elgin_schema} </script>";
-            } else if (is_tree(19010)) {
-                echo "<script type=\"application/ld+json\"> ${hinsdale_schema} </script>";
-            } else if (is_tree(19012)) {
-                echo "<script type=\"application/ld+json\"> ${joilet_schema} </script>";
-            } else if (is_tree(19014)) {
-                echo "<script type=\"application/ld+json\"> ${naperville_schema} </script>";
-            } else if (is_tree(19016)) {
-                echo "<script type=\"application/ld+json\"> ${waukegan_schema} </script>";
-            } else {
-                echo "<script type=\"application/ld+json\"> ${default_schema} </script>";
-            }
-
             // Single Page Schema
             $single_schema = get_field('single_schema');
             if ( !empty($single_schema) ) :
                 echo '<script type="application/ld+json">' . $single_schema . '</script>';
-            endif; ?>
+            endif; 
+        ?>
 
         <!-- <link rel="dns-prefetch" href="https://www.googletagmanager.com/" > -->
 
