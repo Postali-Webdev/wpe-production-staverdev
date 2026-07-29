@@ -85,8 +85,7 @@ if ( $sortby == "date-high" || $sortby == "date-low" ) {
                     <?php if(have_posts()) : while ( have_posts() ) : the_post(); ?>
 						<article>
                             <span>
-                                <?php $num = get_field('settlement_amount'); ?>
-                                <h3>$<?php echo number_format($num); ?></h3>
+                                <h3><?php the_title(); ?></h3>
                                 </span>
 							<span class="small-orange"><?php the_title(); ?></span>
 							<?php the_content(); ?>		
