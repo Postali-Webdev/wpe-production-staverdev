@@ -186,7 +186,7 @@ $current_page_parent_id = $post->post_parent;
         var elem = document.head;
         elem.appendChild(script);
     </script>
-    <noscript><a href="https://www.clickcease.com"><img src="https://monitor.clickcease.com/stats/stats.aspx" alt="Click Fraud Protection"/></a></noscript>
+    <noscript><a href="https://www.clickcease.com"><img src="https://monitor.clickcease.com/stats/stats alt="Click Fraud Protection"/></a></noscript>
  <!-- End of ClickCease -->
 
  <!-- Meta Pixel Code -->
