@@ -51,7 +51,7 @@ get_header(); ?>
                             <li><a href="/blog/category/motorcycle-accidents/">Motorcycle Accidents</a></li>
                             <li><a href="/blog/category/bike-accidents/">Bicycle Accidents</a></li>
                             <li><a href="/blog/category/pedestrian-accidents/">Pedestrian Accidents</a></li>
-                            <li><a href="/blog/category/auto-accidents">Motor Vehicle </a></li>
+                            <li><a href="/blog/category/auto-accidents/">Motor Vehicle </a></li>
                             <li><a href="/blog/category/premises-liability/">Premises Liability</a></li>
                             <li><a href="/blog/category/product-liability/">Product Liability</a></li>
                             <li><a href="/blog/category/medical-malpractice/">Medical Malpractice</a></li>
